@@ -1,0 +1,134 @@
+/* Typefaces start */
+@font-face {
+    font-family: 'GT Super Display';
+    src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
+         url('Fonts/gtsuperdisplay-super-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Super Display Italic';
+    src: url('Fonts/gtsuperdisplay-superitalic-webfont.woff2') format('woff2'),
+         url('Fonts/gtsuperdisplay-superitalic-webfont.woff') format('woff');
+    font-weight: italic;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Super Text';
+    src: url('Fonts/gtsupertext-book-webfont.woff2') format('woff2'),
+         url('Fonts/gtsupertext-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Super Text Italic';
+    src: url('Fonts/gtsupertext-bookitalic-webfont.woff2') format('woff2'),
+         url('Fonts/gtsupertext-bookitalic-webfont.woff') format('woff');
+    font-weight: italic;
+    font-style: normal;
+}
+
+
+/* Typefaces end */
+
+body{
+	background:black;
+	color:black;
+	font-family: GT Super Text;
+	line-height:1em;
+	text-align:left;
+	margin:0px;
+	overflow-x:none;
+}
+
+h3{
+	width:auto;
+	font-size:10pt;
+	letter-spacing: 0.05em;
+	color:grey;
+	text-transform:uppercase;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+a{
+	color:blue;
+}
+
+.nav{
+	text-decoration:none;
+	color:#00ff00;
+}
+
+.nav:hover{
+/*	border-bottom:1px #00ff00 solid;*/
+	text-decoration:line-through;
+}
+
+#header{
+	background:black;
+/*	display:inline;*/
+	height:40px;
+	margin:auto;
+	width:100vw;
+	border-bottom:1px solid #00ff00;
+	position:fixed;
+	z-index:1000000;
+}
+
+#navigation{
+	display:flex;
+	justify-content:space-between;
+	margin:0 15px;
+}
+
+.left{
+	padding-left:0px;
+}
+
+.projects {
+	background:none;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap:0px;
+	max-width:100vw;
+	margin:0px 30px 0px 30px;
+	top:30px;
+	position:relative;
+	z-index:1;
+}
+
+.thumbnail {
+	background:gray;
+	color:#FFFFFF;
+	height:200px;
+	padding:0;
+	border:1px solid #00FF00;
+	margin:20px;
+}
+
+.first{
+	margin-left:30px;
+	margin-right:10px;
+}
+
+.last{
+	margin-right:30px;
+	margin-left:10px;
+}
+
+.top{
+	margin-top:70px;
+}
+
+#Xmarksthespot{
+	z-index:-1;
+	position:fixed;
+	top:45px;
+	width:calc(100vw - 50px);
+/*	transform: scale(100vw, 100vh);
+*/	margin:15px;
+}
