@@ -62,11 +62,16 @@ h1{
 	font-family:GT Super Display;
 	color:#00ff00;
 	font-height:;
-	font-size:15vw;
-	line-height:12vw;
+	font-size:13vw;
+	line-height:10.5vw;
 	text-transform:uppercase;
 	display:table-cell;
 	text-align:justify!important;
+}
+
+.larger{
+	font-size:26.5vw;
+	line-height:20vw;
 }
 
 h4{
@@ -145,13 +150,17 @@ a{
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap:0px;
-/*	grid-auto-flow:column;
-*/	max-width:100vw;
+	max-width:100vw;
 	margin:0px;
 	top:25px;
 	position:relative;
 	z-index:1;
 }
+
+/*.projects{
+	column-count:3;
+	column-gap:10px;
+}*/
 
 .thumbnail {
 	background:gray;
