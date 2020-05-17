@@ -40,7 +40,6 @@ body{
 	color:#0b152e;
 	font-family: 'Work Sans', sans-serif;	
 	line-height:1em;
-	text-align:left;
 	margin:15px;
 	overflow-x:none;
 }
@@ -55,7 +54,8 @@ h1{
 	line-height:10.5vw;
 	text-transform:uppercase;
 	display:table-cell;
-	text-align:justify!important;
+	text-align:justify !important;
+	text-align-last:justify !important;
 }
 
 .larger{
@@ -212,6 +212,12 @@ a{
 	padding:0;
 	padding-top:5px;
 	border:none;
+	width:100%;
+	overflow:hidden;
+	overflow-wrap:break-word;
+	word-break: break-word;
+	text-align:justify !important;
+	text-align-last:justify;
 }
 
 
