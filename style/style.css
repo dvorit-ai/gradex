@@ -211,7 +211,7 @@ p{
 
 .projects {
 	background:none;
-	column-count:4;
+	column-count:6;
 	column-gap:11px;
 	margin:0px;
 	margin-right:1px;
@@ -224,7 +224,6 @@ p{
 }
 
 .thumbnail {
-	color: #FFFFFF;
     width: 100%;
     border: 1px solid #00FF00;
   	display: inline-block;
