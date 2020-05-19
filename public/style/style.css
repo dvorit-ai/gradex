@@ -1,0 +1,502 @@
+/* Typefaces start */
+@import 'http://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900';
+
+@font-face {
+    font-family: 'GT Super Display';
+    src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
+         url('Fonts/gtsuperdisplay-super-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: 'GT Super Display Italic';
+    src: url('Fonts/gtsuperdisplay-superitalic-webfont.woff2') format('woff2'),
+         url('Fonts/gtsuperdisplay-superitalic-webfont.woff') format('woff');
+    font-weight: italic;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Super Text';
+    src: url('Fonts/gtsupertext-book-webfont.woff2') format('woff2'),
+         url('Fonts/gtsupertext-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Super Text Italic';
+    src: url('Fonts/gtsupertext-bookitalic-webfont.woff2') format('woff2'),
+         url('Fonts/gtsupertext-bookitalic-webfont.woff') format('woff');
+    font-weight: italic;
+    font-style: normal;
+}
+/* Typefaces end */
+
+
+body{
+	background:#0b152e;
+/*	background-image: radial-gradient(circle, #0b152e 5%, #00ff00 20%, #0b152e 50%);
+*/	color:white;
+	font-family: 'Work Sans', sans-serif;	
+	line-height:1em;
+	margin:15px;
+	font-size:14pt;
+}
+
+/* TYPOGRAPHY RULES */
+
+h1{
+	margin-top:0;
+	margin-left:-5px;
+	font-family:GT Super Display;
+	font-size:6.5vw;
+	line-height:6vw;
+	text-transform:uppercase;
+	display:table-cell;
+	text-align:justify !important;
+	word-spacing:-18px;
+}
+
+.larger{
+	font-size:12vw;
+	line-height:10vw;
+	word-spacing:-30px;
+}
+
+h2{
+	margin-top:0;
+	font-family:GT Super Display;
+	font-size:6.5em;
+	line-height:0.9em;
+	text-transform:uppercase;
+	display:table-cell;
+	text-align:justify !important;
+	overflow:hidden;
+}
+
+h3{
+	font-size:23pt;
+	font-weight:400;
+	line-height:23pt;
+	font-family:'GT Super Display';
+	text-transform: uppercase;
+	margin:10px 0px;
+}
+
+h4{
+	font-size:12pt;
+	text-transform:uppercase;
+	font-weight:400;
+	line-height:12pt;
+}
+
+h5{
+	font-size:12pt;
+	font-weight:400;
+	display:inline-block;
+	margin:0;
+	line-height:15pt;
+}
+
+h6{
+	font-size:9pt;
+	font-weight:400;
+	display:inline-block;
+	margin:0;
+	line-height:15pt;
+	text-align:justify!important;
+}
+
+a{
+	color:#00ff00;
+	text-decoration:none;
+}
+
+a:hover{
+	border-bottom:1px solid #00ff00;
+}
+
+p{
+	font-size:12pt;
+	font-weight:400;
+	display:inline-block;
+	line-height:14pt;
+}
+
+.type {
+	background:none;
+	height:auto;
+	max-height:1000px;
+	padding:0;
+	padding-top:5px;
+	border:none!important;
+	width:100%;
+	overflow:hidden;
+	overflow-wrap:break-word;
+	word-break: break-word;
+	text-align:justify !important;
+	text-align-last:justify;
+	color:#00FF00!important;
+}
+
+.type:hover{
+	background:none;
+}
+
+
+/* NAVIGATION */
+#nav  {	
+	margin:0;
+	padding:0;
+}
+
+#nav a {
+	color:white;
+	text-decoration:none;
+}
+
+#nav a:hover{
+	border-bottom:1px solid #00ff00;
+}
+
+#nav li {
+	position:fixed;
+	z-index:2;
+	margin:0;
+	padding:0;
+	list-style-type: none;
+}
+
+.nav-top{
+	left:15px;
+	top:-8px;
+}
+
+.nav-left{
+  	transform: rotate(-90deg);
+  	transform-origin: 0 50%;
+  	bottom:-21px;
+  	position:absolute;
+  	left:16px;
+}
+
+.nav-right{
+	right:20px;
+	top:40px;
+	transform-origin: 100% 50%;
+	transform: rotate(90deg);
+}
+
+.nav-bottom{
+/*	transform: rotate(180deg);*/
+	bottom:-10px;
+	right:15px;
+}
+
+/* MAIN WORK PAGE */
+
+.projects-container{
+/*	margin:25px;
+	overflow:hidden;*/
+	position:relative;
+	overflow-y:auto;
+	margin:0px 25px;
+	top:25px;
+	height:calc(100vh - 80px);
+	border:1px solid #00ff00;
+/*	overflow:hidden;
+*/}
+
+.projects {
+	background:none;
+	column-count:4;
+	column-gap:11px;
+	margin:0px;
+	margin-right:1px;
+	top:-1px;
+	position:relative;
+	z-index:1;
+	font-size:0;
+	object-fit:cover;
+	width:100%;
+}
+
+.thumbnail {
+    width: 100%;
+    border: 1px solid #00FF00;
+  	display: inline-block;
+    padding: 0;
+    line-height: 0;
+    height:auto;
+    mix-blend-mode: normal;
+    object-fit:cover;
+    position:relative;
+}
+
+
+.thumbnail img {
+	max-width:100%;
+	height:auto;
+	width:100%;
+/*	border: 2px solid #00FF00;
+*/
+}
+
+.thumbnail:hover img{
+	opacity:0.3;
+	transition: opacity .5s, visibility .15s;
+}
+
+
+/* IMAGE HOVER DESCRIPTION START*/
+.img-tags {
+  position: absolute;
+  top: 0;
+  left:0;
+  margin:0;
+  background: rgba(0, 255, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  width:calc(100% - 30px);
+  height:calc(100% - 30px);
+  padding:15px;
+  transition: opacity .5s, visibility .15s;
+  z-index:100000000000!important;
+  color:#0b152e;
+  display:inline-block;
+  overflow-y:auto;
+  text-transform:uppercase;
+}
+
+.thumbnail:hover .img-tags {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* STUDENT WORK PAGE */
+
+	/* SIDEBAR */
+
+	.sidebar-container{
+		position:fixed;
+		margin:0px 25px;
+		top:40px;
+		height:calc(100vh - 79px);
+		width:calc(30vw - 10px);
+		background:none;
+		color:#00FF00;
+	}
+
+	.sidebar{
+		background:none;
+		height:auto;
+		z-index:5!important;
+		height:100%;
+		color:#00FF00;
+		overflow-y:auto;
+	}
+
+	.sidebar img{
+		width:20vw;
+		border:1px solid #00FF00;
+		display:inline-block;
+	}
+
+	.student-name{
+		width:20vw;
+		display:block;
+		letter-spacing:0.1em;
+		padding:10px 0px;
+	}
+
+	#student-links{
+		padding:0;
+		margin:0;
+		display:inline-block;
+		margin-left:10px;
+		width:calc(10vw - 50px);
+		text-align:justify!important;
+		text-align-last:justify!important;
+		overflow:hidden;
+	}
+
+	#student-links li{
+		list-style-type:none;
+	}
+
+	#student-links a{
+		text-decoration:none;
+		color:#00ff00;
+	}
+
+	#student-links a:hover{
+		border-bottom:1px solid #00ff00;
+	}
+
+	.student-bio{
+		font-weight:400;
+	}
+
+	/* THE WORK */
+
+	.student-container{
+		position:relative;
+		overflow-y:auto;
+		margin:0px 25px;
+		top:25px;
+		left:calc(30vw + 10px);
+		height:calc(100vh - 80px);
+		border:1px solid #00ff00;
+		width:calc(70vw - 17px - 25px - 50px);
+	}
+
+	.project-bar {
+		background:white;
+		color:#0b152e;
+		padding:20px 35px;
+		overflow-x:hidden;
+	}
+
+	.project-bar img{
+		width:calc(100% - 2px);
+		border:1px solid #00ff00;
+		margin:auto;
+	/*	width:auto;
+		max-height:90vh;*/
+		display:block;
+	}
+
+	#project-title{
+		color:#0b152e!important;
+		margin:0;
+		padding:0;
+		width:auto;
+		max-width:100%;
+		text-overflow:wrap;
+	/*	word-break:break-all;
+		-moz-hyphens: auto;
+		hyphens:auto;*/
+	/*	word-wrap:break-word;
+	*/}
+
+	.project-description{
+		text-transform:none!important;
+		grid-template-columns: 1fr 4fr;
+		grid-column-gap: 0px;
+	/*	column-count:2;
+		column-gap:11px;*/
+		margin:25px 0px;
+	/*	background:blue;
+	*/	position:relative;
+		display:grid;
+	/*	word-break:break-all;
+	    hyphens: auto;*/
+	}
+
+	.p-tags{
+		border:1px solid #00ff00;
+		padding:10px;
+	}
+
+	.p-des{
+		border:1px solid #00ff00;
+		border-left:none;
+		padding:10px;
+	}
+
+	.project-caption{
+		text-transform:none!important;
+		margin:-1px 0px 25px 0px;
+		display:block;
+	}
+
+	.p-cap{
+		border:1px solid #00ff00;
+		padding:10px;
+	}
+
+
+	/* X BACKGROUND STARTS*/
+	#backgroundX {
+		width:100vw;
+		height:100vh;
+		position:fixed;
+		top:0;
+		left:0;
+		/*z-index:30;*/
+		pointer-events: none;
+	}
+
+
+/* SCROLLBAR START */
+
+/* width */
+::-webkit-scrollbar {
+  	width: 15px;
+/*  display:none;
+*/}
+
+/* Track */
+::-webkit-scrollbar-track {
+  	background: #0b152e; 
+  	border-left:1px solid #00ff00;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+/*  background:rgb(0, 255, 0, 0.6);
+*/  
+	background:url('../logos/scrollbar-x2.png') no-repeat;
+	background-size:16px 25px; 
+/*    background-position:;
+    display: block;
+    width: 10px;
+    height: 50px;*/
+    background-position: ;
+    top:-1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  	background:rgb(0, 255, 0, 1);
+}
+
+
+/* RESPONSIVE WINDOW SMALLER*/
+@media (max-width:1200px) {
+	.projects{
+		column-count:4;
+	}
+
+	h1{
+		font-size:9.7vw;
+		line-height:9vw;
+	}
+
+	.larger{
+		font-size:17.2vw;
+		line-height:14vw;
+	}
+}
+
+/* RESPONSIVE WINDOW SMALLEST*/
+@media (max-width:700px) {
+	.projects{
+		column-count:2;
+	}
+
+	h1{
+		font-size:19vw;
+		line-height:17vw;
+	}
+
+	.larger{
+		font-size:33vw;
+		line-height:25vw;
+	}
+}
+
+/* END OF RESPONSIVE WINDOW */

@@ -1,0 +1,19 @@
+{
+  "name": "gradex",
+  "version": "1.0.0",
+  "description": "GradEx? lol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvorit-ai/gradex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvorit-ai/gradex/issues"
+  },
+  "homepage": "https://github.com/dvorit-ai/gradex#readme"
+}
