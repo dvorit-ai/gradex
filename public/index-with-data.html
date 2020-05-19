@@ -53,9 +53,11 @@
 
 	  	var tags=data[i]["Project Tags"].replace(/;/g,"<br />")
 
+	  	var thumb = data[i]["First & Last Name"].replace(" ","_")+"_thumbnail.jpg"
+
 		var proj = 	"<div class=\"thumbnail\">"+
 					"<a href=\"aini-haider.html\">"+
-					"<img src=\"students/Aini-Haider/Thumbnail.png\" alt=\"\"/>"+
+					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
 					"<h3>"+data[i]["Project Title"]+"</h3>"+
