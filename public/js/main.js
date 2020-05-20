@@ -10,7 +10,6 @@ function shuffle(array) {
   }
 }
 
-
 	fetch('data/responses.json')
 	  .then(response => response.json())
 	  .then(data => {
