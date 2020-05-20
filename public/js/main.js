@@ -1,7 +1,7 @@
  	// 	var draw = SVG().addTo('#backgroundX').size($(window).width(), $(window).height())
 
  	// 	var line1 = draw.line($(window).width(), 0, 0, $(window).height()).stroke({ width: 1, color:"#0F0" })
-
+ 
 		// var line2 = draw.line(0, 0, $(window).width(), $(window).height()).stroke({ width: 1, color:"#0F0" })
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -28,12 +28,12 @@ function shuffle(array) {
 	  	var thumb = data[i]["First & Last Name"].toLowerCase().replace(" ","_")+"_thumbnail.jpg"
 
 		var proj = 	"<div class=\"thumbnail\">"+
-					"<a href=\"aini-haider.html\">"+
+					"<a href=\"student.html\">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
 					"<h3>"+data[i]["Project Title"]+"</h3>"+
-					"<h5>"+tags+"</h5>"+
+					"<h6>"+tags+"</h6>"+
 					"</div>"+
 					"</a>"+
 					"</div>";
