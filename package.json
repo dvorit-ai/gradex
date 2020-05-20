@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dvorit-ai/gradex/issues"
   },
-  "homepage": "https://github.com/dvorit-ai/gradex#readme"
+  "homepage": "https://github.com/dvorit-ai/gradex#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
