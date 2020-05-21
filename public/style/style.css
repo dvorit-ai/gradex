@@ -1,5 +1,5 @@
 /* Typefaces start */
-@import 'http://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900';
+@import 'http://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700,800,900';
  
 @font-face {
     font-family: 'GT Super Display';
@@ -17,38 +17,29 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'GT Super Text';
-    src: url('Fonts/gtsupertext-book-webfont.woff2') format('woff2'),
-         url('Fonts/gtsupertext-book-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'GT Super Text Italic';
-    src: url('Fonts/gtsupertext-bookitalic-webfont.woff2') format('woff2'),
-         url('Fonts/gtsupertext-bookitalic-webfont.woff') format('woff');
-    font-weight: italic;
-    font-style: normal;
-}
 /* Typefaces end */
 
 
 body{
 	background:#0b152e;
-/*	background: rgb(0, 15, 71);
-*/
-/*	background-image: radial-gradient(circle, #0b152e 5%, #00ff00 20%, #0b152e 50%);
-*/	color:white;
-	font-family: 'Work Sans', sans-serif;	
-	line-height:1em;
+	color:#0f0;
+	font-family: 'Work Sans', sans-serif;		
 	margin:0;
-	font-size:14pt;
 	overflow-y:auto;
+	font-weight:300;	
+	font-size:12pt;
+	margin:0;
+	line-height:15pt;
+	hyphens:auto;
 }
 
 /* TYPOGRAPHY RULES */
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:300;
+}
 
 h1{
 	margin-top:0;
@@ -75,7 +66,6 @@ h2{
 
 h3{
 	font-size:26pt;
-	font-weight:400;
 	line-height:28pt;
 	font-family:'GT Super Display';
 	margin:0;
@@ -86,36 +76,37 @@ h3{
 h4{
 	font-size:12pt;
 	text-transform:uppercase;
-	font-weight:400;
 	line-height:12pt;
+
 }
 
 h5{
-	font-size:16pt;
-	font-weight:300;
+	font-size:16pt;	
 	margin:0;
 	line-height:22pt;
 }
 
-h6{
-	font-size:12pt;
-	font-weight:400;
-	margin:0;
-	line-height:15pt;
-	hyphens:auto;
-}
 
-/*h6.tag {
+h6.tag {
 	background:#0b152e;
 	color:#0f0;
 	display:inline-block;
 	margin:0.25em 0;
 	padding:0.25em 0.5em;
-}*/
+}
+
+
+.sidebar h6.tag {
+	color:#0b152e;
+	background:#0f0;
+	display:inline-block;
+	margin:0.25em 0;
+	padding:0.25em 0.5em;
+}
+
 
 .uppercase{
-	text-transform:uppercase;
-	font-weight:300;
+	text-transform:uppercase;	
 }
 
 a{
@@ -130,10 +121,10 @@ a:hover{
 
 p{
 	font-size:12pt;
-	font-weight:400;
 	display:inline-block;
 	line-height:14pt;
 }
+
 
 
 /* NAVIGATION */
@@ -194,7 +185,7 @@ p{
 
 
 #container {
-	margin:0px 40px;
+	margin:0px 50px;
 
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
@@ -225,7 +216,7 @@ p{
 .projects {
 	background:none;
 	column-count:4;
-	column-gap:0;
+	column-gap:8px;
 	position:relative;
 	z-index:1;
 	font-size:0;
@@ -238,14 +229,15 @@ p{
 
 .thumbnail {
     width: 100%;
-    border: 1px solid #00FF00;
+    /*border: 1px solid #00FF00;*/
     border-top:none;
-    padding: 0;
+    /*padding: 2px;*/
     line-height: 0;
     height:auto;
     mix-blend-mode: normal;
     object-fit:cover;
     position:relative;
+    padding:4px;
 /*  TO ADD MARGINS LIKE STUDENT PAGE
 	margin-bottom:25px;
 */
@@ -253,7 +245,7 @@ p{
 
 
 .thumbnail img {
-	max-width:100%;
+	max-width:calc(100% - 8px);
 	height:auto;
 	width:100%;
 }
@@ -334,14 +326,23 @@ p{
 	padding:25px 25px 100px 25px;
 }
 
+
+.project img{ 
+	max-height:90vh;
+	max-width:100%;
+	margin-bottom:5pt;
+	margin-top:25px;
+
+}
+
+
 .sidebar{
 /*	border:2px solid black;
 */	display:block;
 }
 
 .description{
-	margin-bottom:15pt;
-	font-weight:300;
+	margin-bottom:15pt;	
 }
 
 .sidebar img{
@@ -356,7 +357,7 @@ p{
   	grid-column-end: span 4;
 }
 
-.project img,
+/*.project img,*/
 .project iframe{
 	width:calc(100% - 2px);
 	border:1px solid #00FF00;
@@ -370,8 +371,7 @@ p{
 
 .longimage img,
 .caption{
-	width:66%;
-	font-weight:300;
+	width:66%;	
 }
 
 /* STUDENT LIST PAGE */
@@ -387,7 +387,7 @@ p{
 	z-index:10000000;
 	background:none;
 	z-index:100000000;
-	color:white;
+	color:#0f0;
 
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -418,8 +418,7 @@ p{
 	padding:7pt 24pt 4pt 0;
 	grid-column-start:1;
 	grid-column-end:1;
-	margin:0;
-	font-weight:300;
+	margin:0;	
 }
 
 .list-title{
@@ -446,8 +445,7 @@ p{
 	grid-column-start:4;
 	grid-column-end:4;
 	margin:0;
-	text-align:right;
-	font-weight:300;
+	text-align:right;	
 }
 
 .list-last{

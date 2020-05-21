@@ -27,7 +27,7 @@ function shuffle(array) {
 
 
 	  	for (i=0; i<data.length;i++) {
-	  	console.log(data[i]["Thumbnail Image"])	
+	  	//console.log(data[i]["Thumbnail Image"])	
 
 	  	var tags="<h6 class='tag'>"+data[i]["Project Tags"].replace(/;/g,"</h6><br /><h6 class='tag'>")+"</h6>";
 
@@ -39,7 +39,7 @@ function shuffle(array) {
 
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail\">"+
-					"<a data-project-id='"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
+					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
@@ -53,20 +53,20 @@ function shuffle(array) {
 
 					projectTeasers.push(projTeaser);
 			
-				console.log(data[i])
+//				console.log(data[i])
 
 		var projFull = "<div class=\"students-container\">"+
 "<div class=\"sidebar\">"+
-"<h5>"+data[i]["First & Last Name"]+"</h5>"+
+"<p class='uppercase'>"+data[i]["First & Last Name"]+"</p>"+
 "<h3>"+data[i]["Project Title"]+"</h3>"+
-"<h6 class=\"description\">"+data[i]["Project Description"]+"<h6>"+
-"<h6 class=\"uppercase description\">"+tags+"</h6>"+
+"<p class=\"description\">"+data[i]["Project Description"]+"</p>"+
+"<p class=\"uppercase description\">"+tags+"</p>"+
 "<img src=\"images/"+portrait+"\">"+
 
-"<h6 class=\"uppercase\">"+"About the designer"+"</h6>"+
-"<h6 class=\"description\">"+data[i]["Short Bio"]+"</h6>"+
-"<h6 class=\"uppercase\">"+data[i]["Personal Quip"]+"</h6>"+
-"<h6 class=\"description\">"+data[i]["Quip answer"]+"</h6>"+
+"<p class=\"uppercase\">"+"About the designer"+"</p>"+
+"<p class=\"description\">"+data[i]["Short Bio"]+"</p>"+
+"<p class=\"uppercase\">"+data[i]["Personal Quip"]+"</p>"+
+"<p class=\"description\">"+data[i]["Quip answer"]+"</p>"+
 "</div>"+
 "<div class=\"project\">";
 	
@@ -107,10 +107,18 @@ function shuffle(array) {
 	  	}
 
 
-		shuffle(projectTeasers)
+		//shuffle(projectTeasers)
+
+
+
+
 
 	  	for (j=0;j<projectTeasers.length;j++) {
 			$(".projects-container").append(projectTeasers[j])
+
+			if (j==5) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>r e c<br>e s s<br>i o n</h1></div>"); }
+			if (j==20) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>g r a<br />d s</h1></div>"); }
+			if (j==23) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>2 0<br />2 0</h1></div>"); }
 		}
 
 
@@ -119,12 +127,19 @@ function shuffle(array) {
 	  	},500)
 	  });
 
+
+
+
+
+
+
+
 	  $(document).on("click",".project-link",function(e){
 	  	e.preventDefault();
 
 	  	history.pushState({
 		    id: $(this).data("url")
-		}, $(this).data("url"), $(this).data("url"));
+		}, $(this).data("url"), "?id="+$(this).data("project-id"));
 
 	  	$(".projects-container").fadeOut(200);
 
@@ -138,4 +153,29 @@ function shuffle(array) {
 	  	},200)
 
 	  	
+	  })
+
+
+	  $(document).ready(function(){
+
+
+	  		setTimeout(function(){
+	  		var getz = window.location.href.split("?")[1].split("=");
+	  		
+	  		if (getz[0] == "id") {
+		//alert(getz[1])
+	  			$("#project-link-"+getz[1]).click();
+	  		}
+	  	},1000)
+
+	  	$(".projects-container").fadeOut(200);
+
+
+	  	$(".student-container").html(projects[$(this).data("project-id")])
+
+
+
+	  	setTimeout(function(){
+	  		$(".student-container").fadeIn(200);
+	  	},200)
 	  })
