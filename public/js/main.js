@@ -33,8 +33,12 @@ function shuffle(array) {
 
 	  	var tags="<h6 class='tag'>"+data[i]["Project Tags"].replace(/;/g,"</h6><br /><h6 class='tag'>")+"</h6>";
 
-	  	var thumb = data[i]["First & Last Name"].toLowerCase().replace(" ","_")+"_thumbnail.jpg"
-	  	var portrait = data[i]["First & Last Name"].toLowerCase().replace(" ","_")+"_portrait.jpg"
+
+	  	var imagenames = data[i]["First & Last Name"].toLowerCase().replace(" ","_")
+	  	var thumb = imagenames+"_thumbnail.jpg"
+	  	var portrait = imagenames+"_portrait.jpg"
+
+
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail\">"+
 					"<a data-project-id='"+i+"' class=\"project-link\" >"+
@@ -67,36 +71,26 @@ function shuffle(array) {
 "<h6 class=\"description\">"+data[i]["Quip answer"]+"</h6>"+
 "</div>"+
 "<div class=\"project\">"+
-	"<div class=\"firstimage\">"+
-"<img class=\"firstimage\" src=\"students/Aini-Haider/1.jpg\">"+
-"</div>"+
-"<h6 class=\"caption\">"+
-"Posters used to give an introduction to the overall themes of the project."+
-"</h6>"+
+	
+"<img class=\"img1\" src=\"images/"+imagenames+"_1.jpg\">"+
+
+"<h6 class=\"caption\">"+data[i]["Caption #1: OPTIONAL"]+"</h6>"+
 "<div class=\"\">"+
-"<img src=\"students/Aini-Haider/2.gif\">"+
-"</div>"+
-"<h6 class=\"caption\">"+
-"Growing Pains: A collection of memories in nature."+
-"</h6>"+
+"<img class=\"img2\" src=\"images/"+imagenames+"_2.jpg\">"+"</div>"+
+"<h6 class=\"caption\">"+data[i]["Caption #2: OPTIONAL"]+"</h6>"+
+
 "<div class=\"longimage\">"+
-"<img src=\"students/Aini-Haider/3.jpg\">"+
+"<img class=\"img3\" src=\"images/"+imagenames+"_3.jpg\">"+
 "</div>"+
-"<h6 class=\"caption\">"+
-"161 Green Gold: A double meaning on the future of nature. On one hand, it's a collection of specimens to revive flora/plants in the future. On the other hand, nature has become a commodity due to its scarcity."+
-"</h6>"+
+"<h6 class=\"caption\">"+data[i]["Caption #3: OPTIONAL"]+"</h6>"+
 "<div class=\"\">"+
-"<img src=\"students/Aini-Haider/4.jpg\">"+
+"<img class=\"img4\" src=\"images/"+imagenames+"_4.jpg\">"+
 "</div>"+
-"<h6 class=\"caption\">"+
-"Environmental Oblivion: An interactive display that disregards the importance of humans and their existence; similar to how humans treat nature."+
-"</h6>"+
+"<h6 class=\"caption\">"+data[i]["Caption #4: OPTIONAL"]+"</h6>"+
 "<div class=\"longimage\">"+
-"<img src=\"students/Aini-Haider/5.jpg\">"+
+"<img class=\"img5\" src=\"images/"+imagenames+"_5.jpg\">"+
 "</div>"+
-"<h6 class=\"caption\">"+
-"Pothead: Instagram filters that will have an image of a flower covering your face. To see the QR codes to try out the filters go <a href=\"https://ainihaider.com/error-nature-not-found\" target=\"_blank\">here.</a>"+
-"</h6>"+
+"<h6 class=\"caption\">"+data[i]["Caption #5: OPTIONAL"]+"</h6>"+
 "</div>"+
 "</div>"
 
