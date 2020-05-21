@@ -451,20 +451,37 @@ p{
 	border:none;
 }
 
+/*TESTING A TABLE FORMAT*/
 
-table, th, td {
+.table-list{
+	position:relative;
+/*	overflow-y:auto;
+*/	margin:0 35px 0 40px;
+	top:-15px;
+	height:auto;
+	border-left:1px solid #00ff00;
+	border-right:1px solid #00ff00;
+	z-index:10000000;
+	background:none;
+	z-index:100000000;
+	color:white;
+	top:0;
+	left:0;
+}
+
+th, td {
   border: 1px solid white;
   border-collapse: collapse;
   text-align:left;
-}
-
-th, td{
-	padding:12pt;
+  padding:12pt;
 }
 
 table{
+	border-left:none;
+	border-right:none;
+	border-top:1px solid white;
+	border-collapse: collapse;
 }
-
 
 
 
