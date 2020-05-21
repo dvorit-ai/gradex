@@ -23,8 +23,6 @@ function shuffle(array) {
 	  	
 
 
-//	  	shuffle(data)
-
 
 
 
@@ -41,7 +39,7 @@ function shuffle(array) {
 
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail\">"+
-					"<a data-project-id='"+i+"' class=\"project-link\" >"+
+					"<a data-project-id='"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
@@ -100,7 +98,7 @@ function shuffle(array) {
 		"<h6 class=\"caption\">"+data[i]["Caption #5: OPTIONAL"]+"</h6>"
 	}
 
-projFull += "</div></div>"
+	projFull += "</div></div>"
 
 
 
@@ -124,10 +122,16 @@ projFull += "</div></div>"
 	  $(document).on("click",".project-link",function(e){
 	  	e.preventDefault();
 
+	  	history.pushState({
+		    id: $(this).data("url")
+		}, $(this).data("url"), $(this).data("url"));
+
 	  	$(".projects-container").fadeOut(200);
 
 
 	  	$(".student-container").html(projects[$(this).data("project-id")])
+
+
 
 	  	setTimeout(function(){
 	  		$(".student-container").fadeIn(200);
