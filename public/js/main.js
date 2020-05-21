@@ -1,7 +1,7 @@
  	// 	var draw = SVG().addTo('#backgroundX').size($(window).width(), $(window).height())
 
  	// 	var line1 = draw.line($(window).width(), 0, 0, $(window).height()).stroke({ width: 1, color:"#0F0" })
- 
+
 		// var line2 = draw.line(0, 0, $(window).width(), $(window).height()).stroke({ width: 1, color:"#0F0" })
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -9,6 +9,7 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
+
 
 	fetch('data/responses.json')
 	  .then(response => response.json())
@@ -22,12 +23,12 @@ function shuffle(array) {
 	  	for (i=0; i<data.length;i++) {
 	  	console.log(data[i]["Thumbnail Image"])	
 
-	  	var tags=data[i]["Project Tags"].replace(/;/g,"<br />")
+	  	var tags="<h6 class='tag'>"+data[i]["Project Tags"].replace(/;/g,"</h6><br /><h6 class='tag'>")+"</h6>";
 
 	  	var thumb = data[i]["First & Last Name"].toLowerCase().replace(" ","_")+"_thumbnail.jpg"
 
 		var proj = 	"<div class=\"thumbnail\">"+
-					"<a href=\"student.html\">"+
+					"<a class=\"project-link\" href=\"\">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
@@ -43,3 +44,8 @@ function shuffle(array) {
 	  			
 	  	}
 	  });
+
+	  $(document).on("click",".project-link",function(e){
+	  	e.preventDefault();
+	  	alert("f")
+	  })
