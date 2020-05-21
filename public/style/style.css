@@ -92,7 +92,8 @@ h6.tag {
 	color:#0f0;
 	display:inline-block;
 	margin:0.25em 0;
-	padding:0.25em 0.5em;
+	padding:1em;
+	font-size:12pt;
 }
 
 .sidebar h6.tag {

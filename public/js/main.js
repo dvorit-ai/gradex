@@ -44,7 +44,7 @@ function shuffle(array) {
 					"<div class=\"img-tags\">"+
 					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
 					"<h3>"+data[i]["Project Title"]+"</h3>"+
-					"<h6>"+tags+"</h6>"+
+					tags+
 					"</div>"+
 					"</a>"+
 					"</div>";
