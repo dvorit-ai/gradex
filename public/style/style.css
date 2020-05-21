@@ -43,7 +43,7 @@ body{
 */	color:white;
 	font-family: 'Work Sans', sans-serif;	
 	line-height:1em;
-	margin:15px 15px 0 15px;
+	margin:0;
 	font-size:14pt;
 	overflow-y:auto;
 }
@@ -192,34 +192,48 @@ p{
 
 /* MAIN WORK PAGE */
 
-.projects-container{
-	position:relative;
-/*	overflow-y:auto;
-*/	margin:0px 35px 0px 40px;
-	top:-15px;
-	height:auto;
+
+#container {
+	margin:0px 40px;
+
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
+	width:calc(100vw-80px)
+	min-height:100vh;
+}
+
+.projects-container{
+	
+	column-count:4;
+	column-gap:0;	
+	font-size:0;
+	display:none;
+	
+	
+}
+
+.student-container{
+	/*position:relative;
+	top:-15px;
 	z-index:10000000;
-/*	TO ADD MARGINS LIKE STUDENT PAGE
-	padding:25px;
-*/
+	width:calc(100vw-80px)
+	top:0;
+	display:block;*/
+	display:none;
 }
 
 .projects {
 	background:none;
 	column-count:4;
 	column-gap:0;
-/*	TO ADD MARGINS LIKE STUDENT PAGE
-	column-gap:25px;
-*/	position:relative;
+	position:relative;
 	z-index:1;
 	font-size:0;
 	object-fit:cover;
 	width:100%;
 	top:0;
 	display:block;
-	margin-left:-1px;
+	/*margin-left:-1px;*/
 }
 
 .thumbnail {
@@ -310,18 +324,7 @@ p{
 }
 
 .students-container{
-	position:relative;
-/*	overflow-y:auto;
-*/	margin:0 35px 0 40px;
-	top:-15px;
-	height:auto;
-	border-left:1px solid #00ff00;
-	border-right:1px solid #00ff00;
-	z-index:10000000;
-/*	background:#0b152e;
-*/	
-	background:none;
-	z-index:100000000;
+	
 	color:white;
 
 	display:grid;
