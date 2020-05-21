@@ -74,28 +74,28 @@ function shuffle(array) {
 	
 
 
-	if (data[i]["Caption #1: OPTIONAL"] != undefined) {
+	if (data[i]["Caption #1: OPTIONAL"] != "") {
 		projFull += "<img class=\"img1\" src=\"images/"+imagenames+"_1.jpg\">"+
 		"<h6 class=\"caption\">"+data[i]["Caption #1: OPTIONAL"]+"</h6>"
 	}
 
 
-	if (data[i]["Caption #2: OPTIONAL"] != undefined) {
+	if (data[i]["Caption #2: OPTIONAL"] != "") {
 		projFull += "<img class=\"img2\" src=\"images/"+imagenames+"_2.jpg\">"+
 		"<h6 class=\"caption\">"+data[i]["Caption #2: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #3: OPTIONAL"] != undefined) {
+	if (data[i]["Caption #3: OPTIONAL"] != "") {
 		projFull += "<img class=\"img3\" src=\"images/"+imagenames+"_3.jpg\">"+
 		"<h6 class=\"caption\">"+data[i]["Caption #3: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #4: OPTIONAL"] != undefined) {
+	if (data[i]["Caption #4: OPTIONAL"] != "") {
 		projFull += "<img class=\"img4\" src=\"images/"+imagenames+"_4.jpg\">"+
 		"<h6 class=\"caption\">"+data[i]["Caption #4: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #5: OPTIONAL"] != undefined) {
+	if (data[i]["Caption #5: OPTIONAL"] != "") {
 		projFull += "<img class=\"img5\" src=\"images/"+imagenames+"_5.jpg\">"+
 		"<h6 class=\"caption\">"+data[i]["Caption #5: OPTIONAL"]+"</h6>"
 	}
