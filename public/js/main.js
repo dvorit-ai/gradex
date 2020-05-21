@@ -42,7 +42,7 @@ function shuffle(array) {
 					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
-					"<h5>"+data[i]["First & Last Name"]+"</h5>"+
+					"<p class='uppercase'>"+data[i]["First & Last Name"]+"</p>"+
 					"<h3>"+data[i]["Project Title"]+"</h3>"+
 					tags+
 					"</div>"+
@@ -65,8 +65,8 @@ function shuffle(array) {
 
 "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 "<p class=\"description\">"+data[i]["Short Bio"]+"</p>"+
-"<p class=\"uppercase\">"+data[i]["Personal Quip"]+"</p>"+
-"<p class=\"description\">"+data[i]["Quip answer"]+"</p>"+
+"<p class=\"uppercase\">"+data[i]["Personal Quip: OPTIONAL"]+"</p>"+
+"<br><p class=\"description\">"+data[i]["Quip answer"]+"</p>"+
 "</div>"+
 "<div class=\"project\">";
 	
@@ -107,7 +107,7 @@ function shuffle(array) {
 	  	}
 
 
-		//shuffle(projectTeasers)
+		// shuffle(projectTeasers)
 
 
 
@@ -116,9 +116,10 @@ function shuffle(array) {
 	  	for (j=0;j<projectTeasers.length;j++) {
 			$(".projects-container").append(projectTeasers[j])
 
-			if (j==5) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>r e c<br>e s s<br>i o n</h1></div>"); }
-			if (j==20) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>g r a<br />d s</h1></div>"); }
-			if (j==23) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>2 0<br />2 0</h1></div>"); }
+			if (j==0) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>r e c<br>e s s<br>i o n</h1></div>"); }
+			if (j==34) { $(".projects-container").append("<div class=\"thumbnail type\"><h6 class='home'>Recession Grads is a digital archive that showcases the work of the graphic design graduates from OCADU 2020. Recession Grads is a digital archive that showcases the work of the graphic design graduates from OCADU 2020. Enjoy your visit!</h6></div>"); }
+			if (j==35) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>g r a<br />d s</h1></div>"); }
+			if (j==50) { $(".projects-container").append("<div class=\"thumbnail type\"><h1 class='larger'>2 0<br />2 0</h1></div>"); }
 		}
 
 

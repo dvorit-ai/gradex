@@ -34,58 +34,63 @@ body{
 	hyphens:auto;
 }
 
+
 /* TYPOGRAPHY RULES */
 
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
 	font-weight:300;
 }
 
 h1{
-	margin-top:0;
-	margin-left:-5px;
 	font-family:GT Super Display;
-	font-size:8.5vw;
-	line-height:7vw;
+	font-size:7vw;
+	line-height:0.9em;
 	text-transform:uppercase;
-	display:table-cell;
 	text-align:justify !important;
 	word-spacing:-18px;
+	margin:0;
 }
 
-h2{
-	margin-top:0;
+h1.larger{
+	font-size:13vw;
+	margin:0;
+}
+
+/*h2{
 	font-family:GT Super Display;
 	font-size:6.5em;
 	line-height:0.9em;
 	text-transform:uppercase;
-	display:table-cell;
 	text-align:justify !important;
 	overflow:hidden;
-}
+}*/
 
 h3{
-	font-size:26pt;
-	line-height:28pt;
+	font-size:21pt;
+	line-height:24pt;
 	font-family:'GT Super Display';
 	margin:0;
-	margin-bottom:5pt;
-	letter-spacing:1px;
+	margin-bottom:5px;
+	text-align:left;
+	hyphens:none;
 }
 
 h4{
 	font-size:12pt;
 	text-transform:uppercase;
 	line-height:12pt;
-
 }
 
-h5{
-	font-size:16pt;	
+p{
 	margin:0;
-	line-height:22pt;
+	margin-bottom:5px;
 }
 
+h6{
+	font-size:10pt;
+	line-height:1.25em;
+}
 
 h6.tag {
 	background:#0b152e;
@@ -93,7 +98,7 @@ h6.tag {
 	display:inline-block;
 	margin:0.25em 0;
 	padding:1em;
-	font-size:12pt;
+	font-size:10pt;
 }
 
 .sidebar h6.tag {
@@ -101,7 +106,15 @@ h6.tag {
 	background:#0f0;
 	display:inline-block;
 	margin:0.25em 0;
-	padding:0.25em 0.5em;
+	padding:0.35em 0.5em;
+}
+
+h6.home {
+	text-align:left;
+	hyphens:auto;
+	text-align-last:left;
+	padding:0;
+	margin:0;
 }
 
 
@@ -123,10 +136,12 @@ p{
 	font-size:12pt;
 	display:inline-block;
 	line-height:14pt;
+	margin:0;
 }
 
 img{
 	border:1px solid #0f0;
+	line-height:0;
 }
 
 
@@ -159,29 +174,59 @@ img{
 .one{
 	transform: rotate(90deg);
   	transform-origin: 0% 50%;
-  	top:-15px;
+  	top:-5px;
   	left:25px;
 }
 
 .three{
 	transform: rotate(-90deg);
   	transform-origin: 0% 50%;
-  	bottom:-15px;
+  	bottom:-5px;
   	left:25px;
 }
 
 .two{
 	transform: rotate(90deg);
   	transform-origin: 0% 50%;
-  	top:-15px;
+  	top:-5px;
   	right:-30px;
 }
 
 .four{
 	transform: rotate(-90deg);
   	transform-origin: 0% 50%;
-  	bottom:-15px;
+  	bottom:-5px;
   	right:-60px;
+}
+
+h6.invert-tag {
+	color:#0F0;
+	margin:0.25em 0;
+	display:inline-block;
+	padding:0.25em 25px;
+	text-transform:uppercase;
+}
+
+.filter-by-tag{
+	top:0px;
+	position:fixed;
+	width:95px;
+	height:auto;
+	z-index:10!important;
+	background:#0b152e;
+	display:inline-block;
+	border:1px solid #0f0;
+	border-top:none;
+	margin-left:-1px;
+}
+
+.filter-by-tag:hover {
+	width:calc(100% - 102px);
+	-webkit-transition: width .5s ease-in-out;
+    -moz-transition: width .5s ease-in-out;
+    -o-transition: width .5s ease-in-out;
+    transition: width .5s ease-in-out;
+
 }
 
 
@@ -202,20 +247,19 @@ img{
 	font-size:0;
 	display:none;
 	margin: 0 25px;
-	padding-top:25px;
+	padding-top:60px;
 }
 
-.student-container{
-	/*position:relative;
+/*.student-container{
+	position:relative;
 	top:-15px;
 	z-index:10000000;
 	width:calc(100vw-80px)
 	top:0;
-	display:block;*/
-	display:none;
+	display:block;
 }
-
-.projects {
+*/
+/*.projects {
 	background:none;
 	column-count:4;
 	column-gap:0;
@@ -225,9 +269,7 @@ img{
 	width:100%;
 	top:0;
 	display:block;
-/*	margin-left:-1px;
-*/	
-}
+}*/
 
 .thumbnail {
     width: 100%;
@@ -256,34 +298,33 @@ img{
 	background:url(../logos/X2.svg);
 	background-position:center;
 	height:auto;
-	padding:30px;
-	width:calc(100% - 60px);
+	padding:2vw;
+	width:calc(100% - 4vw);
 	overflow:hidden;
 	text-align:justify !important;
 	text-align-last:justify!important;
 	position:relative;
-	color:#00FF00!important;
+	color:#00FF00;
 	border:1px solid #0f0;
 }
 
 /* IMAGE HOVER DESCRIPTION START*/
 .img-tags {
-  position: absolute;
-  top: 0;
-  left:0;
-  margin:0;
-  background: rgba(0, 255, 0, 1);
-  -mix-blend-mode: multiply;
-  visibility: hidden;
-  opacity: 0;
-  width:calc(100% - 30px);
-  height:calc(100% - 30px);
-  padding:15px;
-/*  transition: opacity .5s, visibility .15s;
-*/  z-index:100000000000!important;
-  color:#0b152e;
-  display:inline-block;
-  overflow:hidden;
+  	position: absolute;
+  	top: 0;
+  	left:0;
+  	margin:0;
+  	background: rgba(0, 255, 0, 1);
+  	visibility: hidden;
+  	opacity: 0;
+ 	width:calc(100% - 30px);
+  	height:calc(100% - 31px);
+ 	padding:15px;
+	z-index:5!important;
+  	color:#0b152e;
+  	overflow:hidden;
+  	border:1px solid #0f0;
+  	border-bottom:none;
 }
 
 .thumbnail:hover .img-tags {
@@ -336,12 +377,14 @@ img{
 }
 
 .description{
-	margin-bottom:15pt;	
+	margin-bottom:10pt;	
 }
 
 .sidebar img{
 	width:calc(100% - 2px);
 	margin-bottom:10pt;
+	margin-top:10pt;
+	display:block;
 }
 
 .project{
@@ -368,11 +411,10 @@ img{
 
 /* STUDENT LIST PAGE */
 
-.list-container{
+/*.list-container{
 	position:relative;
-/*	overflow-y:auto;
-*/	margin:0 35px 0 40px;
-	top:-15px;
+	margin:0 50px 0 50px;
+	top:-5px;
 	height:auto;
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
@@ -442,45 +484,73 @@ img{
 
 .list-last{
 	border:none;
-}
+}*/
 
-/*TESTING A TABLE FORMAT*/
+/*STUDENTS LIST PAGE*/
 
 .table-list{
 	position:relative;
-/*	overflow-y:auto;
-*/	margin:0 35px 0 40px;
-	top:-15px;
+	margin:0 50px;
 	height:auto;
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
 	z-index:10000000;
 	background:none;
 	z-index:100000000;
-	color:white;
-	top:0;
 	left:0;
+	top:0;
+	padding-bottom:100px;
 }
 
-th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
-  text-align:left;
-  padding:12pt;
-}
 
 table{
-	border-left:none;
-	border-right:none;
-	border-top:1px solid white;
-	border-collapse: collapse;
+	width:calc(100% + 2px);
 }
 
+th, td, table{
+  	border:1px solid #00ff00;
+  	border-top:none;
+  	border-collapse: collapse;
+  	font-weight:300;
+  	text-align:left;
+  	padding:4pt 10pt 4pt 10pt;
+  	font-size:10pt;
+  	margin-left:-1px;
+}
+
+th{
+	padding:21px 10pt 10pt 10pt;
+}
+
+/*tbody>tr>:nth-child(3){ 
+	text-align:right;
+}*/
+
+/*tbody>tr>:nth-child(2){ 
+	font-weight:500;
+}*/
+
+tr:hover {
+	background: #0f0;
+	color:#0b152e;
+}
+
+.cell-one{
+	width:25%;
+}
+
+.cell-two{
+	width:50%;
+}
+
+.cell-three{
+	width:25%;
+}
 
 
 /* RESPONSIVE WINDOW SMALLEST*/
 @media (max-width:1000px) {
-	.projects {
+	.projects-container {
 		column-count:3;
 	}
 
@@ -491,7 +561,7 @@ table{
 }
 
 @media (max-width:800px) {
-	.projects {
+	.projects-container {
 		column-count:2;
 	}
 
