@@ -104,6 +104,14 @@ h6{
 	hyphens:auto;
 }
 
+/*h6.tag {
+	background:#0b152e;
+	color:#0f0;
+	display:inline-block;
+	margin:0.25em 0;
+	padding:0.25em 0.5em;
+}*/
+
 .uppercase{
 	text-transform:uppercase;
 }
