@@ -1,6 +1,6 @@
 /* Typefaces start */
 @import 'http://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900';
-
+ 
 @font-face {
     font-family: 'GT Super Display';
     src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
@@ -80,6 +80,7 @@ h3{
 	font-family:'GT Super Display';
 	margin:0;
 	margin-bottom:5pt;
+	letter-spacing:1px;
 }
 
 h4{
@@ -91,7 +92,7 @@ h4{
 
 h5{
 	font-size:16pt;
-	font-weight:400;
+	font-weight:300;
 	margin:0;
 	line-height:22pt;
 }
@@ -114,6 +115,7 @@ h6{
 
 .uppercase{
 	text-transform:uppercase;
+	font-weight:300;
 }
 
 a{
@@ -199,13 +201,18 @@ p{
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
 	z-index:10000000;
+/*	TO ADD MARGINS LIKE STUDENT PAGE
+	padding:25px;
+*/
 }
 
 .projects {
 	background:none;
 	column-count:4;
 	column-gap:0;
-	position:relative;
+/*	TO ADD MARGINS LIKE STUDENT PAGE
+	column-gap:25px;
+*/	position:relative;
 	z-index:1;
 	font-size:0;
 	object-fit:cover;
@@ -225,6 +232,9 @@ p{
     mix-blend-mode: normal;
     object-fit:cover;
     position:relative;
+/*  TO ADD MARGINS LIKE STUDENT PAGE
+	margin-bottom:25px;
+*/
 }
 
 
@@ -280,6 +290,25 @@ p{
 
 /* STUDENT PAGE */
 
+.background-blur{
+	position: fixed;
+  	left: 0;
+  	right: 0;
+  	margin:0;
+  	top:-15px;
+  	z-index: 0;
+  	display: block;
+  	background-image: url('../images/aini_haider_1.jpg');
+  	width: 100vw;
+  	height: calc(100vh + 15px);
+  	-webkit-filter: blur(165px);
+  	-moz-filter: blur(165px);
+  	-o-filter: blur(165px);
+  	-ms-filter: blur(165px);
+  	filter: blur(165px);
+  	background-position: center;
+}
+
 .students-container{
 	position:relative;
 /*	overflow-y:auto;
@@ -289,27 +318,27 @@ p{
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
 	z-index:10000000;
-	background:white;
+/*	background:#0b152e;
+*/	
+	background:none;
 	z-index:100000000;
+	color:white;
 
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
-
-/*	background: white url(../logos/X2.svg);
-*/
 }
 
 .sidebar{
 /*	border:2px solid black;
-*/	color:#0b152e;
-	display:block;
+*/	display:block;
 }
 
 .description{
 	margin-bottom:15pt;
+	font-weight:300;
 }
 
 .sidebar img{
@@ -322,10 +351,10 @@ p{
 /*	border:2px solid black;
 */	grid-column-start: 2;
   	grid-column-end: span 4;
-  	color:#0b152e;
 }
 
-.project img{
+.project img,
+.project iframe{
 	width:calc(100% - 2px);
 	border:1px solid #00FF00;
 	margin-bottom:5pt;
@@ -336,14 +365,106 @@ p{
 	margin-top:0!important;
 }
 
-.longimage img{
+.longimage img,
+.caption{
 	width:66%;
+	font-weight:300;
 }
 
-.caption{
-/*	width:calc(33% - 50px);
-*/	width:66%;
+/* STUDENT LIST PAGE */
+
+.list-container{
+	position:relative;
+/*	overflow-y:auto;
+*/	margin:0 35px 0 40px;
+	top:-15px;
+	height:auto;
+	border-left:1px solid #00ff00;
+	border-right:1px solid #00ff00;
+	z-index:10000000;
+	background:none;
+	z-index:100000000;
+	color:white;
+
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 25px;
+	padding:25px 25px 100px 25px;
 }
+
+.list-container ul{
+	list-style: none;
+	list-style-type: none;
+	padding:0;
+	top:0;
+	left:0;
+	margin:0;
+}
+
+.two-column{
+	grid-column-start: 2;
+	grid-column-end: span 2;
+}
+
+.list-name{
+	width:calc(100% - 24pt);
+	background:none;
+	height:25px;
+	border-bottom:1px solid #00ff00;
+	padding:7pt 24pt 4pt 0;
+	grid-column-start:1;
+	grid-column-end:1;
+	margin:0;
+	font-weight:300;
+}
+
+.list-title{
+	width:calc(100% - 24pt);
+	background:none;
+	height:25px;
+	border-bottom:1px solid #00ff00;
+	padding:2pt 12pt 9pt 12pt;
+	grid-column-start:2;
+	grid-column-end:span 2;
+	overflow: hidden;
+	text-overflow: wrap;
+	margin:0;
+	font-size:14pt;
+	letter-spacing:1px;
+}
+
+.list-prof{
+	width:calc(100% - 24pt);
+	background:none;
+	height:25px;
+	border-bottom:1px solid #00ff00;
+	padding:7pt 0 4pt 24pt;
+	grid-column-start:4;
+	grid-column-end:4;
+	margin:0;
+	text-align:right;
+	font-weight:300;
+}
+
+.list-last{
+	border:none;
+}
+
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align:left;
+}
+
+th, td{
+	padding:12pt;
+}
+
+table{
+}
+
 
 
 
@@ -371,3 +492,28 @@ p{
 }
 
 /* END OF RESPONSIVE WINDOW */
+
+
+
+
+/* SCROLLBAR START */
+
+/*::-webkit-scrollbar {
+  	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  	background: #0b152e; 
+  	border-left:1px solid #00ff00;
+}
+ 
+::-webkit-scrollbar-thumb { 
+	background:url('../logos/scrollbar-x2.png') no-repeat;
+	background-size:16px 25px; 
+    background-position: ;
+    top:-1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  	background:rgb(0, 255, 0, 1);
+}*/
