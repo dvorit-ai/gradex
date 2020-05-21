@@ -95,7 +95,6 @@ h6.tag {
 	padding:0.25em 0.5em;
 }
 
-
 .sidebar h6.tag {
 	color:#0b152e;
 	background:#0f0;
@@ -123,6 +122,10 @@ p{
 	font-size:12pt;
 	display:inline-block;
 	line-height:14pt;
+}
+
+img{
+	border:1px solid #0f0;
 }
 
 
@@ -186,21 +189,19 @@ p{
 
 #container {
 	margin:0px 50px;
-
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
 	width:calc(100vw-80px)
 	min-height:100vh;
 }
 
-.projects-container{
-	
+.projects-container{	
 	column-count:4;
-	column-gap:0;	
+	column-gap:25px;	
 	font-size:0;
 	display:none;
-	
-	
+	margin: 0 25px;
+	padding-top:25px;
 }
 
 .student-container{
@@ -216,39 +217,34 @@ p{
 .projects {
 	background:none;
 	column-count:4;
-	column-gap:8px;
+	column-gap:0;
 	position:relative;
 	z-index:1;
-	font-size:0;
 	object-fit:cover;
 	width:100%;
 	top:0;
 	display:block;
-	/*margin-left:-1px;*/
+/*	margin-left:-1px;
+*/	
 }
 
 .thumbnail {
     width: 100%;
-    /*border: 1px solid #00FF00;*/
-    border-top:none;
-    /*padding: 2px;*/
+/*    border: 1px solid #00FF00;*/
     line-height: 0;
     height:auto;
     mix-blend-mode: normal;
     object-fit:cover;
     position:relative;
-    padding:4px;
-/*  TO ADD MARGINS LIKE STUDENT PAGE
+    padding:0;
 	margin-bottom:25px;
-*/
 }
-
 
 .thumbnail img {
-	max-width:calc(100% - 8px);
-	height:auto;
 	width:100%;
-}
+	height:auto;
+/*	border-top:none;
+*/}
 
 .thumbnail:hover img{
 	opacity:0.3;
@@ -266,6 +262,7 @@ p{
 	text-align-last:justify!important;
 	position:relative;
 	color:#00FF00!important;
+	border:1px solid #0f0;
 }
 
 /* IMAGE HOVER DESCRIPTION START*/
@@ -316,9 +313,6 @@ p{
 }
 
 .students-container{
-	
-	/*color:white;*/
-
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 25px;
@@ -332,7 +326,6 @@ p{
 	max-width:100%;
 	margin-bottom:5pt;
 	margin-top:25px;
-
 }
 
 
@@ -347,7 +340,6 @@ p{
 
 .sidebar img{
 	width:calc(100% - 2px);
-	border:1px solid #00FF00;
 	margin-bottom:10pt;
 }
 
@@ -357,7 +349,6 @@ p{
   	grid-column-end: span 4;
 }
 
-/*.project img,*/
 .project iframe{
 	width:calc(100% - 2px);
 	border:1px solid #00FF00;
