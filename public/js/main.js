@@ -6,6 +6,7 @@
 
 		var projectTeasers = [];
 		var projects = [];
+		var studentList = [];
 
 
 
@@ -38,6 +39,9 @@ function shuffle(array) {
 
 
 
+	  	student = "<tr><td><a href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>";
+	  	studentList.push(student);
+
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail\">"+
 					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
@@ -53,8 +57,6 @@ function shuffle(array) {
 
 					projectTeasers.push(projTeaser);
 			
-//				console.log(data[i])
-
 		var projFull = "<div class=\"students-container\">"+
 "<div class=\"sidebar\">"+
 "<p class='uppercase'>"+data[i]["First & Last Name"]+"</p>"+
@@ -71,6 +73,8 @@ function shuffle(array) {
 "<div class=\"project\">";
 	
 
+
+	
 
 	if (data[i]["Caption #1: OPTIONAL"] != "") {
 		projFull += "<img class=\"img1\" src=\"images/"+imagenames+"_1.jpg\">"+
@@ -106,10 +110,15 @@ function shuffle(array) {
 	  			
 	  	}
 
+	 shuffle(projectTeasers)
 
-		// shuffle(projectTeasers)
 
 
+
+	for (k=0;k<studentList.length;k++) {
+			$("#student-list table").append(studentList[k])
+
+		}
 
 
 
@@ -127,7 +136,6 @@ function shuffle(array) {
 	  		$(".projects-container").fadeIn(200);
 	  	},500)
 	  });
-
 
 
 
@@ -161,12 +169,17 @@ function shuffle(array) {
 
 
 	  		setTimeout(function(){
-	  		var getz = window.location.href.split("?")[1].split("=");
+
+	  			var u = window.location.href;
+				if (u.includes("?")) {
+	  				var getz = u.split("?")[1].split("=");
+	  				if (getz[0] == "id") {		
+	  					$("#project-link-"+getz[1]).click();
+	  				}
+	  			}
+	  			
 	  		
-	  		if (getz[0] == "id") {
-		//alert(getz[1])
-	  			$("#project-link-"+getz[1]).click();
-	  		}
+
 	  	},1000)
 
 	  	$(".projects-container").fadeOut(200);

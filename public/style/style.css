@@ -282,6 +282,7 @@ h6.invert-tag {
     padding:0;
 	margin-bottom:25px;
 	cursor:pointer;
+	/*box-sizing: border-box;*/
 }
 
 .thumbnail img {
@@ -509,15 +510,17 @@ table{
 }
 
 th, td, table{
-  	border:1px solid #00ff00;
+  	border-bottom:1px solid #00ff00;
   	border-top:none;
   	border-collapse: collapse;
   	font-weight:300;
   	text-align:left;
-  	padding:4pt 10pt 4pt 10pt;
+  	padding:8pt;
   	font-size:10pt;
   	margin-left:-1px;
 }
+
+
 
 th{
 	padding:21px 10pt 10pt 10pt;
