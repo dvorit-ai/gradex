@@ -30,7 +30,7 @@ body{
 	font-weight:300;	
 	font-size:12pt;
 	margin:0;
-	line-height:15pt;
+	line-height:1.2em;
 	hyphens:auto;
 }
 
@@ -82,11 +82,6 @@ h4{
 	line-height:12pt;
 }
 
-p{
-	margin:0;
-	margin-bottom:5px;
-}
-
 h6{
 	font-size:10pt;
 	line-height:1.25em;
@@ -135,8 +130,10 @@ a:hover{
 p{
 	font-size:12pt;
 	display:inline-block;
-	line-height:14pt;
+	line-height:1.2em;
 	margin:0;
+	margin-bottom:5px;
+}
 }
 
 img{
@@ -310,6 +307,13 @@ h6.invert-tag {
 	border:1px solid #0f0;
 }
 
+.type p{
+	text-align:left;
+	text-align-last:left;
+	line-height:1.3em;
+}
+
+
 /* IMAGE HOVER DESCRIPTION START*/
 .img-tags {
   	position: absolute;
@@ -327,7 +331,8 @@ h6.invert-tag {
   	overflow:hidden;
   	border:1px solid #0f0;
   	border-bottom:none;
-}
+/*  	overflow-y: auto;
+*/}
 
 .thumbnail:hover .img-tags {
   visibility: visible;
@@ -411,82 +416,6 @@ h6.invert-tag {
 	width:66%;	
 }
 
-/* STUDENT LIST PAGE */
-
-/*.list-container{
-	position:relative;
-	margin:0 50px 0 50px;
-	top:-5px;
-	height:auto;
-	border-left:1px solid #00ff00;
-	border-right:1px solid #00ff00;
-	z-index:10000000;
-	background:none;
-	z-index:100000000;
-	color:#0f0;
-
-	display:grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 25px;
-	padding:25px 25px 100px 25px;
-}
-
-.list-container ul{
-	list-style: none;
-	list-style-type: none;
-	padding:0;
-	top:0;
-	left:0;
-	margin:0;
-}
-
-.two-column{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-}
-
-.list-name{
-	width:calc(100% - 24pt);
-	background:none;
-	height:25px;
-	border-bottom:1px solid #00ff00;
-	padding:7pt 24pt 4pt 0;
-	grid-column-start:1;
-	grid-column-end:1;
-	margin:0;	
-}
-
-.list-title{
-	width:calc(100% - 24pt);
-	background:none;
-	height:25px;
-	border-bottom:1px solid #00ff00;
-	padding:2pt 12pt 9pt 12pt;
-	grid-column-start:2;
-	grid-column-end:span 2;
-	overflow: hidden;
-	text-overflow: wrap;
-	margin:0;
-	font-size:14pt;
-	letter-spacing:1px;
-}
-
-.list-prof{
-	width:calc(100% - 24pt);
-	background:none;
-	height:25px;
-	border-bottom:1px solid #00ff00;
-	padding:7pt 0 4pt 24pt;
-	grid-column-start:4;
-	grid-column-end:4;
-	margin:0;
-	text-align:right;	
-}
-
-.list-last{
-	border:none;
-}*/
 
 /*STUDENTS LIST PAGE*/
 
@@ -504,6 +433,13 @@ h6.invert-tag {
 	padding-bottom:100px;
 }
 
+.table-list a{
+	color:#00FF00;
+}
+
+.table-list a:hover{
+	color:#0b152e;
+}
 
 table{
 	width:calc(100% + 2px);
@@ -521,7 +457,6 @@ th, td, table{
 }
 
 
-
 th{
 	padding:21px 10pt 10pt 10pt;
 }
@@ -536,6 +471,10 @@ th{
 
 tr:hover {
 	background: #0f0;
+	color:#0b152e;
+}
+
+tr:hover a{
 	color:#0b152e;
 }
 
