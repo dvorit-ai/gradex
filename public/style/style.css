@@ -281,6 +281,7 @@ h6.invert-tag {
     position:relative;
     padding:0;
 	margin-bottom:25px;
+	cursor:pointer;
 }
 
 .thumbnail img {
@@ -555,8 +556,8 @@ tr:hover {
 	}
 
 	h1{
-		font-size:19vw;
-		line-height:17vw;
+		font-size:9vw;
+		line-height:0.8em;
 	}
 }
 
