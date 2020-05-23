@@ -32,6 +32,19 @@ body{
 	margin:0;
 	line-height:1.2em;
 	hyphens:auto;
+	cursor: -webkit-image-set(url(../logos/arrow-up.svg) 2.5x ) 29 29, auto;
+/*	cursor: url(logos/arrow.png), pointer;*/
+/*	cursor: pointer;*/
+}
+
+::selection{
+	background:#0f0;
+	color:#0b152e;
+}
+
+::-moz-selection{
+	background:#0f0;
+	color:#0b152e;
 }
 
 
@@ -120,11 +133,13 @@ h6.home {
 a{
 	color:#00ff00;
 	text-decoration:none;
+	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
 }
 
 a:hover{
 /*	border-bottom:1px solid #00ff00;*/
 	text-decoration:line-through;
+	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
 }
 
 p{
@@ -278,8 +293,8 @@ h6.invert-tag {
     position:relative;
     padding:0;
 	margin-bottom:25px;
-	cursor:pointer;
-	/*box-sizing: border-box;*/
+/*	cursor:pointer;
+*/	/*box-sizing: border-box;*/
 }
 
 .thumbnail img {
