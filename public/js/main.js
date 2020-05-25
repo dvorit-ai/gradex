@@ -52,7 +52,7 @@ function shuffle(array) {
 
 
 
-	  	student = "<tr><td><a href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>";
+	  	student = "<tr><td><a data-name='s"+data[i]["First & Last Name"]+"' href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>";
 	  	studentList.push(student);
 
 
@@ -147,7 +147,7 @@ function shuffle(array) {
 	 // shuffle(projectTeasers)
 
 
-
+	 studentList.sort();
 
 	for (k=0;k<studentList.length;k++) {
 			$("#student-list table").append(studentList[k])
