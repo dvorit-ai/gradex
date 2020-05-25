@@ -234,24 +234,23 @@ h6.invert-tag {
 }
 
 .filter-by-tag{
-	top:0px;
-	position:fixed;
-	width:95px;
-	height:auto;
-	z-index:10!important;
-	background:#0b152e;
-	display:inline-block;
-	border:1px solid #0f0;
-	border-top:none;
-	margin-left:-1px;
+	top: 0px;
+    /* position: absolute; */
+    width: 100%;
+    /* height: auto; */
+    z-index: 10!important;
+    background: #0b152e;
+    display: inline-block;
+    border: 1px solid #0f0;
+    border-top: none;
+    margin-left: -1px;
 }
 
-.filter-by-tag:hover {
-	width:calc(100% - 102px);
-	-webkit-transition: width .5s ease-in-out;
-    -moz-transition: width .5s ease-in-out;
-    -o-transition: width .5s ease-in-out;
-    transition: width .5s ease-in-out;
+
+.filter-by-tag .tag.active,
+.filter-by-tag .tag:hover {
+	background:#0F0;
+	color:#0b152e;
 }
 
 
@@ -264,6 +263,7 @@ h6.invert-tag {
 	border-right:1px solid #00ff00;
 	width:calc(100vw-80px)
 	min-height:100vh;
+
 }
 
 .projects-container{	
@@ -272,6 +272,7 @@ h6.invert-tag {
 	font-size:0;
 	display:none;
 	margin: 0 25px;
+	min-height:100vh;
 	padding-top:60px;
 }
 
@@ -406,6 +407,9 @@ h6.invert-tag {
 	margin-top:25px;
 }
 
+.vimeo {
+	width:66vw;
+}
 
 .sidebar{
 /*	border:2px solid black;
