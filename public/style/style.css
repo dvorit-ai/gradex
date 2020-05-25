@@ -83,8 +83,8 @@ h3{
 	font-size:21pt;
 	line-height:24pt;
 	font-family:'GT Super Display';
-	margin:0;
-	margin-bottom:5px;
+	margin-top:2px;
+	margin-bottom:7px;
 	text-align:left;
 	hyphens:none;
 }
@@ -128,6 +128,8 @@ h6.home {
 
 .uppercase{
 	text-transform:uppercase;	
+	margin-top:0;
+	margin-bottom:0;
 }
 
 a{
@@ -144,16 +146,28 @@ a:hover{
 
 p{
 	font-size:12pt;
-	display:inline-block;
+	display:block;
 	line-height:1.2em;
 	margin:0;
-	margin-bottom:5px;
+	margin-bottom:10px;
 }
+
+p a{
+	border-bottom:1px solid #0f0;
+}
+
+p a:hover{
+	border:none;
 }
 
 img{
-	border:1px solid #0f0;
 	line-height:0;
+/*	border:1px solid #0f0;
+*/}
+
+.borderimg{
+	border:1px solid #0f0;
+	margin-bottom:10px;
 }
 
 
@@ -238,7 +252,6 @@ h6.invert-tag {
     -moz-transition: width .5s ease-in-out;
     -o-transition: width .5s ease-in-out;
     transition: width .5s ease-in-out;
-
 }
 
 
@@ -414,6 +427,10 @@ h6.invert-tag {
 */	grid-column-start: 2;
   	grid-column-end: span 4;
 }
+/*
+.project img{
+	border:1px solid #0f0;
+}*/
 
 .project iframe{
 	width:calc(100% - 2px);
@@ -446,6 +463,7 @@ h6.invert-tag {
 	left:0;
 	top:0;
 	padding-bottom:100px;
+	padding-top:25px;
 }
 
 .table-list a{
@@ -466,25 +484,21 @@ th, td, table{
   	border-collapse: collapse;
   	font-weight:300;
   	text-align:left;
-  	padding:8pt;
+  	padding:8pt 8pt 8pt 20pt;
   	font-size:10pt;
   	margin-left:-1px;
 }
 
 
 th{
-	padding:21px 10pt 10pt 10pt;
+	padding:21px 8pt 8pt 20pt;
+	background:#0b152e;
+	position:sticky!important;
+	top:25px;
+	margin-top:0;
 }
 
-/*tbody>tr>:nth-child(3){ 
-	text-align:right;
-}*/
-
-/*tbody>tr>:nth-child(2){ 
-	font-weight:500;
-}*/
-
-tr:hover {
+tr:hover td{
 	background: #0f0;
 	color:#0b152e;
 }
