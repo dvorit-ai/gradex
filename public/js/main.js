@@ -42,6 +42,9 @@ function shuffle(array) {
 	  	student = "<tr><td><a href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>";
 	  	studentList.push(student);
 
+
+
+
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail\">"+
 					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
@@ -118,7 +121,9 @@ function shuffle(array) {
 	for (k=0;k<studentList.length;k++) {
 			$("#student-list table").append(studentList[k])
 
+
 		}
+
 
 
 

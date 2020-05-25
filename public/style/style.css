@@ -306,6 +306,7 @@ h6.invert-tag {
     position:relative;
     padding:0;
 	margin-bottom:25px;
+	border:none;
 /*	cursor:pointer;
 */	/*box-sizing: border-box;*/
 }
@@ -326,7 +327,7 @@ h6.invert-tag {
 	background-position:center;
 	height:auto;
 	padding:2vw;
-	width:calc(100% - 4vw);
+	width:calc(100% - 4vw - 2px) !important;
 	overflow:hidden;
 	text-align:justify !important;
 	text-align-last:justify!important;
@@ -351,7 +352,7 @@ h6.invert-tag {
   	background: rgba(0, 255, 0, 1);
   	visibility: hidden;
   	opacity: 0;
- 	width:calc(100% - 30px);
+ 	width:calc(100% - 31px);
   	height:calc(100% - 31px);
  	padding:15px;
 	z-index:5!important;
