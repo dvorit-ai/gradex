@@ -120,14 +120,17 @@ function shuffle(array) {
 
 
 
-
+	//determine if youtube or vimeo and post accordingly
 	if (data[i]["Video Link: OPTIONAL"] != undefined) {
+
+		//if VIMEO
 		if (data[i]["Video Link: OPTIONAL"].includes("vimeo")) {
 			var l = data[i]["Video Link: OPTIONAL"].split(".com/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"+l+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
+		//IF YOUTUBE 
 		} else {
 			var l = data[i]["Video Link: OPTIONAL"].split(".com/")[1];		
-			projFull += "<iframe title='vimeo-player' src='https://player.vimeo.com/video/"+l+"' width='640' height='360' frameborder='0' allowfullscreen></iframe>"
+			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
 		}
 		projFull+="<h6 class=\"caption\">"+data[i]["Video Caption: OPTIONAL"]+"</h6>"
 		
@@ -165,6 +168,8 @@ function shuffle(array) {
 		}
 
 
+		$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='filter invert-tag'>Filter</h6></div>")
+
 		var uniqueTags = [];
 		$.each(allTags, function(i, el){
 		    if($.inArray(el, uniqueTags) === -1) uniqueTags.push(el);
@@ -175,10 +180,14 @@ function shuffle(array) {
 		}
 
 		setTimeout(function(){
+
 	  		$(".projects-container").fadeIn(200);
 	  	},500)
 	  });
 
+
+
+//tag filtering on the homepage
 
  	$(document).on("click",".filter-by-tag .tag",function(){
  		$(".tag").removeClass("active");
@@ -192,6 +201,7 @@ function shuffle(array) {
  	})
 
 
+//tag filtering on the homepage
  	$(document).on("click",".filter",function(){
  		$(".tag").removeClass("active")
 		$(".thumbnail").fadeIn(200)
@@ -200,7 +210,15 @@ function shuffle(array) {
 		}, $(this).data("url"), "/");
  	})
 
-
+//tag filtering from a project page
+ 	$(document).on("click",".sidebar .tag",function(){
+ 		//$(".tag").removeClass("active");
+ 		//$(this).addClass("active");
+ 		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
+		//$("."+cT).fadeIn(200)
+		//$(".thumbnail:not(."+cT+")").fadeOut(200)
+		window.location.href= "/?tag="+cT;
+	});
 
 
 	  $(document).on("click",".project-link",function(e){
