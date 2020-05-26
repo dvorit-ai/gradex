@@ -195,7 +195,10 @@ img{
 	z-index:2;
  }
 
-
+/*#nav a {
+	color:#00FF00;
+	text-decoration:none;
+}*/
 
 #nav a:hover{
 /*	border-bottom:1px solid #00ff00;
@@ -207,7 +210,6 @@ img{
 	list-style-type: none;
 	margin:0;
 	padding:0;
-	
 }
 
 .one{
