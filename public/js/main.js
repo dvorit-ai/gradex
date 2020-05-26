@@ -44,12 +44,28 @@ function mn(string) {
 	  	//console.log(allData[i]["Thumbnail Image"])	
 
 
-	  	var tags=allData[i]["gsx$tags"]["$t"].split(", ");
-	  	var name= allData[i]["gsx$name"]["$t"]
-	  	var title= allData[i]["gsx$title"]["$t"]
-	  	var profs= allData[i]["gsx$profs"]["$t"]
-	  	
+		var tags  = name = title  = profs = description = bio = quipq = quipa = image1 = image2 = image3 = image4 = image5 = caption1 = caption2 = caption3 = caption4 = caption5 = "";
 
+		tags 		=	allData[i]["gsx$tags"] != undefined ? allData[i]["gsx$tags"]["$t"].split(", "):"";
+	  	name 		= 	allData[i]["gsx$name"] != undefined ? allData[i]["gsx$name"]["$t"]:"";
+	  	title 		= 	allData[i]["gsx$title"] != undefined ? allData[i]["gsx$title"]["$t"]:"";
+	  	profs		= 	allData[i]["gsx$profs"] != undefined ? allData[i]["gsx$profs"]["$t"]:"";
+	  	description = 	allData[i]["gsx$description"] != undefined ? allData[i]["gsx$description"]["$t"]:"";
+		bio			=	allData[i]["gsx$bio"] != undefined ? allData[i]["gsx$bio"]["$t"]:"";
+		quipq		=	allData[i]["gsx$quipq"] != undefined ? allData[i]["gsx$quipq"]["$t"]:"";
+		quipa		=	allData[i]["gsx$quipa"] != undefined ? allData[i]["gsx$quipa"]["$t"]:"";
+		image1	=	allData[i]["gsx$image1"] != undefined ? allData[i]["gsx$image1"]["$t"]:"";
+		image2	=	allData[i]["gsx$image2"] != undefined ? allData[i]["gsx$image2"]["$t"]:"";
+		image3	=	allData[i]["gsx$image3"] != undefined ? allData[i]["gsx$image3"]["$t"]:"";
+		image4	=	allData[i]["gsx$image4"] != undefined ? allData[i]["gsx$image4"]["$t"]:"";
+		image5	=	allData[i]["gsx$image5"] != undefined ? allData[i]["gsx$image5"]["$t"]:"";
+		caption1	=	allData[i]["gsx$caption1"] != undefined ? allData[i]["gsx$caption1"]["$t"]:"";
+		caption2	=	allData[i]["gsx$caption2"] != undefined ? allData[i]["gsx$caption2"]["$t"]:"";
+		caption3	=	allData[i]["gsx$caption3"] != undefined ? allData[i]["gsx$caption3"]["$t"]:"";
+		caption4	=	allData[i]["gsx$caption4"] != undefined ? allData[i]["gsx$caption4"]["$t"]:"";
+		caption5	=	allData[i]["gsx$caption5"] != undefined ? allData[i]["gsx$caption5"]["$t"]:"";
+
+		
 	  	var tagButtons = "";
 	  	var tagClasses= ""
 	  	
@@ -90,49 +106,60 @@ function mn(string) {
 			
 		var projFull = "<div class=\"students-container\">"+
 "<div class=\"sidebar\">"+
-"<p class='uppercase'>"+allData[i]["First & Last Name"]+"</p>"+
-"<h3>"+allData[i]["Project Title"]+"</h3>"+
-"<p class=\"description\">"+allData[i]["Project Description"]+"</p>"+
+"<p class='uppercase'>"+name+"</p>"+
+"<h3>"+title+"</h3>"+
+"<p class=\"description\">"+description+"</p>"+
 "<p class=\"uppercase description\">"+tagButtons+"</p>"+
 "<img src=\"images/"+portrait+"\">"+
 
 "<p class=\"uppercase\">"+"About the designer"+"</p>"+
-"<p class=\"description\">"+allData[i]["Short Bio"]+"</p>"+
-"<p class=\"uppercase\">"+allData[i]["Personal Quip: OPTIONAL"]+"</p>"+
-"<br><p class=\"description\">"+allData[i]["Quip answer"]+"</p>"+
+"<p class=\"description\">"+bio+"</p>"+
+"<p class=\"uppercase\">"+quipq+"</p>"+
+"<br><p class=\"description\">"+quipa+"</p>"+
 "</div>"+
 "<div class=\"project\">";
 	
 
 
-	
 
-	if (allData[i]["Caption #1: OPTIONAL"] != "") {
-		projFull += "<img class=\"img1\" src=\"images/"+imagenames+"_1.jpg\">"+
-		"<h6 class=\"caption\">"+allData[i]["Caption #1: OPTIONAL"]+"</h6>"
+
+	if (image1 != "") {
+		projFull += "<div class='img1'>"+
+					"<img src='images/"+image1+"'>";
+						if (caption1 != "") projFull += "<h6 class='caption'>"+caption1+"</h6>"		
+		projFull += "</div>";
 	}
 
 
-	if (allData[i]["Caption #2: OPTIONAL"] != "") {
-		projFull += "<img class=\"img2\" src=\"images/"+imagenames+"_2.jpg\">"+
-		"<h6 class=\"caption\">"+allData[i]["Caption #2: OPTIONAL"]+"</h6>"
+
+	if (image2 != "") {
+		projFull += "<div class='img2'>"+
+					"<img src='images/"+image2+"'>";
+						if (caption2 != "") projFull += "<h6 class='caption'>"+caption2+"</h6>"		
+		projFull += "</div>";
 	}
 
-	if (allData[i]["Caption #3: OPTIONAL"] != "") {
-		projFull += "<img class=\"img3\" src=\"images/"+imagenames+"_3.jpg\">"+
-		"<h6 class=\"caption\">"+allData[i]["Caption #3: OPTIONAL"]+"</h6>"
+
+	if (image3 != "") {
+		projFull += "<div class='img3'>"+
+					"<img src='images/"+image3+"'>";
+						if (caption3 != "") projFull += "<h6 class='caption'>"+caption3+"</h6>"		
+		projFull += "</div>";
 	}
 
-	if (allData[i]["Caption #4: OPTIONAL"] != "") {
-		projFull += "<img class=\"img4\" src=\"images/"+imagenames+"_4.jpg\">"+
-		"<h6 class=\"caption\">"+allData[i]["Caption #4: OPTIONAL"]+"</h6>"
+	if (image4 != "") {
+		projFull += "<div class='img4'>"+
+					"<img src='images/"+image4+"'>";
+						if (caption4 != "") projFull += "<h6 class='caption'>"+caption4+"</h6>"		
+		projFull += "</div>";
 	}
 
-	if (allData[i]["Caption #5: OPTIONAL"] != "") {
-		projFull += "<img class=\"img5\" src=\"images/"+imagenames+"_5.jpg\">"+
-		"<h6 class=\"caption\">"+allData[i]["Caption #5: OPTIONAL"]+"</h6>"
-	}
-
+	if (image5 != "") {
+		projFull += "<div class='img5'>"+
+					"<img src='images/"+image5+"'>";
+						if (caption5 != "") projFull += "<h6 class='caption'>"+caption5+"</h6>"		
+		projFull += "</div>";
+	}	
 
 
 	//determine if youtube or vimeo and post accordingly
