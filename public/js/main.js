@@ -103,19 +103,35 @@ function mn(string) {
 
 
 		if (allData[i]["gsx$insta"] != undefined) {
-			insta = "<a href='"+allData[i]["gsx$insta"]["$t"]+"' target='_blank'><i class='fab fa-instagram'></i></a>"
+			insta = "<a href='"+allData[i]["gsx$insta"]["$t"]+"' target='_blank'><i class='fab fa-instagram-square'></i></a>"
+		}
+
+		if (allData[i]["gsx$linkedin"] != undefined) {
+			linkedin = "<a href='"+allData[i]["gsx$linkedin"]["$t"]+"' target='_blank'><i class='fab fa-linkedin'></i></a>"
+		}
+
+		if (allData[i]["gsx$portfolio"] != undefined) {
+			portfolio = "<a href='"+allData[i]["gsx$portfolio"]["$t"]+"' target='_blank'><i class='fas fa-link'></i></a>"
+		}
+
+		if (allData[i]["gsx$behance"] != undefined) {
+			behance = "<a href='"+allData[i]["gsx$behance"]["$t"]+"' target='_blank'><i class='fab fa-behance-square'></i></a>"
+		}
+
+		if (allData[i]["gsx$email"] != undefined) {
+			email = "<a href='"+allData[i]["gsx$email"]["$t"]+"' target='_blank'><i class='fas fa-envelope-square'></i></a>"
 		}
 		
 
 
 
-		linkedin = allData[i]["gsx$linkedin"] != undefined ? allData[i]["gsx$linkedin"]["$t"]:"";
+		// linkedin = allData[i]["gsx$linkedin"] != undefined ? allData[i]["gsx$linkedin"]["$t"]:"";
 		
-		email = allData[i]["gsx$email"] != undefined ? allData[i]["gsx$email"]["$t"]:"";
+		// email = allData[i]["gsx$email"] != undefined ? allData[i]["gsx$email"]["$t"]:"";
 		
-		portfolio = allData[i]["gsx$portfolio"] != undefined ? allData[i]["gsx$portfolio"]["$t"]:"";
+		// portfolio = allData[i]["gsx$portfolio"] != undefined ? allData[i]["gsx$portfolio"]["$t"]:"";
 		
-		behance = allData[i]["gsx$behance"] != undefined ? allData[i]["gsx$behance"]["$t"]:"";
+		// behance = allData[i]["gsx$behance"] != undefined ? allData[i]["gsx$behance"]["$t"]:"";
 		
 
 
@@ -167,13 +183,14 @@ function mn(string) {
 "&times;";
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
 
-projFull+= "<p class='uppercase'>"+"About the designer"+"</p>"+
+projFull+= 
+"<div class='social-links'>"+
+insta+linkedin+portfolio+behance+email+
+"</div>"+
+"<p class='uppercase'>"+"About the designer"+"</p>"+
 "<p class='description'>"+bio+"</p>"+
 "<p class='uppercase'>"+quipq+"</p>"+
-"<br><p class='description'>"+quipa+"</p>"+
-"<div class='social-links'>"
-insta+
-"</div>"+
+"<p class='description'>"+quipa+"</p>"+
 "</div>"+
 "<div class='project'>";
 	

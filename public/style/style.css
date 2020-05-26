@@ -455,6 +455,17 @@ text-align-last:center;
 	margin-bottom:10pt;	
 }
 
+.social-links{
+	margin-bottom:10pt;
+/*	display:flex;
+	justify-content: space-between;*/
+}
+
+.social-links i{
+	padding-right:10px;
+	font-size:15pt;
+}
+
 .sidebar img{
 	width:calc(100% - 2px);
 	margin-bottom:10pt;
