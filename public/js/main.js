@@ -52,7 +52,7 @@ function shuffle(array) {
 
 
 
-	  	student = "<tr><td><a data-name='s"+data[i]["First & Last Name"]+"' href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>";
+	  	student = $("<tr data-name='"+data[i]["First & Last Name"]+"' data-title='"+data[i]["Project Title"]+"' data-class='"+data[i]["Class/Professor(s)"]+"'><td><a href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>");
 	  	studentList.push(student);
 
 
@@ -220,6 +220,11 @@ function shuffle(array) {
 		window.location.href= "/?tag="+cT;
 	});
 
+
+
+$(window).bind("unload", function() { 
+alert("f")
+});
 
 	  $(document).on("click",".project-link",function(e){
 	  	e.preventDefault();
