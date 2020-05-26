@@ -4,6 +4,7 @@
 
 		// var line2 = draw.line(0, 0, $(window).width(), $(window).height()).stroke({ width: 1, color:"#0F0" })
 
+		const speed = 300 			//this is the speed of animations in milliseconds
 		var allData = [];					//this array will hold all the data.
 		var projectTeasers = []; 	//this array will hold all the HTML for the Thubnails on the front page
 		var projects = [];			//this array will hold all the HTML for the full projects.
@@ -215,7 +216,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 		}
 
 
-		$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='filter invert-tag'>Filter</h6></div>")
+		$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='tag filter'>Filter</h6></div>")
 
 		var uniqueTags = [];
 		$.each(allTags, function(i, el){
@@ -228,7 +229,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 
 		setTimeout(function(){
 
-	  		$(".projects-container").fadeIn(200);
+	  		$(".projects-container").slideDown(speed);;
 	  	},500)
 	  });
 
@@ -237,21 +238,33 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 //tag filtering on the homepage
 
  	$(document).on("click",".filter-by-tag .tag",function(){
- 		$(".tag").removeClass("active");
- 		$(this).addClass("active");
+ 		
+ 		if ($(this).hasClass("active")) {
+ 			$(".tag").removeClass("active");
+ 			$(".thumbnail").slideDown(speed);
+			history.pushState({
+				    id: $(this).data("url")
+				}, $(this).data("url"), "/");
+ 		} else {
+ 			$(".tag").removeClass("active");
+ 			$(this).addClass("active");
  		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
-		$("."+cT).fadeIn(200)
-		$(".thumbnail:not(."+cT+")").fadeOut(200)
+		$("."+cT).slideDown(speed);
+		$(".thumbnail:not(."+cT+")").slideUp(speed);
 		history.pushState({
 		    id: $(this).data("url")
 		}, $(this).data("url"), "/?tag="+cT);
+
+ 		}
+ 		
+ 		
  	})
 
 
 //tag filtering on the homepage
  	$(document).on("click",".filter",function(){
  		$(".tag").removeClass("active")
-		$(".thumbnail").fadeIn(200)
+		$(".thumbnail").slideDown(speed);
 		history.pushState({
 		    id: $(this).data("url")
 		}, $(this).data("url"), "/");
@@ -262,8 +275,8 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
  		//$(".tag").removeClass("active");
  		//$(this).addClass("active");
  		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
-		//$("."+cT).fadeIn(200)
-		//$(".thumbnail:not(."+cT+")").fadeOut(200)
+		//$("."+cT).slideDown(speed);
+		//$(".thumbnail:not(."+cT+")").slideUp(speed);
 		window.location.href= "/?tag="+cT;
 	});
 
@@ -280,7 +293,7 @@ alert("f")
 		    id: $(this).data("url")
 		}, $(this).data("url"), "?id="+$(this).data("project-id"));
 
-	  	$(".projects-container").fadeOut(200);
+	  	$(".projects-container").slideUp(speed);;
 	  	setTimeout(function(){
 	  		$(".projects-container").empty();
 	  	})
@@ -292,7 +305,7 @@ alert("f")
 
 	  	setTimeout(function(){
 	  		$(document).scrollTop(0)
-	  		$(".student-container").fadeIn(200);
+	  		$(".student-container").slideDown(speed);;
 	  	},200)
 
 	  	
@@ -320,7 +333,7 @@ alert("f")
 
 	  	},500)
 
-	  	$(".projects-container").fadeOut(200);
+	  	$(".projects-container").slideUp(speed);;
 
 
 	  	$(".student-container").html(projects[$(this).data("project-id")])
@@ -328,6 +341,6 @@ alert("f")
 
 
 	  	setTimeout(function(){
-	  		$(".student-container").fadeIn(200);
+	  		$(".student-container").slideDown(speed);;
 	  	},200)
 	  })
