@@ -5,7 +5,7 @@
 		// var line2 = draw.line(0, 0, $(window).width(), $(window).height()).stroke({ width: 1, color:"#0F0" })
 
 		const speed = 300 			//this is the speed of animations in milliseconds
-		var allData = [];					//this array will hold all the data.
+		var allData = [];			//this array will hold all the data.
 		var projectTeasers = []; 	//this array will hold all the HTML for the Thubnails on the front page
 		var projects = [];			//this array will hold all the HTML for the full projects.
 		var studentList = [];		//this array will list all the student names and projects
@@ -25,7 +25,7 @@ function shuffle(array) {
 
 //this is for making filenames and classnames mn = machine name
 function mn(string) {
-	return string.toLowerCase().replace(" ","")
+	return string.toLowerCase().replace(" ","").replace("/","")
 }
 
 
@@ -36,6 +36,7 @@ function mn(string) {
 	  .then(data => {
 	  	
 	  	allData = data.feed.entry;
+
 
 
 
@@ -83,7 +84,7 @@ function mn(string) {
 	  			}
 
 		
-	  	var imagenames = name.toLowerCase().replace(" ","_")
+	  	// var imagenames = name.toLowerCase().replace(" ","_")
 	  	
 	  	
 
@@ -136,7 +137,6 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 						if (caption1 != "") projFull += "<h6 class='caption'>"+caption1+"</h6>"		
 		projFull += "</div>";
 	}
-
 
 
 	if (image2 != "") {
@@ -225,7 +225,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 		});
 		uniqueTags.sort();
 		for (t=0;t<uniqueTags.length;t++) {
-			$(".filter-by-tag").append("<h6 class='tag t_"+uniqueTags[t].toLowerCase().replace(" ","")+"'>"+uniqueTags[t]+"</h6>")
+			$(".filter-by-tag").append("<h6 class='tag t_"+mn(uniqueTags[t])+"'>"+uniqueTags[t]+"</h6>")
 		}
 
 		setTimeout(function(){
@@ -258,7 +258,7 @@ $(document).on("click",".filter",function(e){
  		} else {
  			$(".tag").removeClass("active");
  			$(this).addClass("active");
- 		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
+ 		cT = "t_"+mn($(this).text()); 
 		$("."+cT).slideDown(speed);
 		$(".thumbnail:not(."+cT+")").slideUp(speed);
 		history.pushState({
@@ -284,7 +284,7 @@ $(document).on("click",".filter",function(e){
  	$(document).on("click",".sidebar .tag",function(){
  		//$(".tag").removeClass("active");
  		//$(this).addClass("active");
- 		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
+ 		cT = "t_"+mn($(this).text()); 
 		//$("."+cT).slideDown(speed);
 		//$(".thumbnail:not(."+cT+")").slideUp(speed);
 		window.location.href= "/?tag="+cT;
@@ -333,7 +333,7 @@ alert("f")
 	  				if (getz[0] == "id") {		
 	  					$("#project-link-"+getz[1]).click();
 	  				} else if (getz[0] == "tag") {		
-	  					rrr = ".filter-by-tag ."+getz[1].toLowerCase().replace(" ","");
+	  					rrr = ".filter-by-tag ."+mn(getz[1]);
 	  					$(".filter-by-tag").addClass("active")
 	  					$(rrr).click();
 	  				}
