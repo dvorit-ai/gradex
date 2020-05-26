@@ -25,7 +25,10 @@ function shuffle(array) {
 
 //this is for making filenames and classnames mn = machine name
 function mn(string) {
-	return string.toLowerCase().replace(" ","")
+	return string
+			.toLowerCase()
+			.replace(" ","")
+			.replace("/","")
 }
 
 
@@ -83,10 +86,6 @@ function mn(string) {
 	  			}
 
 		
-	  	var imagenames = name.toLowerCase().replace(" ","_")
-	  	
-	  	
-
 
 
 	  	student = $("<tr data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td><a href='/?id="+i+"'>"+name+"</a></td><td><a href='/?id="+i+"'>"+title+"</a></td><td><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
@@ -225,7 +224,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 		});
 		uniqueTags.sort();
 		for (t=0;t<uniqueTags.length;t++) {
-			$(".filter-by-tag").append("<h6 class='tag t_"+uniqueTags[t].toLowerCase().replace(" ","")+"'>"+uniqueTags[t]+"</h6>")
+			$(".filter-by-tag").append("<h6 class='tag t_"+mn(uniqueTags[t])+"'>"+uniqueTags[t]+"</h6>")
 		}
 
 		setTimeout(function(){
@@ -258,7 +257,7 @@ $(document).on("click",".filter",function(e){
  		} else {
  			$(".tag").removeClass("active");
  			$(this).addClass("active");
- 		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
+ 		cT = "t_"+mn($(this).text());
 		$("."+cT).slideDown(speed);
 		$(".thumbnail:not(."+cT+")").slideUp(speed);
 		history.pushState({
@@ -284,7 +283,7 @@ $(document).on("click",".filter",function(e){
  	$(document).on("click",".sidebar .tag",function(){
  		//$(".tag").removeClass("active");
  		//$(this).addClass("active");
- 		cT = "t_"+$(this).text().toLowerCase().replace(" ",""); 
+ 		cT = "t_"+mn($(this).text())
 		//$("."+cT).slideDown(speed);
 		//$(".thumbnail:not(."+cT+")").slideUp(speed);
 		window.location.href= "/?tag="+cT;
@@ -333,7 +332,7 @@ alert("f")
 	  				if (getz[0] == "id") {		
 	  					$("#project-link-"+getz[1]).click();
 	  				} else if (getz[0] == "tag") {		
-	  					rrr = ".filter-by-tag ."+getz[1].toLowerCase().replace(" ","");
+	  					rrr = ".filter-by-tag ."+mn(getz[1]);
 	  					$(".filter-by-tag").addClass("active")
 	  					$(rrr).click();
 	  				}
