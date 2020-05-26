@@ -4,7 +4,8 @@
 
 		// var line2 = draw.line(0, 0, $(window).width(), $(window).height()).stroke({ width: 1, color:"#0F0" })
 
-		var projectTeasers = []; //this array will hold all the HTML for the Thubnails on the front page
+		var allData = [];					//this array will hold all the data.
+		var projectTeasers = []; 	//this array will hold all the HTML for the Thubnails on the front page
 		var projects = [];			//this array will hold all the HTML for the full projects.
 		var studentList = [];		//this array will list all the student names and projects
 		var allTags = [];			//this array will hold all the unique tags
@@ -21,70 +22,84 @@ function shuffle(array) {
 }
 
 
+//this is for making filenames and classnames mn = machine name
+function mn(string) {
+	return string.toLowerCase().replace(" ","")
+}
+
+
 	//this reaches out the the JSON file and pulls in all the data
-	fetch('data/responses.json')
+	//fetch('data/responses.json')
+	fetch('https://spreadsheets.google.com/feeds/list/1eXqcfAFnQsfIgsAWohCV2sRYQxvG6V8Q9RpDvyWAgz4/1/public/full?alt=json')
 	  .then(response => response.json())
 	  .then(data => {
 	  	
+	  	allData = data.feed.entry;
 
 
 
 
 	  	//here we will loop through ALLLLL the data.
-	  	for (i=0; i<data.length;i++) {
-	  	//console.log(data[i]["Thumbnail Image"])	
+	  	for (i=0; i<allData.length;i++) {
+	  	//console.log(allData[i]["Thumbnail Image"])	
 
-	  	var tags=data[i]["Project Tags"].split(";");
+
+	  	var tags=allData[i]["gsx$tags"]["$t"].split(", ");
+	  	var name= allData[i]["gsx$name"]["$t"]
+	  	var title= allData[i]["gsx$title"]["$t"]
+	  	var profs= allData[i]["gsx$profs"]["$t"]
+	  	
+
 	  	var tagButtons = "";
 	  	var tagClasses= ""
 	  	
 	  			for (t=0;t<tags.length;t++) {
-	  				tagClasses += "t_"+tags[t].toLowerCase().replace(" ","")+" ";
+	  				tagClasses += "t_"+mn(tags[t])+" ";
 	  				tagButtons += "<h6 class='tag'>"+tags[t]+"</h6>";
 	  				allTags.push(tags[t]);
 	  				
 	  			}
 
-
-	  	var imagenames = data[i]["First & Last Name"].toLowerCase().replace(" ","_")
+		
+	  	var imagenames = name.toLowerCase().replace(" ","_")
 	  	var thumb = imagenames+"_thumbnail.jpg"
 	  	var portrait = imagenames+"_portrait.jpg"
 
 
 
-	  	student = $("<tr data-name='"+data[i]["First & Last Name"]+"' data-title='"+data[i]["Project Title"]+"' data-class='"+data[i]["Class/Professor(s)"]+"'><td><a href='/?id="+i+"'>"+data[i]["First & Last Name"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Project Title"]+"</a></td><td><a href='/?id="+i+"'>"+data[i]["Class/Professor(s)"]+"</a></td></tr>");
+	  	student = $("<tr data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td><a href='/?id="+i+"'>"+name+"</a></td><td><a href='/?id="+i+"'>"+title+"</a></td><td><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
 	  	studentList.push(student);
 
 
 
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail "+tagClasses+"\"+>"+
-					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+data[i]["First & Last Name"].toLowerCase().replace(" ","_")+">"+
+					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+mn(name)+">"+
 					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
-					"<p class='uppercase'>"+data[i]["First & Last Name"]+"</p>"+
-					"<h3>"+data[i]["Project Title"]+"</h3>"+
+					"<p class='uppercase'>"+name+"</p>"+
+					"<h3>"+title+"</h3>"+
 					tagButtons+
 					"</div>"+
 					"</a>"+
 					"</div>";
 
-					//console.log(data[i]);
+					//console.log(allData[i]);
 
 					projectTeasers.push(projTeaser);
 			
 		var projFull = "<div class=\"students-container\">"+
 "<div class=\"sidebar\">"+
-"<p class='uppercase'>"+data[i]["First & Last Name"]+"</p>"+
-"<h3>"+data[i]["Project Title"]+"</h3>"+
-"<p class=\"description\">"+data[i]["Project Description"]+"</p>"+
+"<p class='uppercase'>"+allData[i]["First & Last Name"]+"</p>"+
+"<h3>"+allData[i]["Project Title"]+"</h3>"+
+"<p class=\"description\">"+allData[i]["Project Description"]+"</p>"+
 "<p class=\"uppercase description\">"+tagButtons+"</p>"+
 "<img src=\"images/"+portrait+"\">"+
 
 "<p class=\"uppercase\">"+"About the designer"+"</p>"+
-"<p class=\"description\">"+data[i]["Short Bio"]+"</p>"+
-"<p class=\"uppercase\">"+data[i]["Personal Quip: OPTIONAL"]+"</p>"+
-"<br><p class=\"description\">"+data[i]["Quip answer"]+"</p>"+
+"<p class=\"description\">"+allData[i]["Short Bio"]+"</p>"+
+"<p class=\"uppercase\">"+allData[i]["Personal Quip: OPTIONAL"]+"</p>"+
+"<br><p class=\"description\">"+allData[i]["Quip answer"]+"</p>"+
 "</div>"+
 "<div class=\"project\">";
 	
@@ -92,47 +107,47 @@ function shuffle(array) {
 
 	
 
-	if (data[i]["Caption #1: OPTIONAL"] != "") {
+	if (allData[i]["Caption #1: OPTIONAL"] != "") {
 		projFull += "<img class=\"img1\" src=\"images/"+imagenames+"_1.jpg\">"+
-		"<h6 class=\"caption\">"+data[i]["Caption #1: OPTIONAL"]+"</h6>"
+		"<h6 class=\"caption\">"+allData[i]["Caption #1: OPTIONAL"]+"</h6>"
 	}
 
 
-	if (data[i]["Caption #2: OPTIONAL"] != "") {
+	if (allData[i]["Caption #2: OPTIONAL"] != "") {
 		projFull += "<img class=\"img2\" src=\"images/"+imagenames+"_2.jpg\">"+
-		"<h6 class=\"caption\">"+data[i]["Caption #2: OPTIONAL"]+"</h6>"
+		"<h6 class=\"caption\">"+allData[i]["Caption #2: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #3: OPTIONAL"] != "") {
+	if (allData[i]["Caption #3: OPTIONAL"] != "") {
 		projFull += "<img class=\"img3\" src=\"images/"+imagenames+"_3.jpg\">"+
-		"<h6 class=\"caption\">"+data[i]["Caption #3: OPTIONAL"]+"</h6>"
+		"<h6 class=\"caption\">"+allData[i]["Caption #3: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #4: OPTIONAL"] != "") {
+	if (allData[i]["Caption #4: OPTIONAL"] != "") {
 		projFull += "<img class=\"img4\" src=\"images/"+imagenames+"_4.jpg\">"+
-		"<h6 class=\"caption\">"+data[i]["Caption #4: OPTIONAL"]+"</h6>"
+		"<h6 class=\"caption\">"+allData[i]["Caption #4: OPTIONAL"]+"</h6>"
 	}
 
-	if (data[i]["Caption #5: OPTIONAL"] != "") {
+	if (allData[i]["Caption #5: OPTIONAL"] != "") {
 		projFull += "<img class=\"img5\" src=\"images/"+imagenames+"_5.jpg\">"+
-		"<h6 class=\"caption\">"+data[i]["Caption #5: OPTIONAL"]+"</h6>"
+		"<h6 class=\"caption\">"+allData[i]["Caption #5: OPTIONAL"]+"</h6>"
 	}
 
 
 
 	//determine if youtube or vimeo and post accordingly
-	if (data[i]["Video Link: OPTIONAL"] != undefined) {
+	if (allData[i]["Video Link: OPTIONAL"] != undefined) {
 
 		//if VIMEO
-		if (data[i]["Video Link: OPTIONAL"].includes("vimeo")) {
-			var l = data[i]["Video Link: OPTIONAL"].split(".com/")[1];		
+		if (allData[i]["Video Link: OPTIONAL"].includes("vimeo")) {
+			var l = allData[i]["Video Link: OPTIONAL"].split(".com/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"+l+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
 		//IF YOUTUBE 
 		} else {
-			var l = data[i]["Video Link: OPTIONAL"].split(".com/")[1];		
+			var l = allData[i]["Video Link: OPTIONAL"].split(".com/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
 		}
-		projFull+="<h6 class=\"caption\">"+data[i]["Video Caption: OPTIONAL"]+"</h6>"
+		projFull+="<h6 class=\"caption\">"+allData[i]["Video Caption: OPTIONAL"]+"</h6>"
 		
 	}
 
