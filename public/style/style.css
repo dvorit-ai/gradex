@@ -22,7 +22,7 @@
 
 
 body {
-	cursor: url('/logos/arrow-up.png')  auto;
+	cursor: -webkit-image-set(url(../logos/arrow-up.svg) 2.5x ) 29 29, auto;	
 	background:#0b152e;
 	color:#0f0;
 	font-family: 'Work Sans', sans-serif;		
@@ -51,6 +51,17 @@ body {
 
 /* TYPOGRAPHY RULES */
 
+a{
+	color:#00ff00;
+	text-decoration:none;
+	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
+}
+
+a:hover{
+/*	border-bottom:1px solid #00ff00;*/
+	text-decoration:line-through;
+	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
+}
 
 h2, h3, h4, h5, h6 {
 	font-weight:300;
@@ -62,11 +73,12 @@ h1{
 	line-height:0.9em;
 	text-transform:uppercase;
 	text-align:justify;
-text-justify: inter-word;
-text-align-last:center;
+	text-justify: inter-word;
+	text-align-last:center;
 /* for IE9 */
--ms-text-align-last:center;
-	word-spacing:-18px;
+	-ms-text-align-last:center;
+/*	word-spacing:-18px;
+*/	word-spacing:-10px;
 	margin:0;
 }
 
@@ -109,7 +121,6 @@ h6.tag {
     background: #0b152e;
     color: #0f0;
     display: inline-block;
-    margin: 0.25em 0;
     padding: 1em;
     font-size: 10pt;
     padding: 0.3em 0.5em;
@@ -124,7 +135,7 @@ h6.tag {
 	color:#0b152e;
 	background:#0f0;
 	cursor:pointer;
-	margin: 0.25em;
+	margin:0.5em 0.5em 0 0;
 	border:1px solid #0f0;
 }
 
@@ -146,18 +157,6 @@ h6.home {
 	text-transform:uppercase;	
 	margin-top:0;
 	margin-bottom:0;
-}
-
-a{
-	color:#00ff00;
-	text-decoration:none;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
-}
-
-a:hover{
-/*	border-bottom:1px solid #00ff00;*/
-	text-decoration:line-through;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.5x ) 32 32, auto;
 }
 
 p{
@@ -253,19 +252,25 @@ img{
 }*/
 
 .filter-by-tag{
-    
-     
-    
     margin-left: -25px;
-    width: calc(100vw - 100px);
+    width: calc(100vw - 117px);
     column-span: all;
     max-height: 0;
     overflow: hidden;
     transition: all 300ms;
     text-align: justify;
     margin-bottom:25px;
-
+    position:sticky;
+    z-index:1000000000!important;
+    top:0;
+    background:#0f0;
+/*    display:flex;
+    justify-content: space-between;*/
 }
+
+/*.filter-by-tag .tag{
+	display:inline-flex;
+}*/
 
 .filter-by-tag.active {
 	max-height:150px;
@@ -289,7 +294,6 @@ img{
 	border-right:1px solid #00ff00;
 	width:calc(100vw-80px)
 	min-height:100vh;
-
 }
 
 .projects-container{	
@@ -298,7 +302,8 @@ img{
 	font-size:0;
 	display:none;
 	margin: 0 25px;
-	/*min-height:100vh;*/
+	padding-bottom:50px;
+/*	min-height:100vh;*/
 }
 
 /*.student-container{
@@ -358,14 +363,17 @@ img{
 	padding:2vw;
 	width:calc(100% - 4vw - 2px) !important;
 	overflow:hidden;
-	text-align:justify;
-text-justify: inter-word;
-text-align-last:center;
-/* for IE9 */
--ms-text-align-last:center;
 	position:relative;
 	color:#00FF00;
 	border:1px solid #0f0;
+}
+
+.type h1{
+	text-align:justify;
+	text-justify: inter-word;
+	text-align-last:center;
+	/* for IE9 */
+	-ms-text-align-last:center;
 }
 
 .type p{
@@ -402,7 +410,7 @@ text-align-last:center;
 
 
 .thumbnail .tag {
-	margin:0.25em 0.25em 0.25em ;
+	margin:0.25em 0.25em 0 0;
 }
 
 /* STUDENT PAGE */
@@ -499,6 +507,12 @@ text-align-last:center;
 	width:66%;	
 }
 
+.caption{
+	margin:0;
+	padding:0;
+	margin-bottom:1em;
+}
+
 
 /*STUDENTS LIST PAGE*/
 
@@ -580,8 +594,8 @@ tr:hover a{
 	}
 
 	h1{
-		font-size:9vw;
-		line-height:0.8em;
+		font-size:8.5vw;
+		line-height:0.9em;
 	}
 }
 
@@ -591,8 +605,8 @@ tr:hover a{
 	}
 
 	h1{
-		font-size:19vw;
-		line-height:17vw;
+		font-size:9vw;
+		line-height:0.9em;
 	}
 }
 
