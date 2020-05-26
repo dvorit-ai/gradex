@@ -96,10 +96,25 @@ function mn(string) {
 		videocaption	=	allData[i]["gsx$videocaption"] != undefined ? allData[i]["gsx$videocaption"]["$t"]:"";
 		portrait	=	allData[i]["gsx$portrait"] != undefined ? allData[i]["gsx$portrait"]["$t"]:"";
 		
-		insta = allData[i]["gsx$insta"] != undefined ? allData[i]["gsx$insta"]["$t"]:"";
+		
+		//turn each variable into a snippet of HTML code that makes a font awesome chicklet
+		//then go down to the fullProject function and add each variable (if it's empty it'll just dump in empty code)
+		//in css try using this class selector: ".social links i {DO SOMETHIGN HERE}"
+
+
+		if (allData[i]["gsx$insta"] != undefined) {
+			insta = "<a href='"+allData[i]["gsx$insta"]["$t"]+"' target='_blank'><i class='fab fa-instagram'></i></a>"
+		}
+		
+
+
+
 		linkedin = allData[i]["gsx$linkedin"] != undefined ? allData[i]["gsx$linkedin"]["$t"]:"";
+		
 		email = allData[i]["gsx$email"] != undefined ? allData[i]["gsx$email"]["$t"]:"";
+		
 		portfolio = allData[i]["gsx$portfolio"] != undefined ? allData[i]["gsx$portfolio"]["$t"]:"";
+		
 		behance = allData[i]["gsx$behance"] != undefined ? allData[i]["gsx$behance"]["$t"]:"";
 		
 
@@ -156,7 +171,9 @@ projFull+= "<p class='uppercase'>"+"About the designer"+"</p>"+
 "<p class='description'>"+bio+"</p>"+
 "<p class='uppercase'>"+quipq+"</p>"+
 "<br><p class='description'>"+quipa+"</p>"+
-"<i class='fab fa-instagram'></i>"+
+"<div class='social-links'>"
+insta+
+"</div>"+
 "</div>"+
 "<div class='project'>";
 	
