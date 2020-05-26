@@ -25,7 +25,7 @@ function shuffle(array) {
 
 //this is for making filenames and classnames mn = machine name
 function mn(string) {
-	return string.toLowerCase().replace(" ","").replace("/","")
+	return string.toLowerCase().replace(" ","")
 }
 
 
@@ -83,7 +83,7 @@ function mn(string) {
 	  			}
 
 		
-	  	// var imagenames = name.toLowerCase().replace(" ","_")
+	  	var imagenames = name.toLowerCase().replace(" ","_")
 	  	
 	  	
 
