@@ -281,6 +281,9 @@ alert("f")
 		}, $(this).data("url"), "?id="+$(this).data("project-id"));
 
 	  	$(".projects-container").fadeOut(200);
+	  	setTimeout(function(){
+	  		$(".projects-container").empty();
+	  	})
 
 
 	  	$(".student-container").html(projects[$(this).data("project-id")])
@@ -288,6 +291,7 @@ alert("f")
 
 
 	  	setTimeout(function(){
+	  		$(document).scrollTop(0)
 	  		$(".student-container").fadeIn(200);
 	  	},200)
 
