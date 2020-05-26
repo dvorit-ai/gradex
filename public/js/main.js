@@ -25,7 +25,7 @@ function shuffle(array) {
 
 //this is for making filenames and classnames mn = machine name
 function mn(string) {
-	return string.toLowerCase().replace(" ","").replace("/","")
+	return string.toLowerCase().replace(" ","")
 }
 
 
@@ -83,6 +83,8 @@ function mn(string) {
 	  			}
 
 		
+	  	var imagenames = name.toLowerCase().replace(" ","_")
+	  	
 	  	
 
 
@@ -223,7 +225,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 		});
 		uniqueTags.sort();
 		for (t=0;t<uniqueTags.length;t++) {
-			$(".filter-by-tag").append("<h6 class='tag t_"+mn(uniqueTags[t])+"'>"+uniqueTags[t]+"</h6>")
+			$(".filter-by-tag").append("<h6 class='tag t_"+uniqueTags[t].toLowerCase().replace(" ","")+"'>"+uniqueTags[t]+"</h6>")
 		}
 
 		setTimeout(function(){
