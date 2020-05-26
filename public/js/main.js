@@ -115,7 +115,8 @@ function mn(string) {
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
 "<p class=\"description\">"+description+"</p>"+
-"<p class=\"uppercase description\">"+tagButtons+"</p>";
+"<p class=\"uppercase description\">"+tagButtons+"</p>"+
+"&times;";
 portrait != "" ? projFull+="<img src=\"images/"+portrait+"\">": null
 
 projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
@@ -216,7 +217,7 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 		}
 
 
-		$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='tag filter'>Filter</h6></div>")
+		$(".projects-container").prepend("<div class='filter-by-tag'></div>")
 
 		var uniqueTags = [];
 		$.each(allTags, function(i, el){
@@ -235,7 +236,16 @@ projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 
 
 
+
+
+
 //tag filtering on the homepage
+
+
+$(document).on("click",".filter",function(e){
+	e.preventDefault();
+	$(".filter-by-tag").toggleClass("active")
+})
 
  	$(document).on("click",".filter-by-tag .tag",function(){
  		
@@ -324,7 +334,7 @@ alert("f")
 	  					$("#project-link-"+getz[1]).click();
 	  				} else if (getz[0] == "tag") {		
 	  					rrr = ".filter-by-tag ."+getz[1].toLowerCase().replace(" ","");
-	  					console.log(rrr)
+	  					$(".filter-by-tag").addClass("active")
 	  					$(rrr).click();
 	  				}
 	  			}

@@ -105,27 +105,25 @@ h6{
 }
 
 h6.tag {
-	background:#0b152e;
-	color:#0f0;
-	display:inline-block;
-	margin:0.25em 0;
-	padding:1em;
-	font-size:10pt;
-
-	/*ali's adds*/
-    margin: 0.25em;
+    background: #0b152e;
+    color: #0f0;
+    display: inline-block;
+    margin: 0.25em 0;
+    padding: 1em;
+    font-size: 10pt;
     padding: 0.3em 0.5em;
-    /*font-size: 9pt;*/
     border-radius: 2px;
     text-transform: uppercase;
-    letter-spacing:0.07em;
-    border:1px solid #0b152e;
+    letter-spacing: 0.07em;
+    border: 1px solid #0f0;
+    margin: -2px 0 0 -1px;
 }
 
 .sidebar h6.tag {
 	color:#0b152e;
 	background:#0f0;
 	cursor:pointer;
+	margin: 0.25em;
 	border:1px solid #0f0;
 }
 
@@ -242,9 +240,9 @@ img{
   	right:-60px;
 }
 
-.filter {
+/*.filter {
 	display:block;
-}
+}*/
  /*{
 	color:#0F0;
 	margin:0.25em 0;
@@ -255,14 +253,21 @@ img{
 
 .filter-by-tag{
     
-    width: 100%;
-
-    border-top: none;
+     
+    
     margin-left: -25px;
     width: calc(100vw - 100px);
     column-span: all;
-    margin-top: -40px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 300ms;
+    text-align: justify;
+    margin-bottom:25px;
 
+}
+
+.filter-by-tag.active {
+	max-height:150px;
 }
 
 
@@ -293,7 +298,6 @@ img{
 	display:none;
 	margin: 0 25px;
 	min-height:100vh;
-	padding-top:60px;
 }
 
 /*.student-container{
@@ -462,7 +466,7 @@ text-align-last:center;
 
 .project iframe{
 	width:calc(100% - 2px);
-	border:1px solid #00FF00;
+	/*border:1px solid #00FF00;*/
 	margin-bottom:5pt;
 	margin-top:25px;
 }
