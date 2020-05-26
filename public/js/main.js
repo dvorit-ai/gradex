@@ -44,7 +44,7 @@ function mn(string) {
 	  	//console.log(allData[i]["Thumbnail Image"])	
 
 
-		var tags  = name = title  = profs = description = bio = quipq = quipa = image1 = image2 = image3 = image4 = image5 = caption1 = caption2 = caption3 = caption4 = caption5 = "";
+		var tags  = name = title  = profs = description = bio = quipq = quipa = image1 = image2 = image3 = image4 = image5 = caption1 = caption2 = caption3 = caption4 = caption5 = video = portrait = "";
 
 		tags 		=	allData[i]["gsx$tags"] != undefined ? allData[i]["gsx$tags"]["$t"].split(", "):"";
 	  	name 		= 	allData[i]["gsx$name"] != undefined ? allData[i]["gsx$name"]["$t"]:"";
@@ -64,6 +64,11 @@ function mn(string) {
 		caption3	=	allData[i]["gsx$caption3"] != undefined ? allData[i]["gsx$caption3"]["$t"]:"";
 		caption4	=	allData[i]["gsx$caption4"] != undefined ? allData[i]["gsx$caption4"]["$t"]:"";
 		caption5	=	allData[i]["gsx$caption5"] != undefined ? allData[i]["gsx$caption5"]["$t"]:"";
+		video	=	allData[i]["gsx$video"] != undefined ? allData[i]["gsx$video"]["$t"]:"";
+		videocaption	=	allData[i]["gsx$videocaption"] != undefined ? allData[i]["gsx$videocaption"]["$t"]:"";
+		portrait	=	allData[i]["gsx$portrait"] != undefined ? allData[i]["gsx$portrait"]["$t"]:"";
+
+		const thumbnail	=	allData[i]["gsx$thumbnail"]["$t"];
 
 		
 	  	var tagButtons = "";
@@ -78,8 +83,8 @@ function mn(string) {
 
 		
 	  	var imagenames = name.toLowerCase().replace(" ","_")
-	  	var thumb = imagenames+"_thumbnail.jpg"
-	  	var portrait = imagenames+"_portrait.jpg"
+	  	
+	  	
 
 
 
@@ -91,7 +96,7 @@ function mn(string) {
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail "+tagClasses+"\"+>"+
 					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+mn(name)+">"+
-					"<img src=\"images/"+thumb+"\" alt=\"\"/>"+
+					"<img src=\"images/"+thumbnail+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<p class='uppercase'>"+name+"</p>"+
 					"<h3>"+title+"</h3>"+
@@ -109,10 +114,10 @@ function mn(string) {
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
 "<p class=\"description\">"+description+"</p>"+
-"<p class=\"uppercase description\">"+tagButtons+"</p>"+
-"<img src=\"images/"+portrait+"\">"+
+"<p class=\"uppercase description\">"+tagButtons+"</p>";
+portrait != "" ? projFull+="<img src=\"images/"+portrait+"\">": null
 
-"<p class=\"uppercase\">"+"About the designer"+"</p>"+
+projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
 "<p class=\"description\">"+bio+"</p>"+
 "<p class=\"uppercase\">"+quipq+"</p>"+
 "<br><p class=\"description\">"+quipa+"</p>"+
@@ -163,18 +168,18 @@ function mn(string) {
 
 
 	//determine if youtube or vimeo and post accordingly
-	if (allData[i]["Video Link: OPTIONAL"] != undefined) {
+	if (video != "") {
 
 		//if VIMEO
-		if (allData[i]["Video Link: OPTIONAL"].includes("vimeo")) {
-			var l = allData[i]["Video Link: OPTIONAL"].split(".com/")[1];		
+		if (video.includes("vimeo")) {
+			var l = video.split(".com/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"+l+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
 		//IF YOUTUBE 
 		} else {
-			var l = allData[i]["Video Link: OPTIONAL"].split(".com/")[1];		
+			var l = video.split(".com/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
 		}
-		projFull+="<h6 class=\"caption\">"+allData[i]["Video Caption: OPTIONAL"]+"</h6>"
+		projFull+="<h6 class=\"caption\">"+videocaption+"</h6>"
 		
 	}
 

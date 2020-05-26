@@ -111,14 +111,27 @@ h6.tag {
 	margin:0.25em 0;
 	padding:1em;
 	font-size:10pt;
+
+	/*ali's adds*/
+    margin: 0.25em;
+    padding: 0.3em 0.5em;
+    /*font-size: 9pt;*/
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing:0.07em
+    border:1px solid #0b152e;
 }
 
 .sidebar h6.tag {
 	color:#0b152e;
 	background:#0f0;
-	display:inline-block;
-	margin:0.25em 0;
-	padding:0.35em 0.5em;
+	cursor:pointer;
+	border:1px solid #0f0;
+}
+
+.sidebar h6.tag:hover{
+	background:#0b152e;
+	color:#0f0;
 }
 
 h6.home {
