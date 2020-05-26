@@ -21,7 +21,8 @@
 /* Typefaces end */
 
 
-body{
+body {
+	cursor: url('/logos/arrow-up.png')  auto;
 	background:#0b152e;
 	color:#0f0;
 	font-family: 'Work Sans', sans-serif;		
@@ -31,8 +32,8 @@ body{
 	font-size:12pt;
 	margin:0;
 	line-height:1.2em;
-	hyphens:auto;
-	cursor: -webkit-image-set(url(../logos/arrow-up.svg) 2.5x ) 29 29, auto;
+	/*hyphens:auto;*/
+	
 /*	cursor: url(logos/arrow.png), pointer;*/
 /*	cursor: pointer;*/
 }
@@ -112,7 +113,7 @@ h6.tag {
     padding: 1em;
     font-size: 10pt;
     padding: 0.3em 0.5em;
-    border-radius: 2px;
+    /*border-radius: 2px;*/
     text-transform: uppercase;
     letter-spacing: 0.07em;
     border: 1px solid #0f0;
@@ -332,6 +333,9 @@ img{
     padding:0;
 	margin-bottom:25px;
 	border:none;
+	-webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
 /*	cursor:pointer;
 */	/*box-sizing: border-box;*/
 }
@@ -396,6 +400,10 @@ text-align-last:center;
   opacity: 1;
 }
 
+
+.thumbnail .tag {
+	margin:0.25em 0.25em 0.25em ;
+}
 
 /* STUDENT PAGE */
 
