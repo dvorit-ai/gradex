@@ -48,7 +48,31 @@ function mn(string) {
 	  	//console.log(allData[i]["Thumbnail Image"])	
 
 
-		var tags  = name = title  = profs = description = bio = quipq = quipa = image1 = image2 = image3 = image4 = image5 = caption1 = caption2 = caption3 = caption4 = caption5 = video = portrait = "";
+		var tags  = 
+		name = 
+		title  = 
+		profs = 
+		description = 
+		bio = 
+		quipq = 
+		quipa = 
+		image1 = 
+		image2 = 
+		image3 = 
+		image4 = 
+		image5 = 
+		caption1 = 
+		caption2 = 
+		caption3 = 
+		caption4 = 
+		caption5 = 
+		video = 
+		insta = 
+		linkedin = 
+		email = 
+		portfolio = 
+		behance = 
+		portrait = "";
 
 		tags 		=	allData[i]["gsx$tags"] != undefined ? allData[i]["gsx$tags"]["$t"].split(", "):"";
 	  	name 		= 	allData[i]["gsx$name"] != undefined ? allData[i]["gsx$name"]["$t"]:"";
@@ -71,6 +95,16 @@ function mn(string) {
 		video	=	allData[i]["gsx$video"] != undefined ? allData[i]["gsx$video"]["$t"]:"";
 		videocaption	=	allData[i]["gsx$videocaption"] != undefined ? allData[i]["gsx$videocaption"]["$t"]:"";
 		portrait	=	allData[i]["gsx$portrait"] != undefined ? allData[i]["gsx$portrait"]["$t"]:"";
+		
+		insta = allData[i]["gsx$insta"] != undefined ? allData[i]["gsx$insta"]["$t"]:"";
+		linkedin = allData[i]["gsx$linkedin"] != undefined ? allData[i]["gsx$linkedin"]["$t"]:"";
+		email = allData[i]["gsx$email"] != undefined ? allData[i]["gsx$email"]["$t"]:"";
+		portfolio = allData[i]["gsx$portfolio"] != undefined ? allData[i]["gsx$portfolio"]["$t"]:"";
+		behance = allData[i]["gsx$behance"] != undefined ? allData[i]["gsx$behance"]["$t"]:"";
+		
+
+
+
 
 		const thumbnail	=	allData[i]["gsx$thumbnail"]["$t"];
 
@@ -109,21 +143,22 @@ function mn(string) {
 
 					projectTeasers.push(projTeaser);
 			
-		var projFull = "<div class=\"students-container\">"+
-"<div class=\"sidebar\">"+
+		var projFull = "<div class='students-container'>"+
+"<div class='sidebar'>"+
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
-"<p class=\"description\">"+description+"</p>"+
-"<p class=\"uppercase description\">"+tagButtons+"</p>"+
+"<p class='description'>"+description+"</p>"+
+"<p class='uppercase description'>"+tagButtons+"</p>"+
 "&times;";
-portrait != "" ? projFull+="<img src=\"images/"+portrait+"\">": null
+portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
 
-projFull+= "<p class=\"uppercase\">"+"About the designer"+"</p>"+
-"<p class=\"description\">"+bio+"</p>"+
-"<p class=\"uppercase\">"+quipq+"</p>"+
-"<br><p class=\"description\">"+quipa+"</p>"+
+projFull+= "<p class='uppercase'>"+"About the designer"+"</p>"+
+"<p class='description'>"+bio+"</p>"+
+"<p class='uppercase'>"+quipq+"</p>"+
+"<br><p class='description'>"+quipa+"</p>"+
+"<i class='fab fa-instagram'></i>"+
 "</div>"+
-"<div class=\"project\">";
+"<div class='project'>";
 	
 
 
