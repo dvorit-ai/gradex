@@ -178,8 +178,9 @@ p a:hover{
 
 img{
 	line-height:0;
-/*	border:1px solid #0f0;
-*/}
+	max-width:100%;
+	max-height:100%;
+}
 
 .borderimg{
 	border:1px solid #0f0;
@@ -252,24 +253,36 @@ img{
 	text-transform:uppercase;
 }*/
 
-.filter-by-tag{     
-	margin-left: -25px;     
-	width: calc(100vw - 100px);     
-	column-span: all;     
-	max-height: 0;     
-	overflow: hidden;     
-	top:0;     
-	/*background:#0f0;*/      
-	display:flex;     
-	flex-wrap:wrap;     
-	justify-content: space-between; 
+
+.filter-by-tag{
+	margin-left:-25px;
+	width: calc(100% + 51px);
+	column-span:all;
+	max-height:0;
+	overflow:hidden;
+	transition: all 300ms;
+	text-align:justify;
+	margin-bottom:25px;
+	position:sticky;
+	z-index:100000000!important;
+	top:0;
+/*	background:#0b152e;
+*/	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-between;
 }
 
+.filter-by-tag:after{
+	flex-grow:50;
+	content:'';
+}
 
-
-/*.filter-by-tag .tag{
-	display:inline-flex;
-}*/
+.filter-by-tag h6{
+/*	width:100px;*/
+	margin-top:-1px;
+	flex-grow:1;
+	text-align:center
+}
 
 .filter-by-tag.active {
 	max-height:150px;
@@ -445,7 +458,8 @@ img{
 
 .project img{ 
 	max-height:90vh;
-	max-width:100%;
+/*	width:100%;
+*//*	height:auto;*/
 	margin-bottom:5pt;
 	margin-top:25px;
 	padding:0;
@@ -496,12 +510,10 @@ margin: 2em 0;
 .project-columns{
 	grid-column-start: 2;
   	grid-column-end: span 4;
-
   	display:grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
-
 }
 
 .project-c2{
