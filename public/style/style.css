@@ -265,9 +265,10 @@ img{
     z-index:1000000000!important;
     top:0;
     background:#0f0;
-/*    display:flex;
-    justify-content: space-between;*/
+
 }
+
+
 
 /*.filter-by-tag .tag{
 	display:inline-flex;
@@ -585,6 +586,13 @@ tr:hover a{
 th:hover {
 	background: #0f0;
 	color:#0b152e;
+}
+
+.row-thumb {
+	position:absolute;
+	max-width:300px;
+	max-height:300px;
+	pointer-events: none;
 }
 
 .cell-one{

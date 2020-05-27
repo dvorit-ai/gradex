@@ -22,6 +22,25 @@ function shuffle(array) {
   }
 }
 
+function urlify(inputText) {
+    var replacedText, replacePattern1, replacePattern2, replacePattern3;
+
+    //URLs starting with http://, https://, or ftp://
+    replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+    replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+
+    //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
+    replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+
+    //Change email addresses to mailto:: links.
+    replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
+    replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
+
+    return replacedText;
+}
+
+
 
 //this is for making filenames and classnames mn = machine name
 function mn(string) {
@@ -153,7 +172,7 @@ function mn(string) {
 		
 
 
-	  	student = $("<tr data-href='/?id="+i+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td class='name'><a href='/?id="+i+"'>"+name+"</a></td><td class='title'><a href='/?id="+i+"'>"+title+"</a></td><td class='profs'><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
+	  	student = $("<tr data-href='/?id="+i+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"' data-img='"+thumbnail+"'><td class='name'><a href='/?id="+i+"'>"+name+"</a></td><td class='title'><a href='/?id="+i+"'>"+title+"</a></td><td class='profs'><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
 	  	studentList.push(student);
 
 
@@ -178,7 +197,7 @@ function mn(string) {
 "<div class='sidebar'>"+
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
-"<p class='description'>"+description+"</p>"+
+"<p class='description'>"+urlify(description)+"</p>"+
 "<p class='uppercase description'>"+tagButtons+"</p>"+
 "<hr />";
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
@@ -188,7 +207,7 @@ projFull+=
 insta+linkedin+portfolio+behance+email+
 "</div>"+
 "<p class='uppercase'>"+"About the designer"+"</p>"+
-"<p class='description'>"+bio+"</p>"+
+"<p class='description'>"+urlify(bio)+"</p>"+
 "<p class='uppercase'>"+quipq+"</p>"+
 "<p class='description'>"+quipa+"</p>"+
 "</div>"+
@@ -201,7 +220,7 @@ insta+linkedin+portfolio+behance+email+
 	if (image1 != "") {
 		projFull += "<div class='img1'>"+
 					"<img src='images/"+image1+"'>";
-						if (caption1 != "") projFull += "<h6 class='caption'>"+caption1+"</h6>"		
+						if (caption1 != "") projFull += "<h6 class='caption'>"+urlify(caption1)+"</h6>"		
 		projFull += "</div>";
 	}
 
@@ -210,7 +229,7 @@ insta+linkedin+portfolio+behance+email+
 	if (image2 != "") {
 		projFull += "<div class='img2'>"+
 					"<img src='images/"+image2+"'>";
-						if (caption2 != "") projFull += "<h6 class='caption'>"+caption2+"</h6>"		
+						if (caption2 != "") projFull += "<h6 class='caption'>"+urlify(caption2)+"</h6>"		
 		projFull += "</div>";
 	}
 
@@ -218,21 +237,21 @@ insta+linkedin+portfolio+behance+email+
 	if (image3 != "") {
 		projFull += "<div class='img3'>"+
 					"<img src='images/"+image3+"'>";
-						if (caption3 != "") projFull += "<h6 class='caption'>"+caption3+"</h6>"		
+						if (caption3 != "") projFull += "<h6 class='caption'>"+urlify(caption3)+"</h6>"		
 		projFull += "</div>";
 	}
 
 	if (image4 != "") {
 		projFull += "<div class='img4'>"+
 					"<img src='images/"+image4+"'>";
-						if (caption4 != "") projFull += "<h6 class='caption'>"+caption4+"</h6>"		
+						if (caption4 != "") projFull += "<h6 class='caption'>"+urlify(caption4)+"</h6>"		
 		projFull += "</div>";
 	}
 
 	if (image5 != "") {
 		projFull += "<div class='img5'>"+
 					"<img src='images/"+image5+"'>";
-						if (caption5 != "") projFull += "<h6 class='caption'>"+caption5+"</h6>"		
+						if (caption5 != "") projFull += "<h6 class='caption'>"+urlify(caption5)+"</h6>"		
 		projFull += "</div>";
 	}	
 
@@ -303,6 +322,35 @@ $(document).on("click",".student-top",function(){
 	sortTable($(this).data("via"));
 })
 
+$(document).on("mouseout",".student-row",function(e){
+	
+	$(".row-thumb").remove()
+})
+
+
+$(document).on("mouseover",".student-row",function(e){
+	
+	fromTop = $(this).offset().top+$(this).height()+1;
+	
+	fromLeft = function() {
+		l = e.clientX;
+
+		if (e.clientX > $(window).width()-300) l = $(window).width()-300
+
+		return l
+	}
+
+	$("<img class='row-thumb'>")							//create image elemtent
+			.attr('src','/images/'+$(this).data("img"))		//add the image to it
+			.appendTo("body")
+			.css({
+				left:fromLeft,
+				top:fromTop
+			})
+})
+
+
+
 
 	  	for (j=0;j<projectTeasers.length;j++) {
 			$(".projects-container").append(projectTeasers[j])
@@ -314,7 +362,7 @@ $(document).on("click",".student-top",function(){
 		}
 
 
-		$(".projects-container").prepend("<div class='filter-by-tag'></div>")
+		$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='tag see-all'>all work</h6></div>")
 
 		var uniqueTags = [];
 		$.each(allTags, function(i, el){
@@ -365,6 +413,7 @@ $(document).on("click",".filter",function(e){
 
  		}
  		
+ 		$(this).hasClass("see-all") ? $(".thumbnail").slideDown(speed) : null
  		
  	})
 
