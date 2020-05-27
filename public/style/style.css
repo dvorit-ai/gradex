@@ -528,7 +528,7 @@ img{
 	z-index:100000000;
 	left:0;
 	top:0;
-	padding-bottom:100px;
+	/*padding-bottom:100px;*/
 	/*padding-top:25px;*/
 }
 
@@ -572,6 +572,11 @@ tr:hover td{
 }
 
 tr:hover a{
+	color:#0b152e;
+}
+
+th:hover {
+	background: #0f0;
 	color:#0b152e;
 }
 

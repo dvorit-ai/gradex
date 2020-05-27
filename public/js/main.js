@@ -153,7 +153,7 @@ function mn(string) {
 		
 
 
-	  	student = $("<tr data-href='/?id="+i+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td><a href='/?id="+i+"'>"+name+"</a></td><td><a href='/?id="+i+"'>"+title+"</a></td><td><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
+	  	student = $("<tr data-href='/?id="+i+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td class='name'><a href='/?id="+i+"'>"+name+"</a></td><td class='title'><a href='/?id="+i+"'>"+title+"</a></td><td class='profs'><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
 	  	studentList.push(student);
 
 
@@ -246,7 +246,7 @@ insta+linkedin+portfolio+behance+email+
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"+l+"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
 		//IF YOUTUBE 
 		} else {
-			var l = video.split(".com/")[1];		
+			var l = video.split(".be/")[1];		
 			projFull += "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
 		}
 		projFull+="<h6 class=\"caption\">"+videocaption+"</h6>"
@@ -264,7 +264,6 @@ insta+linkedin+portfolio+behance+email+
 	 // shuffle(projectTeasers)
 
 
-	 studentList.sort();
 
 	for (k=0;k<studentList.length;k++) {
 			$("#student-list table").append(studentList[k])
@@ -273,6 +272,36 @@ insta+linkedin+portfolio+behance+email+
 		}
 
 
+function sortTable(via){
+  var rows = $('#student-list table tr').get();
+
+  rows.sort(function(a, b) {
+
+  var A = $(a).children('td.'+via).eq(0).text();
+  var B = $(b).children('td.'+via).eq(0).text();
+
+
+
+  if(A < B) {
+    return -1;
+  }
+
+  if(A > B) {
+    return 1;
+  }
+
+  return 0;
+
+  });
+  $.each(rows, function(index, row) {
+    $('#student-list table').append(row);
+  });
+}
+
+
+$(document).on("click",".student-top",function(){
+	sortTable($(this).data("via"));
+})
 
 
 	  	for (j=0;j<projectTeasers.length;j++) {
@@ -313,6 +342,7 @@ insta+linkedin+portfolio+behance+email+
 $(document).on("click",".filter",function(e){
 	e.preventDefault();
 	$(".filter-by-tag").toggleClass("active")
+	$(document).scrollTop(0)
 })
 
  	$(document).on("click",".filter-by-tag .tag",function(){
