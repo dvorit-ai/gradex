@@ -13,6 +13,15 @@
 
  
 
+// window.addEventListener("hashchange", hashHandler, false);
+
+
+// function hashHandler() {
+//   console.log('The hash has changed!');
+// }
+
+
+// window.location.hash="ffff"
 
 //this is function to randomize any array
 function shuffle(array) {
@@ -37,7 +46,9 @@ function urlify(inputText) {
     replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
     replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
 
-    return replacedText;
+    //return replacedText;
+
+    return(inputText)
 }
 
 
@@ -65,6 +76,8 @@ function mn(string) {
 	  	//here we will loop through ALLLLL the data.
 	  	for (i=0; i<allData.length;i++) {
 	  	//console.log(allData[i]["Thumbnail Image"])	
+
+
 
 
 		var tags  = 
@@ -121,24 +134,27 @@ function mn(string) {
 		//in css try using this class selector: ".social links i {DO SOMETHIGN HERE}"
 
 
-		if (allData[i]["gsx$insta"] != undefined) {
+		if (allData[i]["gsx$insta"]["$t"] != "") {
 			insta = "<a href='"+allData[i]["gsx$insta"]["$t"]+"' target='_blank'><i class='fab fa-instagram-square'></i></a>"
 		}
 
-		if (allData[i]["gsx$linkedin"] != undefined) {
+		if (allData[i]["gsx$linkedin"]["$t"] != "") {
 			linkedin = "<a href='"+allData[i]["gsx$linkedin"]["$t"]+"' target='_blank'><i class='fab fa-linkedin'></i></a>"
 		}
 
-		if (allData[i]["gsx$portfolio"] != undefined) {
+		if (allData[i]["gsx$portfolio"]["$t"] != "") {
 			portfolio = "<a href='"+allData[i]["gsx$portfolio"]["$t"]+"' target='_blank'><i class='fas fa-link'></i></a>"
 		}
 
-		if (allData[i]["gsx$behance"] != undefined) {
+
+
+		if (allData[i]["gsx$behance"]["$t"] != "") {
+			
 			behance = "<a href='"+allData[i]["gsx$behance"]["$t"]+"' target='_blank'><i class='fab fa-behance-square'></i></a>"
 		}
 
-		if (allData[i]["gsx$email"] != undefined) {
-			email = "<a href='"+allData[i]["gsx$email"]["$t"]+"' target='_blank'><i class='fas fa-envelope-square'></i></a>"
+		if (allData[i]["gsx$email"]["$t"] != "") {
+			email = "<a href='mailto:"+allData[i]["gsx$email"]["$t"]+"' target='_blank'><i class='fas fa-envelope-square'></i></a>"
 		}
 		
 
@@ -326,6 +342,7 @@ $(document).on("mouseout",".student-row",function(e){
 	
 	$(".row-thumb").remove()
 })
+
 
 
 $(document).on("mouseover",".student-row",function(e){
