@@ -252,20 +252,17 @@ img{
 	text-transform:uppercase;
 }*/
 
-.filter-by-tag{
-    margin-left: -25px;
-    width: calc(100vw - 117px);
-    column-span: all;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 300ms;
-    text-align: justify;
-    margin-bottom:25px;
-    position:sticky;
-    z-index:1000000000!important;
-    top:0;
-    background:#0f0;
-
+.filter-by-tag{     
+	margin-left: -25px;     
+	width: calc(100vw - 100px);     
+	column-span: all;     
+	max-height: 0;     
+	overflow: hidden;     
+	top:0;     
+	/*background:#0f0;*/      
+	display:flex;     
+	flex-wrap:wrap;     
+	justify-content: space-between; 
 }
 
 
@@ -451,6 +448,7 @@ img{
 	max-width:100%;
 	margin-bottom:5pt;
 	margin-top:25px;
+	padding:0;
 }
 
 .vimeo {
@@ -491,10 +489,38 @@ margin: 2em 0;
 }
 
 .project{
-/*	border:2px solid black;
-*/	grid-column-start: 2;
+	grid-column-start: 2;
   	grid-column-end: span 4;
 }
+
+.project-columns{
+	grid-column-start: 2;
+  	grid-column-end: span 4;
+
+  	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 25px;
+	grid-row-gap: 25px;
+
+}
+
+.project-c2{
+	grid-column-start: 1;
+  	grid-column-end: span 1;
+}
+
+.project-c34{
+	grid-column-start: 2;
+  	grid-column-end: span 2;
+}
+
+.project-all{
+	grid-column-start: 1;
+  	grid-column-end: span 3;
+}
+
+
+
 /*
 .project img{
 	border:1px solid #0f0;
