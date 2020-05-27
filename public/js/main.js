@@ -153,7 +153,7 @@ function mn(string) {
 		
 
 
-	  	student = $("<tr data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td><a href='/?id="+i+"'>"+name+"</a></td><td><a href='/?id="+i+"'>"+title+"</a></td><td><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
+	  	student = $("<tr data-href='/?id="+i+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"'><td><a href='/?id="+i+"'>"+name+"</a></td><td><a href='/?id="+i+"'>"+title+"</a></td><td><a href='/?id="+i+"'>"+profs+"</a></td></tr>");
 	  	studentList.push(student);
 
 
@@ -360,9 +360,10 @@ $(document).on("click",".filter",function(e){
 
 
 
-$(window).bind("unload", function() { 
-alert("f")
-});
+
+ 	$(document).on("click",".student-row",function(e){
+ 		  window.location = $(this).data("href");
+ 	});
 
 	  $(document).on("click",".project-link",function(e){
 	  	e.preventDefault();
