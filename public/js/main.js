@@ -180,7 +180,7 @@ function mn(string) {
 "<h3>"+title+"</h3>"+
 "<p class='description'>"+description+"</p>"+
 "<p class='uppercase description'>"+tagButtons+"</p>"+
-"&times;";
+"<hr />";
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
 
 projFull+= 
@@ -440,7 +440,7 @@ $(document).on("click",".filter",function(e){
 	  			
 	  		
 
-	  	},500)
+	  	},1000)
 
 	  	$(".projects-container").slideUp(speed);;
 

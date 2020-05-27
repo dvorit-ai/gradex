@@ -286,6 +286,7 @@ img{
 }
 
 
+
 /* MAIN WORK PAGE */
 
 
@@ -460,6 +461,12 @@ img{
 */	display:block;
 }
 
+hr {
+margin: 2em 0;
+    border: none;
+    border: 1px solid #0f0;
+}
+
 .description{
 	margin-bottom:10pt;	
 }
@@ -472,7 +479,7 @@ img{
 
 .social-links i{
 	padding-right:10px;
-	font-size:15pt;
+	font-size:1.5em;
 }
 
 .sidebar img{
