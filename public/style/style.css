@@ -22,7 +22,7 @@
 
 
 body {
-	cursor: -webkit-image-set(url(../logos/arrow-up.svg) 2.75x ) 14 19, auto;	
+	cursor: -webkit-image-set(url(/logos/arrow-up.svg) 2.75x ) 14 19, auto;	
 	background:#0b152e;
 	color:#0f0;
 	font-family: 'Work Sans', sans-serif;		
@@ -54,14 +54,14 @@ body {
 a{
 	color:#00ff00;
 	text-decoration:none;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
-	cursor: url(../logos/arrow-down.svg) 2.5x 15 22, auto;
+	cursor: -webkit-image-set(url(/logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: url(/logos/arrow-down.svg) 2.5x 15 22, auto;
 }
 
 a:hover{
 /*	border-bottom:1px solid #00ff00;*/
 	text-decoration:line-through;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(/logos/arrow-down.svg) 2.75x ) 14 20, auto;
 }
 
 h2, h3, h4, h5, h6 {

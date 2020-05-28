@@ -133,10 +133,7 @@ function mn(string) {
 		//turn each variable into a snippet of HTML code that makes a font awesome chicklet
 		//then go down to the fullProject function and add each variable (if it's empty it'll just dump in empty code)
 		//in css try using this class selector: ".social links i {DO SOMETHIGN HERE}"
-
-		console.log(allData[i]["gsx$shorttitle"]["$t"])
-
-
+		
 		if (allData[i]["gsx$shorttitle"]["$t"] != "") {
 			shorttitle = allData[i]["gsx$shorttitle"]["$t"]
 		} else {
@@ -429,9 +426,12 @@ $(document).on("mouseover",".student-row",function(e){
 
 
 $(document).on("click",".filter",function(e){
+	
 	e.preventDefault();
 	$(".filter-by-tag").toggleClass("active")
 	$(document).scrollTop(0)
+
+	if (window.location.href)
 })
 
  	$(document).on("click",".filter-by-tag .tag",function(){
