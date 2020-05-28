@@ -206,7 +206,7 @@ function mn(string) {
 
 		var projTeaser = 	"<div id='project-"+i+"' class=\"thumbnail "+tagClasses+"\"+>"+
 					"<a data-project-id='"+i+"' id='project-link-"+i+"' class=\"project-link\" data-url="+mn(name)+">"+
-					"<img src=\"images/"+thumbnail+"\" alt=\"\"/>"+
+					"<img src=\"images/thumbnails/"+thumbnail+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<p class='uppercase'>"+name+"</p>"+
 					"<h3>"+shorttitle+"</h3>"+
