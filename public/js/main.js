@@ -431,7 +431,7 @@ $(document).on("click",".filter",function(e){
 	$(".filter-by-tag").toggleClass("active")
 	$(document).scrollTop(0)
 
-	if (window.location.href)
+	//if (window.location.href)
 })
 
  	$(document).on("click",".filter-by-tag .tag",function(){
