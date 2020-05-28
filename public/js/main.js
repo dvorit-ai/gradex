@@ -83,6 +83,7 @@ function mn(string) {
 		var tags  = 
 		name = 
 		title  = 
+		shorttitle = 
 		profs = 
 		description = 
 		bio = 
@@ -132,6 +133,15 @@ function mn(string) {
 		//turn each variable into a snippet of HTML code that makes a font awesome chicklet
 		//then go down to the fullProject function and add each variable (if it's empty it'll just dump in empty code)
 		//in css try using this class selector: ".social links i {DO SOMETHIGN HERE}"
+
+		console.log(allData[i]["gsx$shorttitle"]["$t"])
+
+
+		if (allData[i]["gsx$shorttitle"]["$t"] != "") {
+			shorttitle = allData[i]["gsx$shorttitle"]["$t"]
+		} else {
+			shorttitle = title;
+		}
 
 
 		if (allData[i]["gsx$insta"]["$t"] != "") {
@@ -199,7 +209,7 @@ function mn(string) {
 					"<img src=\"images/"+thumbnail+"\" alt=\"\"/>"+
 					"<div class=\"img-tags\">"+
 					"<p class='uppercase'>"+name+"</p>"+
-					"<h3>"+title+"</h3>"+
+					"<h3>"+shorttitle+"</h3>"+
 					tagButtons+
 					"</div>"+
 					"</a>"+
@@ -477,6 +487,14 @@ $(document).on("click",".filter",function(e){
 	  	$(".student-container").html(projects[$(this).data("project-id")])
 
 
+
+	  	setTimeout(function(){
+	  		$("img").each(function(){
+	  			if ($(this).height() > $(this).width()) {
+	  				$(this).addClass("longimage")
+	  			}
+	  		})
+	  	},500)
 
 	  	setTimeout(function(){
 	  		$(document).scrollTop(0)
