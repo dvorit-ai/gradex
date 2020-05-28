@@ -303,7 +303,7 @@ insta+linkedin+portfolio+behance+email+
 	  			
 	  	}
 
-	 // shuffle(projectTeasers)
+	 shuffle(projectTeasers)
 
 
 
@@ -394,9 +394,18 @@ $(document).on("mouseover",".student-row",function(e){
 			$(".projects-container").append(projectTeasers[j])
 
 			if (j==0) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>r e c<br>e s s<br>i o n</h1></div>"); }
-			if (j==37) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>Recession Grads is a digital archive that showcases the work of the graphic design graduates from OCADU 2020. Recession Grads is a digital archive that showcases the work of the graphic design graduates from OCADU 2020. Enjoy your visit!</p></div>"); }
-			if (j==38) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>g r a<br />d s</h1></div>"); }
-			if (j==22) { $(".projects-container").append("<div class=\"thumbnail type\"><h1 class='larger'>2 0<br />2 0</h1></div>"); }
+			
+			if (j==43) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>Recession Grads is a digital archive & exhibition set to showcase the work of the Graphic Design 2020 graduating class at OCADU.</p></div>"); }
+			if (j==25) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>The work featured on this site has been produced over an 8 month period of research, iteration, and craft. </p></div>"); }
+			if (j==46) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>Supported by faculty and their classes, students produced work that pertained to their design practice and topics they were passionate about such as equity, sustainability, social justice, and more.</p></div>"); }
+			if (j==9) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>Despite COVID-19 halting our work and cancelling our graduate show and exhibition GradEx105, students still worked to complete their projects for themselves, their professors, and this website.</p></div>"); }
+			if (j==75) { $(".projects-container").append("<div class=\"thumbnail type\"><p class='home'>Recession Grads exists to acknowledge the situation of what it is like for us to graduate into a recession, and a period of time where everything is a missing glyph of uncertainty and at an indefinite pause. This site serves to showcase our work despite the circumstances and to start new traditions of archiving future graduates' work.</p></div>"); }
+			
+			if (j==24) { $(".projects-container").append("<div class=\"thumbnail type\"><h1>g r a<br />d s</h1></div>"); }
+			if (j==44) { $(".projects-container").append("<div class=\"thumbnail type\"><h1 class='larger'>2 0<br>2 0</h1></div>"); }
+			
+			// random project click?? 
+			// if (j==79) { $(".projects-container").append("<div class=\"thumbnail type\"><h1 class='home'>Click here for a random project</h1></div>"); }
 		}
 
 

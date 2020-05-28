@@ -98,6 +98,12 @@ h1.larger{
 	overflow:hidden;
 }*/
 
+h2{
+	font-size:23pt;
+	font-weight:400;
+	line-height:0.7em;
+}
+
 h3{
 	font-size:23pt;
 	line-height:1.1em;
@@ -488,10 +494,16 @@ img{
 
 .about-container{
 	display:grid;
-	grid-template-columns: 3fr 3fr 1fr;
+	grid-template-columns: 2fr 3fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
+}
+
+.about-2 p img{
+	width:15%;
+	margin-right:10px;
+	vertical-align: middle;
 }
 
 .vimeo {
@@ -640,8 +652,8 @@ th, td, table{
   	border-bottom:1px solid #00ff00;
   	border-top:none;
   	border-collapse: collapse;
-/*  	font-weight:300;
-*/  text-align:left;
+  	font-weight:300;
+  	text-align:left;
   	padding:9pt 9pt 9pt 20pt;
   	font-size:11pt;
   	margin-left:-1px;
