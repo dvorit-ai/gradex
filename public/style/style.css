@@ -476,7 +476,7 @@ img{
   	background-position: center;
 }
 
-.about-container,
+
 .students-container{
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -486,14 +486,14 @@ img{
 }
 
 
-/*.about-container{
+.about-container{
 	display:grid;
 	grid-template-columns: 3fr 3fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
 }
-*/
+
 
 .project img{ 
 	/*max-height:90vh;*/
