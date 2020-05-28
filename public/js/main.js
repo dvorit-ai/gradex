@@ -376,7 +376,7 @@ $(document).on("mouseover",".student-row",function(e){
 	}
 
 	$("<img class='row-thumb'>")							//create image elemtent
-			.attr('src','/images/'+$(this).data("img"))		//add the image to it
+			.attr('src','/images/thumbnails/'+$(this).data("img"))		//add the image to it
 			.appendTo("body")
 			.css({
 				left:fromLeft,
