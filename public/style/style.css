@@ -479,7 +479,7 @@ img{
 
 .students-container{
 	display:grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
