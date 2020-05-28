@@ -357,6 +357,14 @@ $(document).on("mouseout",".student-row",function(e){
 
 $(document).on("mouseover",".student-row",function(e){
 	
+	//console.log($(document).scrollTop()+e.clientY)
+	var fromTop;
+	if (e.clientY > $(window).height()-400) {
+		fromTop = $(this).offset().top-$(this).height()+1;
+	} else {
+		fromTop = $(this).offset().top+$(this).height()+1;
+	}
+
 	fromTop = $(this).offset().top+$(this).height()+1;
 	
 	fromLeft = function() {
@@ -377,6 +385,10 @@ $(document).on("mouseover",".student-row",function(e){
 })
 
 
+
+		
+
+	// this is where we load all projects... 
 
 
 	  	for (j=0;j<projectTeasers.length;j++) {
@@ -402,8 +414,8 @@ $(document).on("mouseover",".student-row",function(e){
 
 		setTimeout(function(){
 
-	  		$(".projects-container").slideDown(speed);;
-	  	},500)
+	  		$(".projects-container").fadeIn(speed);;
+	  	},1500)
 	  });
 
 
@@ -524,7 +536,7 @@ $(document).on("click",".filter",function(e){
 	  			
 	  		
 
-	  	},1000)
+	  	},1500)
 
 	  	$(".projects-container").slideUp(speed);;
 

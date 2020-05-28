@@ -550,8 +550,8 @@ hr {
 .project iframe{
 	width:calc(100% - 2px);
 	/*border:1px solid #00FF00;*/
-	margin-bottom:5pt;
-	margin-top:25px;
+	/*margin-bottom:5pt;
+	margin-top:25px;*/
 }
 
 .firstimage img{
@@ -560,7 +560,7 @@ hr {
 
 .longimage img,
 .caption{
-	width:66%;	
+	/*width:66%;	*/
 }
 
 .caption{

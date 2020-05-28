@@ -7,4 +7,4 @@ var app = express();
 app.use(express.static(__dirname + '/public')); //Serves resources from public folder
 
 
-var server = app.listen(17164);
+var server = app.listen(11896);
