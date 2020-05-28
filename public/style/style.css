@@ -1,5 +1,5 @@
 /* Typefaces start */
-@import 'http://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700,800,900';
+@import 'http://fonts.googleapis.com/css?family=Work+Sans:300,400,500';
  
 @font-face {
     font-family: 'GT Super Display';
@@ -190,6 +190,33 @@ img{
 }
 
 
+/* left and right lines */
+
+.left-line,
+.right-line {
+	position:fixed;
+	pointer-events:none;
+	height:100vh;
+	width:50px;
+	/*background:red;*/
+	top:0; 
+	z-index:100;
+}
+
+.left-line {
+	left:0;
+	border-right:1px solid #0F0;
+}
+
+.right-line {
+	right:0;
+	border-left:1px solid #0F0;
+}
+
+#backgroundX {
+	z-index:-1;
+	position:fixed;
+}
 
 /* NAVIGATION */
 #nav  {	
@@ -284,7 +311,8 @@ img{
 /*	width:100px;*/
 	margin-top:-1px;
 	flex-grow:1;
-	text-align:center
+	text-align:center;
+	width:18%;
 }
 
 .filter-by-tag.active {
@@ -450,7 +478,7 @@ img{
 
 .students-container{
 	display:grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
@@ -473,8 +501,8 @@ img{
 }
 
 .sidebar{
-/*	border:2px solid black;
-*/	display:block;
+	display:block;
+
 }
 
 hr {
@@ -514,7 +542,7 @@ hr {
 	grid-column-start: 2;
   	grid-column-end: span 4;
   	display:grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 }
@@ -560,6 +588,8 @@ hr {
 
 .longimage img,
 .caption{
+	font-weight:400;
+	margin-bottom:2em;
 	/*width:66%;	*/
 }
 
@@ -691,30 +721,3 @@ th:hover {
 	  	grid-column-end: span 2;
 	}
 }
-
-/* END OF RESPONSIVE WINDOW */
-
-
-
-
-/* SCROLLBAR START */
-
-/*::-webkit-scrollbar {
-  	width: 15px;
-}
-
-::-webkit-scrollbar-track {
-  	background: #0b152e; 
-  	border-left:1px solid #00ff00;
-}
- 
-::-webkit-scrollbar-thumb { 
-	background:url('../logos/scrollbar-x2.png') no-repeat;
-	background-size:16px 25px; 
-    background-position: ;
-    top:-1px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  	background:rgb(0, 255, 0, 1);
-}*/
