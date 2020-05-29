@@ -583,8 +583,6 @@ hr {
 	height:auto;
 }
 
-
-
 .project img{ 
 	margin-bottom:5pt;
 	margin-top:25px;
@@ -733,20 +731,24 @@ th:hover {
 	}
 
 	h1{
-		font-size:9vw;
+		font-size:15vw;
 		line-height:0.9em;
 	}
 
-	.project-columns{
-	grid-template-columns: 1fr 1fr;
+	.larger h1{
+		font-size:20vw;
 	}
 
-	.project-c4{
+	.about-container{
+		grid-template-columns: 1fr;
+	}
+
+	.students-container{
+		grid-template-columns:1fr;
+	}
+
+	.project{
 		grid-column-start: 1;
-	  	grid-column-end: span 2;
-	}
-
-	.project-all{
-	  	grid-column-end: span 2;
+		grid-column-end:span 1;
 	}
 }
