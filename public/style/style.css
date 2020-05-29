@@ -116,6 +116,9 @@ h4{
 	font-size:14pt;
 	text-transform:uppercase;
 	line-height:14pt;
+
+	/*writing-mode: vertical-lr;
+text-orientation: mixed;*/
 }
 
 h6{
@@ -220,15 +223,21 @@ img{
 
 /* NAVIGATION */
 #nav  {	
-	margin:0;
-	padding:0;
-	z-index:2;
-	width:50px;
-	height:100%;
-	background:#0f0;
- 	position:fixed;
- 	display:inline-flex;
- 	justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    height: 50px;
+    width: 100vh;
+    background: #0f0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.5em;
+    vertical-align: center;
+    align-items:center;
+    transform: rotate(-90deg) translate(calc(-50vh + 25px),calc(-50vh + 25px));
+    list-style-type: none;
  }
 
 #nav a{
@@ -241,13 +250,22 @@ img{
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
+
 #nav li {
+	margin:0;
+	padding:0;
+	font-weight:400;
+	font-size: 24pt;
+    letter-spacing: -0.05em;
+}
+/*#nav li {
 	position:fixed;
 	list-style-type: none;
 	margin:0;
 	padding:0;
  	display:inline-flex;
-}
+
+}*/
 
 .five{
 	transform: rotate(-90deg);
