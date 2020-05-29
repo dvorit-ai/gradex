@@ -428,6 +428,7 @@ img{
 	text-align:left;
 	text-align-last:left;
 	line-height:1.3em;
+/*	font-weight:400;*/
 }
 
 
@@ -588,6 +589,7 @@ hr {
 	margin-bottom:5pt;
 	margin-top:25px;
 	padding:0;
+	width:100%;
 }
 
 .project iframe{
@@ -714,7 +716,7 @@ th:hover {
 }
 
 /* RESPONSIVE WINDOW SMALLEST*/
-@media (max-width:1000px) {
+@media (max-width:1300px) {
 	.projects-container {
 		column-count:3;
 	}
@@ -725,7 +727,7 @@ th:hover {
 	}
 }
 
-@media (max-width:800px) {
+@media (max-width:1000px) {
 	.projects-container {
 		column-count:2;
 	}
