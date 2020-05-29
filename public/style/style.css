@@ -22,7 +22,8 @@
 
 
 body {
-	cursor: -webkit-image-set(url(/logos/arrow-up.svg) 2.75x ) 14 19, auto;	
+/*	cursor: -webkit-image-set(url(/logos/arrow-up.svg) 2.75x ) 14 19, auto;	
+*/	
 	background:#0b152e;
 	color:#0f0;
 	font-family: 'Work Sans', sans-serif;		
@@ -34,8 +35,7 @@ body {
 	line-height:1.2em;
 	/*hyphens:auto;*/
 	
-/*	cursor: url(logos/arrow.png), pointer;*/
-/*	cursor: pointer;*/
+	cursor: -webkit-image-set(url(../Logos/working-up.svg) 3x ) 27 23, auto;
 }
 
 ::selection{
@@ -54,14 +54,13 @@ body {
 a{
 	color:#00ff00;
 	text-decoration:none;
-	cursor: -webkit-image-set(url(/logos/arrow-down.svg) 2.75x ) 14 20, auto;
-	cursor: url(/logos/arrow-down.svg) 2.5x 15 22, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 a:hover{
 /*	border-bottom:1px solid #00ff00;*/
 	text-decoration:line-through;
-	cursor: -webkit-image-set(url(/logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 h2, h3, h4, h5, h6 {
@@ -141,7 +140,6 @@ h6.tag {
 .sidebar h6.tag {
 	color:#0b152e;
 	background:#0f0;
-	cursor:pointer;
 	margin:0.5em 0.5em 0 0;
 	border:1px solid #0f0;
 }
@@ -149,7 +147,7 @@ h6.tag {
 .sidebar h6.tag:hover{
 	background:#0b152e;
 	color:#0f0;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 h6.home {
@@ -181,7 +179,7 @@ p a{
 
 p a:hover{
 	border:none;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 img{
@@ -240,7 +238,7 @@ img{
 #nav a:hover{
 /*	border-bottom:1px solid #00ff00;
 */	text-decoration:line-through;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 #nav li {
@@ -332,7 +330,7 @@ img{
 .filter-by-tag .tag:hover {
 	background:#0F0;
 	color:#0b152e;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 
@@ -644,7 +642,7 @@ hr {
 
 .table-list a:hover{
 	color:#0b152e;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 table{
@@ -680,7 +678,7 @@ tr:hover td{
 
 tr:hover a{
 	color:#0b152e;
-	cursor: -webkit-image-set(url(../logos/arrow-down.svg) 2.75x ) 14 20, auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 th:hover {
