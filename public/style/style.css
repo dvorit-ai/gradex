@@ -53,12 +53,11 @@ body {
 
 a{
 	color:#00ff00;
-	text-decoration:none;
+	text-decoration:underline;
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 a:hover{
-/*	border-bottom:1px solid #00ff00;*/
 	text-decoration:line-through;
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
@@ -173,10 +172,6 @@ p{
 	margin-bottom:10px;
 }
 
-p a{
-	border-bottom:1px solid #0f0;
-}
-
 p a:hover{
 	border:none;
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
@@ -234,6 +229,10 @@ img{
 	color:#00FF00;
 	text-decoration:none;
 }*/
+
+#nav a{
+	text-decoration:none;
+}
 
 #nav a:hover{
 /*	border-bottom:1px solid #00ff00;
@@ -662,6 +661,10 @@ th, td, table{
   	margin-left:-1px;
 }
 
+th, td, table a{
+	text-decoration:none;
+}
+
 
 th{
 	padding:25px 9pt 9pt 20pt;
@@ -674,6 +677,11 @@ th{
 tr:hover td{
 	background: #0f0;
 	color:#0b152e;
+}
+
+tr:hover {
+	text-decoration:line-through;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 tr:hover a{
