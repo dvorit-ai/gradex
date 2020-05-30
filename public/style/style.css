@@ -230,19 +230,25 @@ img{
     width: 100vh;
     background: #0f0;
     position: fixed;
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0.5em;
+    padding: 1em 0.5em ;
     vertical-align: center;
     align-items:center;
     transform: rotate(-90deg) translate(calc(-50vh + 25px),calc(-50vh + 25px));
     list-style-type: none;
+    overflow:hidden;
+
  }
 
 #nav a{
 	text-decoration:none;
 	color:#0b152e;
+
+	font-weight:400;
+	font-size: 24pt;
+    letter-spacing: -0.05em;
 }
 
 #nav a:hover{
@@ -257,6 +263,7 @@ img{
 	font-weight:400;
 	font-size: 24pt;
     letter-spacing: -0.05em;
+    display:inline;
 }
 /*#nav li {
 	position:fixed;
