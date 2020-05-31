@@ -683,7 +683,7 @@ hr {
 
 .table-list{
 	/*position:relative;*/
-	margin:0 50px;
+	margin:0 0 0 50px;
 	height:auto;
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
@@ -725,7 +725,6 @@ th, td, table{
 th, td, table a{
 	text-decoration:none;
 }
-
 
 th{
 	padding:25px 9pt 9pt 20pt;
@@ -825,6 +824,10 @@ th:hover {
 @media (max-width:800px){
 	.filter-by-tag h6{
 		width:25%;
+	}
+
+	.larger{
+		font-size:25vw !important;
 	}
 }
 
