@@ -306,7 +306,7 @@ insta+linkedin+portfolio+behance+email+
 		//IF YOUTUBE 
 		} else {
 			var l = video.split(".be/")[1];		
-			projFull += "<style>.embed-container { margin-bottom: 10pt; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
+			projFull += "<style>.embed-container { margin-top: 35pt; margin-bottom: 10pt; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/"+l+"' frameborder='0' allowfullscreen></iframe></div>"
 		}
 		projFull+="<h6 class=\"caption\">"+videocaption+"</h6>"
 		
