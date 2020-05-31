@@ -389,6 +389,26 @@ img{
 /*	min-height:100vh;*/
 }
 
+.rect {
+	display:inline-block;
+	font-weight:400;
+	font-size: 24pt;
+	color:#0b152e;
+}
+
+.rect::before {
+content: '';
+    font-size: 1px;
+    display: inline-block;
+    width: 14.2pt;
+    height: 18pt;
+    box-sizing: border-box;
+    border: 2pt solid #0b152e;
+    position: relative;
+    left: 14.3pt;
+    top: 1pt;
+}
+
 /*.student-container{
 	position:relative;
 	top:-15px;
