@@ -470,7 +470,9 @@ $(document).on("click",".filter",function(e){
 	$(".filter-by-tag").toggleClass("active")
 	$(document).scrollTop(0)
 
-	alert(window.location.href)
+	if (window.location.href.includes("id=")) {
+		window.location.href="/?tag=see_all"
+	}
 })
 
  	$(document).on("click",".filter-by-tag .tag",function(){
