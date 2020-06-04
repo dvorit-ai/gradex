@@ -373,10 +373,8 @@ img{
 
 
 #container {
-	margin:0 45px 0 30px;
-	/*border-left:1px solid #00ff00;*/
-/*	border-right:1px solid #00ff00;
-*/	width:calc(100vw - 75px);
+	margin:0 53px;
+	/*width:calc(100vw - 106px); */
 	min-height:100vh;
 }
 
@@ -385,9 +383,10 @@ img{
 	column-gap:25px;	
 	font-size:0;
 	display:none;
-	margin: 0 50px;
-	padding-bottom:50px;
-/*	min-height:100vh;*/
+	margin: 0 25px;
+	padding-bottom:20vh;
+	/*width:100%;
+	min-height:100vh;*/
 }
 
 .rect {
@@ -490,18 +489,19 @@ img{
 .close-button {
 	float:right;
 	clear:both;
-	cursor:pointer;
+	cursor:auto;
+	padding:0 5px 5px 5px;
 }
 
 .blm{
 	column-span:all;
-	margin-top:-25px;
-	margin-bottom:30vh;
 	background:#0f0;
 	color:#0b152e;
-	padding:1em;
+	padding:25px;
 	font-size:27pt;
 	line-height:30pt;
+	margin:-25px -25px 25px -25px;
+	z-index:1000000;
 }
 
 
