@@ -373,21 +373,23 @@ img{
 
 
 #container {
-	margin:0 45px 0 30px;
-	/*border-left:1px solid #00ff00;*/
-/*	border-right:1px solid #00ff00;
-*/	width:calc(100vw - 75px);
+	margin:0 53px;
+	/*width:calc(100vw - 75px);*/
 	min-height:100vh;
 }
 
 .projects-container{	
+	
+	
+	display:none;
+	padding-bottom:50px;
+/*	min-height:100vh;*/
+}
+.projects-container-interior{
+	margin:25px;
 	column-count:4;
 	column-gap:25px;	
 	font-size:0;
-	display:none;
-	margin: 0 50px;
-	padding-bottom:50px;
-/*	min-height:100vh;*/
 }
 
 .rect {
@@ -496,7 +498,7 @@ img{
 .blm{
 	column-span:all;
 	margin-top:-25px;
-	margin-bottom:30vh;
+	/*margin-bottom:30vh;*/
 	background:#0f0;
 	color:#0b152e;
 	padding:1em;
