@@ -880,6 +880,9 @@ th:hover {
 
 	#nav h4{
 		font-size:4vh;
+/*		font-size:21pt;
+		text-overflow: hidden;
+		white-space:nowrap;*/
 	}
 
 	.table-list{
