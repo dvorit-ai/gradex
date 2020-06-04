@@ -819,7 +819,7 @@ th:hover {
 }
 
 @media (max-width:1000px) {
-	.projects-container {
+	.projects-container-interior {
 		column-count:2;
 	}
 
