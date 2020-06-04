@@ -246,7 +246,7 @@ function htmlize(string) {
 "<div class='sidebar'>"+
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
-"<p class='description'>"+htmlize(description)+"</p>"+
+"<p class='description'>"+description+"</p>"+
 "<p class='uppercase description'>"+tagButtons+"</p>"+
 "<hr />";
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
