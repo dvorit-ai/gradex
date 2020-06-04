@@ -1,18 +1,18 @@
-$('#nav').marquee({
-    //speed in milliseconds of the marquee
-    duration: 30000,
-    //gap in pixels between the tickers
-    gap: 30,
-    //time in milliseconds before the marquee will start animating
-    delayBeforeStart: 0,
-    //'left' or 'right'
-    direction: 'left',
-    //true or false - should the marquee be duplicated to show an effect of continues flow
-    duplicated: true,
-    startVisible:true,
-    pauseOnHover:true
+// $('#nav').marquee({
+//     //speed in milliseconds of the marquee
+//     duration: 30000,
+//     //gap in pixels between the tickers
+//     gap: 30,
+//     //time in milliseconds before the marquee will start animating
+//     delayBeforeStart: 0,
+//     //'left' or 'right'
+//     direction: 'left',
+//     //true or false - should the marquee be duplicated to show an effect of continues flow
+//     duplicated: true,
+//     startVisible:true,
+//     pauseOnHover:true
 
-});
+// });
 
 
  	// 	var draw = SVG().addTo('#backgroundX').size($(window).width(), $(window).height())
@@ -77,6 +77,15 @@ function mn(string) {
 			.replace(" ","")
 			.replace("/","")
 }
+
+
+//this is for making adding HTML ([[ to < ]] to  >)
+function htmlize(string) {
+	return string
+			// .replace("[[","<")
+			// .replace("]]",">")
+}
+
 
 
 	//this reaches out the the JSON file and pulls in all the data
@@ -237,7 +246,7 @@ function mn(string) {
 "<div class='sidebar'>"+
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
-"<p class='description'>"+urlify(description)+"</p>"+
+"<p class='description'>"+htmlize(description)+"</p>"+
 "<p class='uppercase description'>"+tagButtons+"</p>"+
 "<hr />";
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
@@ -247,7 +256,7 @@ projFull+=
 insta+linkedin+portfolio+behance+email+
 "</div>"+
 "<p class='uppercase'>"+"About the designer"+"</p>"+
-"<p class='description'>"+urlify(bio)+"</p>"+
+"<p class='description'>"+htmlize(bio)+"</p>"+
 "<p class='uppercase'>"+quipq+"</p>"+
 "<p class='description'>"+quipa+"</p>"+
 "</div>"+
@@ -260,7 +269,7 @@ insta+linkedin+portfolio+behance+email+
 	if (image1 != "") {
 		projFull += "<div class='img1'>"+
 					"<img src='images/"+image1+"'>";
-						if (caption1 != "") projFull += "<h6 class='caption'>"+urlify(caption1)+"</h6>"		
+						if (caption1 != "") projFull += "<h6 class='caption'>"+htmlize(caption1)+"</h6>"		
 		projFull += "</div>";
 	}
 
@@ -269,7 +278,7 @@ insta+linkedin+portfolio+behance+email+
 	if (image2 != "") {
 		projFull += "<div class='img2'>"+
 					"<img src='images/"+image2+"'>";
-						if (caption2 != "") projFull += "<h6 class='caption'>"+urlify(caption2)+"</h6>"		
+						if (caption2 != "") projFull += "<h6 class='caption'>"+htmlize(caption2)+"</h6>"		
 		projFull += "</div>";
 	}
 
@@ -277,21 +286,21 @@ insta+linkedin+portfolio+behance+email+
 	if (image3 != "") {
 		projFull += "<div class='img3'>"+
 					"<img src='images/"+image3+"'>";
-						if (caption3 != "") projFull += "<h6 class='caption'>"+urlify(caption3)+"</h6>"		
+						if (caption3 != "") projFull += "<h6 class='caption'>"+htmlize(caption3)+"</h6>"		
 		projFull += "</div>";
 	}
 
 	if (image4 != "") {
 		projFull += "<div class='img4'>"+
 					"<img src='images/"+image4+"'>";
-						if (caption4 != "") projFull += "<h6 class='caption'>"+urlify(caption4)+"</h6>"		
+						if (caption4 != "") projFull += "<h6 class='caption'>"+htmlize(caption4)+"</h6>"		
 		projFull += "</div>";
 	}
 
 	if (image5 != "") {
 		projFull += "<div class='img5'>"+
 					"<img src='images/"+image5+"'>";
-						if (caption5 != "") projFull += "<h6 class='caption'>"+urlify(caption5)+"</h6>"		
+						if (caption5 != "") projFull += "<h6 class='caption'>"+htmlize(caption5)+"</h6>"		
 		projFull += "</div>";
 	}	
 

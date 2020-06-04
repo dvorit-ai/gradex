@@ -225,30 +225,30 @@ img{
 #nav  {	
     margin: 0;
     padding: 0;
-    top:-3px;
-    z-index: 2;
-    height: 55px;
-    width: calc(100vh + 3px);
-    background: #0f0;
-    position: fixed;
+    /*top:-3px;*/
+    /*z-index: 2;*/
+    /*height: 55px;*/
+    /*width: calc(100vh + 3px);*/
+    /*background: #0f0;*/
+    /*position: fixed;*/
     /*display: flex;*/
-    justify-content: space-between;
+    /*justify-content: space-between;
     box-sizing: border-box;
     padding: 1em 0.5em ;
     vertical-align: center;
     align-items:center;
     transform: rotate(-90deg) translate(calc(-50vh + 25px),calc(-50vh + 25px));
     list-style-type: none;
-    overflow:hidden;
+    overflow:hidden;*/
  }
 
 
 #nav a{
-	text-decoration:none;
+	text-decoration:none;/*
 	color:#0b152e;
 	font-weight:300;
 	font-size: 24pt;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.05em;*/
 }
 
 #nav a:hover{
@@ -261,20 +261,19 @@ img{
 	margin:0;
 	padding:0;
 	font-weight:400;
-	font-size: 24pt;
-    letter-spacing: -0.05em;
+
     display:inline;
 }
 
 
-/*#nav li {
+#nav li {
 	position:fixed;
 	list-style-type: none;
 	margin:0;
 	padding:0;
  	display:inline-flex;
 
-}*/
+}
 
 .five{
 	transform: rotate(-90deg);
@@ -283,7 +282,7 @@ img{
 /*  	left:25px;
 */}
 
-/*.one{
+.one{
 	transform: rotate(90deg);
   	transform-origin: 0% 50%;
   	top:-5px;
@@ -309,7 +308,7 @@ img{
   	transform-origin: 0% 50%;
   	bottom:-5px;
   	right:-67px;
-}*/
+}
 
 /*.filter {
 	display:block;
@@ -375,9 +374,9 @@ img{
 
 #container {
 	margin:0 0 0 50px;
-	border-left:1px solid #00ff00;
+	/*border-left:1px solid #00ff00;*/
 /*	border-right:1px solid #00ff00;
-*/	width:calc(100vw-40px)
+*/	width:calc(100vw - 100px);
 	min-height:100vh;
 }
 
@@ -397,7 +396,7 @@ img{
 	font-size: 24pt;
 	color:#0b152e;
 }
-
+/*
 .rect::before {
 	content:'';
     font-size: 1px;
@@ -410,7 +409,7 @@ img{
     left: 14.1pt;
     top: 1pt;
 }
-
+*/
 /*.student-container{
 	position:relative;
 	top:-15px;
@@ -683,7 +682,7 @@ hr {
 
 .table-list{
 	/*position:relative;*/
-	margin:0 0 0 50px;
+	margin:0 50px 0 53px;
 	height:auto;
 	border-left:1px solid #00ff00;
 	border-right:1px solid #00ff00;
@@ -829,6 +828,40 @@ th:hover {
 	.larger{
 		font-size:25vw !important;
 	}
+
+.right-line {
+	display:none;
+}
+
+#container {
+	width:calc(100vw - 50px);
+}
+
+#nav {
+	box-sizing: border-box;
+	padding:0 2em;
+	transform-origin: 0 0;
+    transform: rotate(90deg);
+    position: fixed;
+    left: 53px;
+    top: 0;
+    width: 100vh;
+    display: flex;
+    background: #0F0;
+    justify-content: space-between;
+}
+
+#nav li {
+	position: static;
+    display: inline-block;
+    transform: rotate(0deg);
+    margin-top: -0.3em;
+}
+
+#nav a {
+	color:#0b152e;
+}
+
 }
 
 @media (max-width:600px){
