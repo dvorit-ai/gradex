@@ -323,8 +323,8 @@ img{
 
 
 .filter-by-tag{
-	margin-left:-26px;
-	width: calc(100% + 53px);
+	margin-left:1px;
+	/*width: calc(100% + 53px);*/
 	column-span:all;
 	max-height:0;
 	overflow:hidden;
@@ -375,6 +375,9 @@ img{
 #container {
 	margin:0 53px;
 	/*width:calc(100vw - 75px);*/
+
+	/*width:calc(100vw - 106px); */
+
 	min-height:100vh;
 }
 
@@ -382,8 +385,12 @@ img{
 	
 	
 	display:none;
+
 	padding-bottom:50px;
-/*	min-height:100vh;*/
+
+	/*margin: 0 25px;*/
+	padding-bottom:20vh;
+
 }
 .projects-container-interior{
 	margin:25px;
@@ -492,18 +499,20 @@ img{
 .close-button {
 	float:right;
 	clear:both;
-	cursor:pointer;
+	cursor:auto;
+	padding:0 5px 5px 5px;
 }
 
 .blm{
 	column-span:all;
-	margin-top:-25px;
-	/*margin-bottom:30vh;*/
+
 	background:#0f0;
 	color:#0b152e;
-	padding:1em;
+	padding:25px;
 	font-size:27pt;
 	line-height:30pt;
+	margin-top: -25px;
+	z-index:1000000;
 }
 
 
