@@ -367,6 +367,10 @@ function sortTable(via){
 }
 
 
+$(document).on("click",".close-button",function(){
+	$(".blm").slideUp(speed)
+})
+
 $(document).on("click",".student-top",function(){
 	sortTable($(this).data("via"));
 })

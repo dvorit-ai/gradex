@@ -486,10 +486,22 @@ img{
 /*	font-weight:400;*/
 }
 
+
+.close-button {
+	float:right;
+	clear:both;
+	cursor:pointer;
+}
+
 .blm{
 	column-span:all;
 	margin-top:-25px;
 	margin-bottom:30vh;
+	background:#0f0;
+	color:#0b152e;
+	padding:1em;
+	font-size:27pt;
+	line-height:30pt;
 }
 
 
