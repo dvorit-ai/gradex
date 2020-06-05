@@ -592,8 +592,6 @@ img{
 
 .sidebar{
 	display:block;
-
-
 }
 
 hr {
@@ -963,9 +961,7 @@ th:hover {
 	}
 
 	.thumbnail{
-		/*margin-top:-1px;*/
 		margin-bottom:0;
-		/*margin-left:-1px;*/
 		border-bottom:1px solid #0f0;
 	}
 
@@ -977,10 +973,6 @@ th:hover {
 		font-size:30vw;
 		line-height:30vw;
 	}
-
-/*	.thumbnail img{
-		border:1px solid #0f0;
-	}*/
 
 	.blm{
 		padding-top:50px;
