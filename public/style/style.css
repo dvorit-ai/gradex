@@ -382,7 +382,7 @@ img{
 .projects-container{	
 	display:none;
 	padding-bottom:50px;
-	padding-bottom:20vh;
+	/*padding-bottom:20vh;*/
 	/*margin: 0 25px;*/
 }
 
@@ -564,7 +564,7 @@ img{
 	grid-template-columns: 2fr 1fr 1fr 1fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
-	padding:25px 25px 100px 25px;
+	padding:25px 25px 0 25px;
 /*	margin: 0 1em;
 */}
 
@@ -956,6 +956,10 @@ th:hover {
 		/*margin-top:-1px;*/
 		margin-bottom:0;
 		/*margin-left:-1px;*/
+	}
+
+	.sidebar img {
+		width:100%;
 	}
 
 /*	.thumbnail img{
