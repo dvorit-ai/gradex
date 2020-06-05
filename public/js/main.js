@@ -384,16 +384,17 @@ $(document).on("mouseout",".student-row",function(e){
 
 $(document).on("mouseover",".student-row",function(e){
 	
-	//console.log($(document).scrollTop()+e.clientY)
-	var fromTop;
-	if (e.clientY > $(window).height()-400) {
-		fromTop = $(this).offset().top-$(this).height()+1;
-	} else {
-		fromTop = $(this).offset().top+$(this).height()+1;
+	var fixedTop = $(this).offset().top-$(document).scrollTop();
+	var reverse = false;
+	if (fixedTop > $(window).height()-400) {
+		reverse = true
+		console.log(reverse)
 	}
 
+
+	var fromTop;
 	fromTop = $(this).offset().top+$(this).height()+1;
-	
+
 	fromLeft = function() {
 		l = e.clientX;
 
@@ -405,11 +406,16 @@ $(document).on("mouseover",".student-row",function(e){
 
 	$("<img class='row-thumb'>")							//create image elemtent
 			.attr('src','/images/thumbnails/'+$(this).data("img"))		//add the image to it
-
+			.addClass(function(){
+				return reverse ? "reverse" : ""				
+			})
 			.appendTo("body")
 			.css({
 				left:fromLeft,
-				top:fromTop
+				top:function(){
+
+				return fromTop;
+				}
 			})
 })
 

@@ -782,6 +782,11 @@ th:hover {
 	pointer-events: none;
 }
 
+.reverse {
+	transform:translateY(-100%);
+	padding-bottom:2.7em;
+}
+
 .cell-one{
 	width:25%;
 }
