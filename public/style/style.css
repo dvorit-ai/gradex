@@ -356,6 +356,7 @@ img{
 
 .filter-by-tag.active {
 	max-height:500px;
+
 }
 
 
@@ -384,6 +385,7 @@ img{
 	padding-bottom:20vh;
 	/*margin: 0 25px;*/
 }
+
 .projects-container-interior{
 	margin:20px;
 	column-count:4;
@@ -563,8 +565,8 @@ img{
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
 	padding:25px 25px 100px 25px;
-	margin: 0 1em;
-}
+/*	margin: 0 1em;
+*/}
 
 
 .about-container{
@@ -572,7 +574,7 @@ img{
 	grid-template-columns: 2fr 3fr;
 	grid-column-gap: 25px;
 	grid-row-gap: 25px;
-	padding:25px 50px 100px 50px;
+	padding:25px 25px 100px 25px;
 }
 
 .about-2 p img{
@@ -704,11 +706,11 @@ hr {
 
 .table-list{
 	/*position:relative;*/
-	margin:0 53px 0 53px;
+	margin:0 54px 0 53px;
 	height:auto;
 	border-left:1px solid #00ff00;
-	border-right:1px solid #00ff00;
-	z-index:10000000;
+/*	border-right:1px solid #00ff00;
+*/	z-index:10000000;
 	background:none;
 	z-index:100000000;
 	left:0;
@@ -849,11 +851,16 @@ th:hover {
 	}
 }
 
-	@media (max-width:800px){
+@media (max-width:800px){
+	
 	.filter-by-tag{
-		width: calc(100% + 82px);
+		height:300px;
+		overflow-y:scroll;
 	}
 
+	.filter-by-tag:active{
+		border-bottom:1px solid #0f0;
+	}
 
 	.filter-by-tag h6{
 		width:25%;
@@ -868,7 +875,7 @@ th:hover {
 	}
 
 	#container {
-		width:calc(100vw - 20px);
+		margin:0 0 0 53px;
 	}
 
 
@@ -879,8 +886,8 @@ th:hover {
 	    transform: rotate(-90deg);
 	    position: fixed;
 	    left: 0;
-	    bottom: -53px;
-	    width: 100vh;
+	    bottom: -54px;
+	    width: calc(100vh + 3px);
 	    height:53px;
 	    display: flex;
 	    background: #0F0;
@@ -899,15 +906,16 @@ th:hover {
 	}
 
 	#nav h4{
-		font-size:4vh;
+		font-size:3.8vh;
 /*		font-size:21pt;
 		text-overflow: hidden;
 		white-space:nowrap;*/
 	}
 
 	.table-list{
-		margin:0 -1px 0 53px;
+		margin:0 0 0 53px;
 	}
+
 
 }
 
@@ -921,7 +929,31 @@ th:hover {
 		max-height:100%;
 	}
 
-	h6{
+	.filter-by-tag{
+		margin-bottom:0;
+	}
 
+	.projects-container-interior{
+		margin:0;
+		column-gap:0;	
+		font-size:0;
+	}
+
+	.type{
+		border:none;
+	}
+
+	.thumbnail{
+		/*margin-top:-1px;*/
+		margin-bottom:0;
+		/*margin-left:-1px;*/
+	}
+
+/*	.thumbnail img{
+		border:1px solid #0f0;
+	}*/
+
+	.blm{
+		padding-top:50px;
 	}
 }
