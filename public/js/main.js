@@ -607,3 +607,4 @@ $(window).on('popstate', function(event) {
 	  		$(".student-container").slideDown(speed);;
 	  	},200)
 	  })
+	  

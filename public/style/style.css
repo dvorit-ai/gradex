@@ -48,7 +48,6 @@ body {
 	color:#0b152e;
 }
 
-
 /* TYPOGRAPHY RULES */
 
 a{
@@ -468,7 +467,7 @@ img{
 	background-position:center;
 	height:auto;
 	padding:2vw;
-	width:calc(100% - 4vw - 2px) !important;
+	width:calc(100% - 4vw - 2px);
 	overflow:hidden;
 	position:relative;
 	color:#00FF00;
@@ -493,13 +492,12 @@ img{
 .close-button {
 	float:right;
 	clear:both;
-	cursor:auto;
+	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 	padding:0 5px 5px 5px;
 }
 
 .blm{
 	column-span:all;
-
 	background:#0f0;
 	color:#0b152e;
 	padding:25px;
@@ -822,12 +820,7 @@ th:hover {
 	.filter-by-tag.active {
 	max-height:1000px;
 
-}
-
-	.projects-container-interior {
-		column-count:1;
 	}
-
 	h1{
 		font-size:15vw;
 		line-height:0.9em;
@@ -837,18 +830,20 @@ th:hover {
 		font-size:27vw !important;
 	}
 
+	.projects-container-interior {
+		column-count:2;
+	}
+
 	.about-container{
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.students-container{
-		grid-template-columns:1fr;
+		grid-template-columns:1fr 1fr;
 	}
 
-
-
 	.project{
-		grid-column-start: 1;
+		grid-column-start: 2;
 		grid-column-end:span 1;
 	}
 
@@ -886,6 +881,21 @@ th:hover {
 		margin:0 0 0 53px;
 	}
 
+	.projects-container-interior {
+		column-count:1;
+	}
+
+	.about-container{
+		grid-template-columns: 1fr;
+	}
+
+	.students-container{
+		grid-template-columns:1fr;
+	}
+
+	.project{
+		grid-column-start: 1;
+	}
 
 	#nav {
 		box-sizing: border-box;
@@ -956,10 +966,16 @@ th:hover {
 		/*margin-top:-1px;*/
 		margin-bottom:0;
 		/*margin-left:-1px;*/
+		border-bottom:1px solid #0f0;
 	}
 
 	.sidebar img {
 		width:100%;
+	}
+
+	h1{
+		font-size:30vw;
+		line-height:30vw;
 	}
 
 /*	.thumbnail img{
