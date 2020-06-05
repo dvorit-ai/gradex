@@ -526,7 +526,14 @@ $(document).on("click",".filter",function(e){
 	});
 
 $(window).on('popstate', function(event) {
- console.log(event)
+ console.log(window.location.href)
+
+ if ((!window.location.href.includes("id=")) ||
+ 	(!window.location.href.includes("student-list")) ||
+ 	(!window.location.href.includes("about"))) {
+ 		location.reload();
+ }
+
 });
 
 
