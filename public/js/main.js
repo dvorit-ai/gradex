@@ -525,7 +525,9 @@ $(document).on("click",".filter",function(e){
 		window.location.href= "/?tag="+cT;
 	});
 
-
+$(window).on('popstate', function(event) {
+ console.log(event)
+});
 
 
  	$(document).on("click",".student-row",function(e){
