@@ -468,10 +468,10 @@ img{
 /*	border-top:none;
 */}
 
-.thumbnail:hover img{
-	opacity:0.3;
+/*.thumbnail:hover img{
+	opacity:0.8;
 	transition: opacity .5s, visibility .15s;
-}
+}*/
 
 .type {
 	background:url(../logos/X2.svg);
@@ -977,6 +977,11 @@ th:hover {
 	.thumbnail img{
 		border-bottom:1px solid #0f0;
 		border-top:1px solid #0f0;
+	}
+
+	.thumbnail:hover img{
+		opacity:0.8;
+		transition: opacity .5s, visibility .15s;
 	}
 
 
