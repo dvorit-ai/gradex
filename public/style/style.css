@@ -1,6 +1,5 @@
 /* Typefaces start */
 @import 'http://fonts.googleapis.com/css?family=Work+Sans:300,400,500';
- 
 
 
 @font-face {
@@ -11,7 +10,7 @@
 } 
 
 
-
+/*
 @font-face {
     font-family: 'GT Super Display';
     src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
@@ -27,7 +26,7 @@
     font-weight: italic;
     font-style: normal;
 }
-
+*/
 
 /* Typefaces end */
 
@@ -978,6 +977,13 @@ th:hover {
 		margin-bottom:0;
 		border-bottom:1px solid #0f0;
 	}
+	.sidebar {
+		display:flex;
+		flex-direction:column;
+	}
+	.sidebar-project {order:3;}
+	.sidebar hr {order:2;}
+	.sidebar-author {order:1;}
 
 	.sidebar img {
 		width:100%;

@@ -244,11 +244,18 @@ function htmlize(string) {
 			
 		var projFull = "<div class='students-container'>"+
 "<div class='sidebar'>"+
+
 "<p class='uppercase'>"+name+"</p>"+
 "<h3>"+title+"</h3>"+
+"<div class='sidebar-project'>"+
 "<p class='description'>"+description+"</p>"+
 "<p class='uppercase description'>"+tagButtons+"</p>"+
-"<hr />";
+
+"</div>"+
+"<hr />"+
+"<div class='sidebar-author'>";
+
+
 portrait != "" ? projFull+="<img src='images/"+portrait+"'>": null
 
 projFull+= 
@@ -259,6 +266,7 @@ insta+linkedin+portfolio+behance+email+
 "<p class='description'>"+htmlize(bio)+"</p>"+
 "<p class='uppercase'>"+quipq+"</p>"+
 "<p class='description'>"+quipa+"</p>"+
+"</div>"+
 "</div>"+
 "<div class='project'>";
 	
