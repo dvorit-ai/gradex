@@ -368,9 +368,7 @@ img{
 
 .filter-by-tag.active {
 	max-height:500px;
-
 }
-
 
 
 .filter-by-tag .tag.active,
@@ -542,7 +540,6 @@ img{
   visibility: visible;
   opacity: 1;
 }
-
 
 .thumbnail .tag {
 	margin:0.25em 0.25em 0 0;
@@ -761,8 +758,8 @@ th, td, table a{
 th{
 	padding:25px 9pt 9pt 20pt;
 	background:#0b152e;
-	position:sticky!important;
-	top:0;
+/*	position:sticky!important;
+*/	top:0;
 	margin-top:0;
 }
 
@@ -943,6 +940,7 @@ th:hover {
 
 	.table-list{
 		margin:0 0 0 53px;
+		overflow-x:hidden;
 	}
 
 
@@ -971,20 +969,68 @@ th:hover {
 
 	.type{
 		border:none;
-	}
-
-	.thumbnail{
-		margin-bottom:0;
+		margin-bottom:25px;
 		border-bottom:1px solid #0f0;
+		border-top:1px solid #0f0;
 	}
 
-.sidebar {
+	.thumbnail img{
+		border-bottom:1px solid #0f0;
+		border-top:1px solid #0f0;
+	}
+
+
+
+	.img-tags{
+		visibility: visible;
+		opacity:1;
+		position:relative;
+		margin-bottom:25px;
+		background:none;
+		margin:0;
+		padding:0;
+		border-bottom:1px solid #0f0;
+		width:100%;
+
+		display:flex;
+		flex-flow:row wrap;
+		justify-content: space-between;
+	}
+
+	.img-tags p,
+	.img-tags h3{
+		display:none;
+	}
+
+	.thumbnail .tag{
+		margin:0;
+		margin-top:-1px;
+		margin-bottom:-1px;
+		margin-left:-1px;
+/*		width:calc(60% - 52px);
+*/		border-right:none;
+		flex-grow:1;
+		width:45%;
+	}
+
+	.thumbnail a{
+		text-decoration:none;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	.sidebar {
 		display:flex;
 		flex-direction:column;
 	}
-
-/*	.project { order:1; }
-	.sidebar { order:2; }*/
 
 
 	.sidebar-project {order:3;}
@@ -994,7 +1040,6 @@ th:hover {
 	.sidebar img {
 		width:100%;
 	}
-
 
 
 	h1{
