@@ -1040,4 +1040,9 @@ th:hover {
 	.blm{
 		padding-top:50px;
 	}
+
+	.cell-three,
+	.profs {
+		display:none;
+	}
 }
