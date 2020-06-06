@@ -602,6 +602,17 @@ $(window).on('popstate', function(event) {
 	  	$(".student-container").html(projects[$(this).data("project-id")])
 
 
+	  	$(document).scroll(function(){
+	  		$("nd").css({
+	  			"font-family":"notdef"
+	  		})
+	  	})
+
+	  	$(document).on("scrollstop",function(){
+  alert("Stopped scrolling!");
+});
+
+
 
 	  	setTimeout(function(){
 	  		$(".student-container").slideDown(speed);;

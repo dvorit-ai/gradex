@@ -1,6 +1,17 @@
 /* Typefaces start */
 @import 'http://fonts.googleapis.com/css?family=Work+Sans:300,400,500';
  
+
+
+@font-face {
+    font-family: 'notdef';
+    src: url('/fonts/notdef.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+
+
 @font-face {
     font-family: 'GT Super Display';
     src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
@@ -272,6 +283,7 @@ img{
 	padding:0;
  	display:inline-flex;
 
+
 }
 
 .five{
@@ -286,6 +298,7 @@ img{
   	transform-origin: 0% 50%;
   	top:-5px;
   	left:25px;
+  	
 }
 
 .three{
