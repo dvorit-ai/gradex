@@ -977,10 +977,16 @@ th:hover {
 		margin-bottom:0;
 		border-bottom:1px solid #0f0;
 	}
-	.sidebar {
+
+.sidebar {
 		display:flex;
 		flex-direction:column;
 	}
+
+/*	.project { order:1; }
+	.sidebar { order:2; }*/
+
+
 	.sidebar-project {order:3;}
 	.sidebar hr {order:2;}
 	.sidebar-author {order:1;}
@@ -988,6 +994,8 @@ th:hover {
 	.sidebar img {
 		width:100%;
 	}
+
+
 
 	h1{
 		font-size:30vw;
