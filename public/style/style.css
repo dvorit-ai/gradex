@@ -947,6 +947,11 @@ th:hover {
 }
 
 @media (max-width:600px){
+
+
+	.type {
+		display:none;
+	}
 	.filter-by-tag h6{
 		width:calc(100% / 3)
 		font-size:13pt;
