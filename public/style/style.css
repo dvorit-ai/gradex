@@ -530,15 +530,14 @@ img{
 }
 
 .footer{
-	background:#0f0;
-/*	height:100px;
-*/	color:#0b152e;
+/*	background:#0f0;
+	color:#0b152e;*/
 	padding:20px;
 	column-count:2;
 }
 
 .footer a{
-	color:#0b152e;
+/*	color:#0b152e;*/
 }
 
 
