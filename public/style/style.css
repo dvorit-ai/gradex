@@ -384,7 +384,7 @@ img{
 }
 
 .projects-container{	
-	display:none;
+	/*display:none;*/
 	padding-bottom:50px;
 	/*padding-bottom:20vh;*/
 	/*margin: 0 25px;*/
@@ -517,7 +517,8 @@ img{
 	padding:20px;
 	font-size:27pt;
 	line-height:30pt;
-	margin-top: -25px;
+	
+	margin:0 53px;
 	z-index:1000000;
 }
 
@@ -528,8 +529,10 @@ img{
 .blm-resources p{
 	line-height:1.3em;
 }
-
 .footer{
+	background:#0f0;
+/*	height:100px;
+*/	color:#0b152e;
 /*	background:#0f0;
 	color:#0b152e;*/
 	padding:20px;
@@ -537,8 +540,11 @@ img{
 }
 
 .footer a{
+	color:#0b152e;
 /*	color:#0b152e;*/
 }
+
+
 
 
 /* IMAGE HOVER DESCRIPTION START*/
@@ -734,7 +740,7 @@ hr {
 
 .table-list{
 	/*position:relative;*/
-	margin:0 54px 0 53px;
+	/*margin:0 54px 0 53px;*/
 	height:auto;
 	border-left:1px solid #00ff00;
 /*	border-right:1px solid #00ff00;
@@ -1080,5 +1086,6 @@ th:hover {
 
 	.blm{
 		padding-top:45px;
+
 	}
 }
