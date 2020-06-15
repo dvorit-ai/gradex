@@ -34,7 +34,7 @@ fetch('/projectTeasers.json')
 //THIS IS FOR CLICKING ON THE MAIN PAGE
 $(document).on("click",".one",function(e){
 		e.preventDefault();
-		unload()
+		unload();
 		
 		setTimeout(function(){
 			projectTeasers.splice(1,0,"<div class='thumbnail type'><h1>r e c<br>e s s<br>i o n</h1></div>");
@@ -369,8 +369,8 @@ window.addEventListener('scroll', function ( event ) {
 
 	  //this function unloads all existing content
 	  function unload() {
-	  		  	$(".projects-container, .student-container, .about-container, .table-list").slideUp(aSpeed);
+	  		  	$(".projects-container, .students-container, .student-container, .about-container, .table-list").slideUp(aSpeed);
 	  	setTimeout(function(){
-	  		$(".projects-container, .student-container, .table-list").remove();
+	  		$(".projects-container, .students-container, .student-container, .table-list").remove();
 	  	},aSpeed+100	)
 	  }
