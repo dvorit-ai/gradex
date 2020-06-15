@@ -38,6 +38,28 @@
 // }
 
 
+
+//this is the crumble function:
+function crumble() {
+	$(".thumbnail")
+		.addClass("crumbled")
+		.each(function(){
+
+				t = Math.floor(Math.random()*50);
+				l = Math.floor(Math.random()*50);
+				r = Math.floor(Math.random()*180);
+				m = Math.floor(Math.random()*100);
+				s = 1 + Math.floor(Math.random()*1.5);
+			$(this).css({
+				"top":t,
+				"left":l,
+				"margin":m,
+				"transform":"rotate("+r+"deg) scale("+s+")"
+			})
+
+	})
+}
+
 // window.location.hash="ffff"
 
 //this is function to randomize any array
@@ -376,7 +398,7 @@ function sortTable(via){
 
 
 $(document).on("click",".close-button",function(){
-	$(".blm").slideUp(speed)
+	$(".blm").slideUp(speed)	
 })
 
 $(document).on("click",".student-top",function(){
@@ -389,6 +411,9 @@ $(document).on("mouseout",".student-row",function(e){
 })
 
 
+$(document).keypress(function(e){
+	e.charCode == 99 ? crumble() : null
+})
 
 $(document).on("mouseover",".student-row",function(e){
 	
@@ -467,7 +492,7 @@ $(".projects-container").append("<div class='projects-container-interior'></div>
 		setTimeout(function(){
 
 	  		$(".projects-container").fadeIn(speed);;
-	  	},1500)
+	  	},1000)
 	  });
 
 
