@@ -89,6 +89,7 @@ h1{
 /*	word-spacing:-18px;
 */	word-spacing:-18px;
 	margin:0;
+	font-variant-numeric: lining-nums;
 }
 
 h1.larger{
@@ -109,6 +110,8 @@ h2{
 	font-size:23pt;
 	font-weight:300;
 	line-height:1.2em;
+	margin:0;
+	padding:0;
 }
 
 h3{
@@ -268,22 +271,13 @@ img{
 
 
 #nav li {
-	margin:0;
-	padding:0;
-	font-weight:400;
-
-    display:inline;
-}
-
-
-#nav li {
 	position:fixed;
 	list-style-type: none;
 	margin:0;
 	padding:0;
- 	display:inline-flex;
+	font-weight:400;
 
-
+    display:inline-flex;
 }
 
 .five{
@@ -505,13 +499,18 @@ img{
 	clear:both;
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 	padding:0 5px 5px 5px;
+	column-span:all;
+	position:absolute;
+	right:70px;
+	top:15px;
 }
 
 .blm{
-	column-span:all;
+/*	column-span:all;
+*/	column-count: 2;
 	background:#0f0;
 	color:#0b152e;
-	padding:25px;
+	padding:20px;
 	font-size:27pt;
 	line-height:30pt;
 	margin-top: -25px;
@@ -519,21 +518,24 @@ img{
 }
 
 .blm a{
-	color:black;
+	color:#0b152e;
 }
 
-.blm-resources{
+.blm-resources p{
+	line-height:1.3em;
+}
+
+.footer{
+	background:#0f0;
+/*	height:100px;
+*/	color:#0b152e;
+	padding:20px;
 	column-count:2;
-	margin-top:20pt;
 }
 
-/*.blm-1{
-	column-span:1;
+.footer a{
+	color:#0b152e;
 }
-
-.blm-2{
-	column-span:1;
-}*/
 
 
 /* IMAGE HOVER DESCRIPTION START*/
@@ -960,6 +962,10 @@ th:hover {
 		overflow-x:hidden;
 	}
 
+	.blm{
+		column-count:1;
+	}
+
 
 }
 
@@ -1064,12 +1070,12 @@ th:hover {
 		line-height:30vw;
 	}
 
-	.blm{
-		padding-top:50px;
-	}
-
 	.cell-three,
 	.profs {
 		display:none;
+	}
+
+	.blm{
+		padding-top:45px;
 	}
 }
