@@ -21,8 +21,10 @@ fs.readFile(__dirname + '/public/about.html', (err, data) => {
 
 
 let db = [];
+let s = [];
 var projectTeasers = []; 	//this array will hold all the HTML for the Thubnails on the front page
 var projects = [];			//this array will hold all the HTML for the full projects.
+var students = [];		//this array will list all the student names and projects
 var studentList = [];		//this array will list all the student names and projects
 var allTags = [];			//this array will hold all the unique tags
 var uniqueTags = [];			//this array will hold all the unique tags
@@ -126,6 +128,9 @@ doc.useServiceAccountAuth(creds, function (err) {
 
 
 		const thumbnail	=	rows[i].thumbnail;
+
+
+		db[i] = { "name":name, "title": title, "thumbnail":thumbnail}
 
 
 	  	var tagButtons = "";
@@ -330,29 +335,29 @@ app.get('/', function (req, res) {
 			pT.splice(76,0,"<div class='thumbnail type'><p class='home'>Recession Grads exists to acknowledge the situation of what it is like for us to graduate into a recession, and a period of time where everything is a missing glyph of uncertainty and at an indefinite pause. This site serves to showcase our work despite the circumstances and to start new traditions of archiving future graduates' work.</p></div>"); 
 
   	var content = "<div class='projects-container'><div class='projects-container-interior'>"+pT.join('')+"</div></div>"
-  res.render('head', { stuff: content })
+  res.render('head', { stuff: content, title:"home" })
 })
 
 
 app.get('/students', function (req, res) {
   	var content = "<div class='table-list' id='student-list'><table><tr class='uppercase'><th class='student-top cell-one' data-via='name'>Name</th><th class='student-top cell-two' data-via='title'>Project</th><th class='student-top cell-three' data-via='profs'>Professor(s)</th></tr>"+studentList.join('')+"</table></div>"
-  res.render('head', { stuff: content })
+  res.render('head', { stuff: content, title:"all students" })
 })
 
 app.get('/about', function (req, res) {
 	console.log();
   	//var content = "<div class='table-list' id='student-list'><table><tr class='uppercase'><th class='student-top cell-one' data-via='name'>Name</th><th class='student-top cell-two' data-via='title'>Project</th><th class='student-top cell-three' data-via='profs'>Professor(s)</th></tr>"+studentList.join('')+"</table></div>"
-  res.render('head', { stuff: about })
+  res.render('head', { stuff: about, title:"about" })
 })
 
 
 app.get('/tag/:uid', function (req, res) {
   	var content = "<div class='projects-container'><div class='projects-container-interior'>"+projectTeasers.join('')+"</div></div>"
-  res.render('head', { stuff: content })
+  res.render('head', { stuff: content,title:"home" })
 })
 
 app.get('/student/:uid', function (req, res) {
-  res.render('head', { stuff: projects[req.params.uid] })
+  res.render('head', { stuff: projects[req.params.uid], title: db[req.params.uid].name+" — "+db[req.params.uid].title, metaimg: db[req.params.uid].thumbnail})
 })
 
 app.get('/teasers.json', (req, res) => {
