@@ -130,7 +130,7 @@ doc.useServiceAccountAuth(creds, function (err) {
 		const thumbnail	=	rows[i].thumbnail;
 
 
-		db[i] = { "name":name, "title": title, "thumbnail":thumbnail}
+		db[i] = { "name":name, "title": title, "thumbnail":thumbnail, "desc":description}
 
 
 	  	var tagButtons = "";
@@ -335,7 +335,7 @@ app.get('/', function (req, res) {
 			pT.splice(76,0,"<div class='thumbnail type'><p class='home'>Recession Grads exists to acknowledge the situation of what it is like for us to graduate into a recession, and a period of time where everything is a missing glyph of uncertainty and at an indefinite pause. This site serves to showcase our work despite the circumstances and to start new traditions of archiving future graduates' work.</p></div>"); 
 
   	var content = "<div class='projects-container'><div class='projects-container-interior'>"+pT.join('')+"</div></div>"
-  res.render('head', { stuff: content, title:"home" })
+  res.render('head', { stuff: content, title:"home", desc: "The work featured on this site showcases the work of the Graphic Design 2020 graduating class at OCADU." })
 })
 
 
@@ -357,7 +357,7 @@ app.get('/tag/:uid', function (req, res) {
 })
 
 app.get('/student/:uid', function (req, res) {
-  res.render('head', { stuff: projects[req.params.uid], title: db[req.params.uid].name+" — "+db[req.params.uid].title, metaimg: db[req.params.uid].thumbnail})
+  res.render('head', { stuff: projects[req.params.uid], title: db[req.params.uid].name+" — "+db[req.params.uid].title, metaimg: db[req.params.uid].thumbnail, desc: db[req.params.uid].desc})
 })
 
 app.get('/teasers.json', (req, res) => {
