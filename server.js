@@ -150,7 +150,7 @@ doc.useServiceAccountAuth(creds, function (err) {
 
 
 
-	  	student = "<tr data-href='/student/"+sID+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"' data-img='"+thumbnail+"'><td class='name'><a href='/?id="+i+"'>"+name+"</a></td><td class='title'><a href='/?id="+i+"'>"+title+"</a></td><td class='profs'><a href='/?id="+i+"'>"+profs+"</a></td></tr>";
+	  	student = "<tr data-href='/student/"+sID+"' data-project-id='"+sID+"' class='student-row'  data-name='"+name+"' data-title='"+title+"' data-class='"+profs+"' data-img='"+thumbnail+"'><td class='name'><a href='/student/"+sID+"'>"+name+"</a></td><td class='title'><a href='/student/"+sID+"'>"+title+"</a></td><td class='profs'><a href='/student/"+sID+"'>"+profs+"</a></td></tr>";
 	  	studentList.push(student);
 	  	
 
@@ -353,7 +353,7 @@ app.get('/about', function (req, res) {
 
 app.get('/tag/:uid', function (req, res) {
   	var content = "<div class='projects-container'><div class='projects-container-interior'>"+projectTeasers.join('')+"</div></div>"
-  res.render('head', { stuff: content,title:"home" })
+  res.render('head', { stuff: content,title:req.params.uid.replace("t_","") })
 })
 
 app.get('/student/:uid', function (req, res) {

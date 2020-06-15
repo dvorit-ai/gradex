@@ -264,45 +264,12 @@ $(window).on('popstate', function(event) {
 });
 
 
- 	$(document).on("click",".student-row",function(e){
- 		  window.location = $(this).data("href");
- 	});
 
-	  $(document).on("click",".project-link",function(e){
+	  $(document).on("click",".student-row, .project-link",function(e){
 	  	e.preventDefault();		
-	  	pID = $(this).data("project-id");
-
 	  	
-
-	 history.pushState({
-		     id: $(this).data("url")
-	 }, $(this).data("url"), "/student/"+pID);
-
-
-
-	  	$(".projects-container").slideUp(aSpeed);
-	  	setTimeout(function(){
-	  		$(".projects-container").empty();
-	  	},aSpeed+100	)
-
-	  	$("<div class='student-container'></div>")
-	  		.html(projects[pID])
-	  		.appendTo("#container")
-
-
-
-	  	setTimeout(function(){
-	  		$("img").each(function(){
-	  			if ($(this).height() > $(this).width()) {
-	  				$(this).addClass("longimage")
-	  			}
-	  		})
-	  	},500)
-
-	  	setTimeout(function(){
-	  		$(document).scrollTop(0)
-	  		$(".student-container").slideDown(aSpeed);;
-	  	},200)
+loadProject($(this).data("project-id"))
+	  	
 
 	  	
 	  })
@@ -334,7 +301,10 @@ $(window).on('popstate', function(event) {
 
 	  	$(document).scroll(function(){
 	  		$("x").css({
-	  			"font-family":"notdef"
+	  			"font-family":"notdef",
+	  			"font-size":"1.3em",
+	  			"position":"relative",
+	  			"top":"2px"
 	  		})
 	  	})
 
@@ -350,9 +320,7 @@ window.addEventListener('scroll', function ( event ) {
 	// Set a timeout to run after scrolling ends
 	isScrolling = setTimeout(function() {
 
-		$("x").css({
-	  			"font-family":"Work Sans"
-	  		})
+		$("x").attr("style","")
 
 	}, 66);
 
@@ -364,6 +332,38 @@ window.addEventListener('scroll', function ( event ) {
 	  		$(".student-container").slideDown(aSpeed);;
 	  	},200)
 	  })
+
+
+	  //this function loads a project:
+	  function loadProject(pID){
+
+	  	unload();
+	 history.pushState({
+		     id: $(this).data("url")
+	 }, $(this).data("url"), "/student/"+pID);
+
+
+	 setTimeout(function(){
+	  	$("<div class='student-container'></div>")
+	  		.html(projects[pID])
+	  		.appendTo("#container")
+	  	},aSpeed+200)
+
+
+	  	setTimeout(function(){
+	  		$("img").each(function(){
+	  			if ($(this).height() > $(this).width()) {
+	  				$(this).addClass("longimage")
+	  			}
+	  		})
+	  	},500)
+
+	  	setTimeout(function(){
+	  		$(document).scrollTop(0)
+	  		$(".student-container").slideDown(aSpeed);;
+	  	},200)
+	  }
+
 
 
 
