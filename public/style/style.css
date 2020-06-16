@@ -1,3 +1,10 @@
+
+:root {
+  --main-bg-color:#0b152e;
+  --main-fg-color:#0f0;
+}
+
+
 /* Typefaces start */
 @import 'http://fonts.googleapis.com/css?family=Work+Sans:300,400,500';
 
@@ -34,8 +41,8 @@
 body {
 /*	cursor: -webkit-image-set(url(/logos/arrow-up.svg) 2.75x ) 14 19, auto;	
 */	
-	background:#0b152e;
-	color:#0f0;
+	background:var(--main-bg-color);
+	color:var(--main-fg-color);
 	font-family: 'Work Sans', sans-serif;		
 	margin:0;
 	overflow-y:auto;
@@ -50,12 +57,12 @@ body {
 
 ::selection{
 	background:rgba(0,255,0,0.99);
-	color:#0b152e;
+	color:var(--main-bg-color);
 }
 
 ::-moz-selection{
 	background:rgba(0,255,0,0.99);
-	color:#0b152e;
+	color:var(--main-bg-color);
 }
 
 /* TYPOGRAPHY RULES */
@@ -125,9 +132,13 @@ h3{
 }
 
 h4{
-	font-size:14pt;
-	text-transform:uppercase;
-	line-height:14pt;
+	text-indent:1em;
+	font-size: 14pt;
+    text-transform: uppercase;
+    line-height: 14pt;
+    min-width: 20em;
+    margin: 0;
+}
 
 	/*writing-mode: vertical-lr;
 text-orientation: mixed;*/
@@ -139,28 +150,28 @@ h6{
 }
 
 h6.tag {
-    background: #0b152e;
-    color: #0f0;
+    background: var(--main-bg-color);
+    color: var(--main-fg-color);
     display: inline-block;
     font-size: 10pt;
     padding: 0.3em 0.5em;
     /*border-radius: 2px;*/
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    border: 1px solid #0f0;
+    border: 1px solid var(--main-fg-color);
     margin: -2px 0 0 -1px;
 }
 
 .sidebar h6.tag {
-	color:#0b152e;
-	background:#0f0;
+	color:var(--main-bg-color);
+	background:var(--main-fg-color);
 	margin:0.5em 0.5em 0 0;
-	border:1px solid #0f0;
+	border:1px solid var(--main-fg-color);
 }
 
 .sidebar h6.tag:hover{
-	background:#0b152e;
-	color:#0f0;
+	background:var(--main-bg-color);
+	color:var(--main-fg-color);
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
@@ -199,7 +210,7 @@ img{
 }
 
 .borderimg{
-	border:1px solid #0f0;
+	border:1px solid var(--main-fg-color);
 	margin-bottom:10px;
 }
 
@@ -219,12 +230,12 @@ img{
 
 .left-line {
 	left:0;
-	border-right:1px solid #0f0;
+	border-right:1px solid var(--main-fg-color);
 }
 
 .right-line {
 	right:0;
-	border-left:1px solid #0F0;
+	border-left:1px solid var(--main-fg-color);
 }
 
 #backgroundX {
@@ -241,7 +252,7 @@ img{
     /*z-index: 2;*/
     /*height: 55px;*/
     /*width: calc(100vh + 3px);*/
-    /*background: #0f0;*/
+    /*background: var(--main-fg-color);*/
     /*position: fixed;*/
     /*display: flex;*/
     /*justify-content: space-between;
@@ -257,7 +268,7 @@ img{
 
 #nav a{
 	text-decoration:none;/*
-	color:#0b152e;
+	color:var(--main-bg-color);
 	font-weight:300;
 	font-size: 24pt;
     letter-spacing: -0.05em;*/
@@ -290,37 +301,37 @@ img{
 .one{
 	transform: rotate(90deg);
   	transform-origin: 0% 50%;
-  	top:-5px;
-  	left:25px;
+  	top:0;
+  	left:1.5em;
 
 }
 
 .three{
 	transform: rotate(-90deg);
   	transform-origin: 0% 50%;
-  	bottom:-5px;
-  	left:25px;
+  	bottom: 0;
+  	left:1.5em;
 }
 
 .two{
 	transform: rotate(90deg);
   	transform-origin: 0% 50%;
-  	top:-5px;
-  	right:-32px;
+  	top:0;
+  	right: -21.5em;
 }
 
 .four{
 	transform: rotate(-90deg);
-  	transform-origin: 0% 50%;
-  	bottom:-5px;
-  	right:-67px;
+    transform-origin: 0% 50%;
+    bottom: 0;
+    right: -21.5em;
 }
 
 /*.filter {
 	display:block;
 }*/
  /*{
-	color:#0F0;
+	color:var(--main-fg-color);
 	margin:0.25em 0;
 	display:inline-block;
 	padding:0.25em 25px;
@@ -331,6 +342,8 @@ img{
 .filter-by-tag{
 	margin-left:1px;
 	/*width: calc(100% + 53px);*/
+		border-top:1px solid var(--main-fg-color);
+
 	column-span:all;
 	max-height:0;
 	overflow:hidden;
@@ -340,7 +353,7 @@ img{
 	position:sticky;
 	z-index:100000000!important;
 	top:0;
-/*	background:#0b152e;
+/*	background:var(--main-bg-color);
 */	display:flex;
 	flex-flow:row wrap;
 	justify-content: space-between;
@@ -367,8 +380,8 @@ img{
 
 .filter-by-tag .tag.active,
 .filter-by-tag .tag:hover {
-	background:#0F0;
-	color:#0b152e;
+	background:var(--main-fg-color);
+	color:var(--main-bg-color);
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
@@ -401,7 +414,7 @@ img{
 	display:inline-block;
 	font-weight:300;
 	font-size: 24pt;
-	color:#0b152e;
+	color:var(--main-bg-color);
 }
 /*
 .rect::before {
@@ -411,7 +424,7 @@ img{
     width: 14pt;
     height: 18pt;
     box-sizing: border-box;
-    border: 1.5pt solid #0b152e;
+    border: 1.5pt solid var(--main-bg-color);
     position: relative;
     left: 14.1pt;
     top: 1pt;
@@ -476,7 +489,7 @@ img{
 	overflow:hidden;
 	position:relative;
 	color:#00FF00;
-	border:1px solid #0f0;
+	border:1px solid var(--main-fg-color);
 }
 
 /*.type h1{
@@ -512,8 +525,7 @@ img{
 .blm{
 /*	column-span:all;
 */	column-count: 2;
-	background:#0f0;
-	color:#0b152e;
+	
 	padding:20px;
 	font-size:27pt;
 	line-height:30pt;
@@ -525,24 +537,24 @@ img{
 	grid-column-gap: 1em;
 }
 
-.blm a{
-	color:#0b152e;
-}
+/*.blm a{
+	color:var(--main-bg-color);
+}*/
 
 .blm-resources p{
 	line-height:1.3em;
 }
 .footer{
-    background: #0f0;
-    color: #0b152e;
+    background: var(--main-fg-color);
+    color: var(--main-bg-color);
     padding: 2em;
     margin: 0 53px;
     column-count: 2;
 }
 
 .footer a{
-	color:#0b152e;
-/*	color:#0b152e;*/
+	color:var(--main-bg-color);
+/*	color:var(--main-bg-color);*/
 }
 
 
@@ -554,14 +566,14 @@ img{
   	top: 0;
   	left:0;
   	margin:0;
-  	background: #0f0;
+  	background: var(--main-fg-color);
   	visibility: hidden;
   	opacity: 0;
  	width:calc(100% - 30px);
   	height:calc(100% - 30px);
  	padding:15px;
 	z-index:5!important;
-  	color:#0b152e;
+  	color:var(--main-bg-color);
   	overflow:hidden;
 }
 
@@ -636,7 +648,7 @@ img{
 hr {
 	margin: 1.5em 0;
     border: none;
-    border-bottom: 1px solid #0f0;
+    border-bottom: 1px solid var(--main-fg-color);
 }
 
 .description{
@@ -759,14 +771,14 @@ hr {
 }
 
 .table-list a:hover{
-	color:#0b152e;
+	color:var(--main-bg-color);
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 table{
 	width:calc(100% + 1px);
-	border-left:1px solid #0f0;
-	border-right:1px solid #0f0;
+	border-left:1px solid var(--main-fg-color);
+	border-right:1px solid var(--main-fg-color);
 }
 
 th, td, table{
@@ -786,15 +798,15 @@ th, td, table a{
 
 th{
 	padding:25px 9pt 9pt 20pt;
-	background:#0b152e;
+	background:var(--main-bg-color);
 /*	position:sticky!important;
 */	top:0;
 	margin-top:0;
 }
 
 tr:hover td{
-	background: #0f0;
-	color:#0b152e;
+	background: var(--main-fg-color);
+	color:var(--main-bg-color);
 }
 
 tr:hover {
@@ -803,13 +815,13 @@ tr:hover {
 }
 
 tr:hover a{
-	color:#0b152e;
+	color:var(--main-bg-color);
 	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 th:hover {
-	background: #0f0;
-	color:#0b152e;
+	background: var(--main-fg-color);
+	color:var(--main-bg-color);
 }
 
 .row-thumb {
@@ -899,7 +911,7 @@ th:hover {
 	}
 
 	.filter-by-tag:active{
-		border-bottom:1px solid #0f0;
+		border-bottom:1px solid var(--main-fg-color);
 	}
 
 	.filter-by-tag h6{
@@ -945,7 +957,7 @@ th:hover {
 	    width: calc(100vh + 3px);
 	    height:53px;
 	    display: flex;
-	    background: #0F0;
+	    background: var(--main-fg-color);
 	    justify-content: space-between;
 	}
 
@@ -957,7 +969,7 @@ th:hover {
 	}
 
 	#nav a {
-		color:#0b152e;
+		color:var(--main-bg-color);
 	}
 
 	#nav h4{
@@ -1009,13 +1021,13 @@ th:hover {
 	.type{
 		border:none;
 		margin-bottom:25px;
-		border-bottom:1px solid #0f0;
-		border-top:1px solid #0f0;
+		border-bottom:1px solid var(--main-fg-color);
+		border-top:1px solid var(--main-fg-color);
 	}
 
 	.thumbnail img{
-		border-bottom:1px solid #0f0;
-		border-top:1px solid #0f0;
+		border-bottom:1px solid var(--main-fg-color);
+		border-top:1px solid var(--main-fg-color);
 	}
 
 	.thumbnail:hover img{
@@ -1033,7 +1045,7 @@ th:hover {
 		background:none;
 		margin:0;
 		padding:0;
-		border-bottom:1px solid #0f0;
+		border-bottom:1px solid var(--main-fg-color);
 		width:100%;
 
 		display:flex;
@@ -1089,11 +1101,11 @@ th:hover {
 	.blm{
 		padding-top:45px;
 		margin:0 0 0 53px;
-		background:#0b152e;
-		color:#0f0;
+		background:var(--main-bg-color);
+		color:var(--main-fg-color);
 	}
 
 	.blm a{
-		color:#0f0;
+		color:var(--main-fg-color);
 	}
 }
