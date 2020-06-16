@@ -51,7 +51,7 @@ body {
 	margin:0;
 	line-height:1.2em;
 	/*hyphens:auto;*/
-	cursor: -webkit-image-set(url(../Logos/working-up.svg) 3x ) 27 23, auto;
+	cursor: -webkit-image-set(url(/logos/working-up.svg) 3x ) 27 23, auto;
 	overflow-x:hidden;
 }
 
@@ -172,7 +172,7 @@ h6.tag {
 .sidebar h6.tag:hover{
 	background:var(--main-bg-color);
 	color:var(--main-fg-color);
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 h6.home {
@@ -200,7 +200,7 @@ p{
 
 p a:hover{
 	border:none;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 img{
@@ -277,7 +277,7 @@ img{
 #nav a:hover{
 	/*text-decoration:line-through;*/
 	font-family:notdef;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 
@@ -382,7 +382,7 @@ img{
 .filter-by-tag .tag:hover {
 	background:var(--main-fg-color);
 	color:var(--main-bg-color);
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 
@@ -481,7 +481,7 @@ img{
 }*/
 
 .type {
-	background:url(../logos/X2.svg);
+	background:url(/logos/X2.svg);
 	background-position:center;
 	height:auto;
 	padding:2vw;
@@ -514,7 +514,7 @@ img{
 .close-button {
 	float:right;
 	clear:both;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 	padding:0 5px 5px 5px;
 	column-span:all;
 	position:absolute;
@@ -773,7 +773,7 @@ hr {
 
 .table-list a:hover{
 	color:var(--main-bg-color);
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 table{
@@ -813,12 +813,12 @@ tr:hover td{
 
 tr:hover {
 	text-decoration:line-through;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 tr:hover a{
 	color:var(--main-bg-color);
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 th:hover {
