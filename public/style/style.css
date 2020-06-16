@@ -518,7 +518,7 @@ img{
 	font-size:27pt;
 	line-height:30pt;
 	
-	margin:0 53px;
+	margin:25px 73px -5px 73px;
 	z-index:1000000;
 	display:grid;
 	grid-template-columns: 1fr 1fr;
@@ -764,7 +764,7 @@ hr {
 }
 
 table{
-	width:calc(100% + 2px);
+	width:calc(100% + 1px);
 	border-left:1px solid #0f0;
 	border-right:1px solid #0f0;
 }
@@ -974,6 +974,7 @@ th:hover {
 
 	.blm{
 		column-count:1;
+		margin:0 20px -5px 73px;
 	}
 
 
@@ -1087,6 +1088,12 @@ th:hover {
 
 	.blm{
 		padding-top:45px;
+		margin:0 0 0 53px;
+		background:#0b152e;
+		color:#0f0;
+	}
 
+	.blm a{
+		color:#0f0;
 	}
 }
