@@ -36,6 +36,9 @@ $(document).on("click",".one",function(e){
 		e.preventDefault();
 		unload();
 		
+
+		shuffle(projectTeasers);
+
 		setTimeout(function(){
 			projectTeasers.splice(1,0,"<div class='thumbnail type'><h1>r e c<br>e s s<br>i o n</h1></div>");
 			projectTeasers.splice(10,0,"<div class='thumbnail type'><p class='home'>Despite COVID-19 halting our work and cancelling our graduate show and exhibition GradEx105, students still worked to complete their projects for themselves, their professors, and this website.</p></div>"); 
@@ -363,6 +366,15 @@ window.addEventListener('scroll', function ( event ) {
 	  		$(".student-container").slideDown(aSpeed);;
 	  	},200)
 	  }
+
+
+//this is function to randomize any array
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 
 

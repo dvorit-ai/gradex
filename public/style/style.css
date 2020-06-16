@@ -17,23 +17,23 @@
 } 
 
 
-/*
+
 @font-face {
     font-family: 'GT Super Display';
-    src: url('Fonts/gtsuperdisplay-super-webfont.woff2') format('woff2'),
-         url('Fonts/gtsuperdisplay-super-webfont.woff') format('woff');
+    src: url('/fonts/GT-Super-Display-Super.woff2') format('woff2'),
+         url('/fonts/GT-Super-Display-Super.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 } 
 
 @font-face {
     font-family: 'GT Super Display Italic';
-    src: url('Fonts/gtsuperdisplay-superitalic-webfont.woff2') format('woff2'),
-         url('Fonts/gtsuperdisplay-superitalic-webfont.woff') format('woff');
+    src: url('/fonts/GT-Super-Display-Super-Italic.woff2') format('woff2'),
+         url('/fonts/GT-Super-Display-Super-Italic.woff') format('woff');
     font-weight: italic;
     font-style: normal;
 }
-*/
+
 
 /* Typefaces end */
 
@@ -70,12 +70,12 @@ body {
 a{
 	color:#00ff00;
 	text-decoration:underline;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 a:hover{
 	text-decoration:line-through;
-	cursor: -webkit-image-set(url(../Logos/working-down.svg) 3x ) 26 22, auto;
+	cursor: -webkit-image-set(url(/logos/working-down.svg) 3x ) 26 22, auto;
 }
 
 h2, h3, h4, h5, h6 {
@@ -835,7 +835,7 @@ th:hover {
 
 .reverse {
 	transform:translateY(-100%);
-	padding-bottom:2.7em;
+	padding-bottom:calc(32pt + 2px);
 }
 
 .cell-one{
