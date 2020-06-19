@@ -1,4 +1,43 @@
 
+//start of virus 
+
+i = 0;
+while (i < 7) {
+	$("<img>")									//create empty imag element
+		.addClass("virus")						//add a class to this element
+		.attr("src","../logos/corona-virus.svg")	//add the attribute SRC to the element
+		.appendTo (".holder")					//add the element to the div .holder
+
+	i++; //this is the short form of just saing "i = i + 1"
+}
+
+//pulled from https://codepen.io/stezu/pen/cmLrI 
+
+$(".virus").each(function(){
+	randomTop = Math.floor(Math.random()*$(window).height())
+	randomLeft = Math.floor(Math.random()*$(window).width())
+	randomSpeed = Math.floor(Math.random()*300)+150 //before it was *600 + 200
+	randomWidth = Math.floor(Math.random()*80)+50
+
+	$(this)
+		.css({
+			"top":randomTop,
+			"left":randomLeft,
+			"width":randomWidth,
+			"height":randomWidth,
+		})
+		.marqueeify({
+			"speed":randomSpeed
+		});
+
+})
+
+//end of virus 
+
+
+
+
+
 		const aSpeed = 300 			//this is the speed of animations in milliseconds
 		var allData = [];					//this array will hold all the data.
 		var projectTeasers = []; 	//this array will hold all the HTML for the Thubnails on the front page

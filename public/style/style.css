@@ -145,7 +145,7 @@ text-orientation: mixed;*/
 }
 
 h6{
-	font-size:11pt;
+	font-size:11pt !important;
 	line-height:1.25em;
 }
 
@@ -525,11 +525,11 @@ img{
 .blm{
 /*	column-span:all;
 */	column-count: 2;
-	
+	background:var(--main-fg-color);
 	padding:20px;
 	font-size:27pt;
 	line-height:30pt;
-	
+	color:var(--main-bg-color);
 	margin:0 53px;
 	z-index:1000000;
 	display:grid;
@@ -537,9 +537,9 @@ img{
 	grid-column-gap: 1em;
 }
 
-/*.blm a{
+.blm a{
 	color:var(--main-bg-color);
-}*/
+}
 
 .blm-resources p{
 	line-height:1.3em;
@@ -548,13 +548,12 @@ img{
     background: var(--main-fg-color);
     color: var(--main-bg-color);
     padding: 2em;
-    margin: 0 53px;
+    margin: 50px 53px 0px 53px;
     column-count: 2;
 }
 
 .footer a{
 	color:var(--main-bg-color);
-/*	color:var(--main-bg-color);*/
 }
 
 
@@ -747,6 +746,7 @@ hr {
 	margin:0;
 	padding:0;
 	margin-bottom:1em;
+	font-size:11pt;
 }
 
 
@@ -849,6 +849,28 @@ th:hover {
 .cell-three{
 	width:25%;
 }
+
+
+
+/* BEG OF CORONA VIRUS */
+.virus{
+	z-index:500000000000000000;
+	width:500px;
+	height:auto;
+	max-width:500px;
+}
+
+.holder {
+    position:fixed; 
+    width:100vw; 
+    height:100vh;
+    pointer-events:none;
+    z-index:1000 !important;
+}
+
+/*END OF CORONA VIRUS... i wish*/
+
+
 
 /* RESPONSIVE WINDOW SMALLEST*/
 @media (max-width:1300px) {
@@ -986,8 +1008,24 @@ th:hover {
 		overflow-x:hidden;
 	}
 
+	.close-button{
+		right:20px;
+	}
+
 	.blm{
 		column-count:1;
+		margin:0 0 0 53px !important;
+		background:var(--main-bg-color);
+		color:var(--main-fg-color);
+		border-bottom:1px solid var(--main-fg-color);
+	}
+
+	.blm a{
+		color:var(--main-fg-color);
+	}
+
+	.footer{
+		margin:0 0 0 53px;
 	}
 
 
@@ -1101,10 +1139,6 @@ th:hover {
 
 	.blm{
 		padding-top:45px;
-
-		margin:0 0 0 53px;
-		background:var(--main-bg-color);
-		color:var(--main-fg-color);
 	}
 
 }
