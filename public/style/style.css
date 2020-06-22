@@ -854,11 +854,26 @@ th:hover {
 
 /* BEG OF CORONA VIRUS */
 .virus{
+	position:fixed;
 	z-index:500000000000000000;
 	width:500px;
 	height:auto;
 	max-width:500px;
+	    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
+
+
+
+     @keyframes spin { 
+        from { 
+            transform: rotate(0deg); 
+        } to { 
+            transform: rotate(360deg); 
+        }
+    }
 
 .holder {
     position:fixed; 
@@ -927,6 +942,8 @@ th:hover {
 
 @media (max-width:800px){
 	
+
+
 	.filter-by-tag{
 		height:100%;
 		overflow-y:scroll;
@@ -989,7 +1006,7 @@ th:hover {
 		position: static;
 	    display: inline-block;
 	    transform: rotate(0deg);
-	    margin-top: -3vh;
+	    margin-top: 2vh;
 	}
 
 	#nav a {
@@ -998,6 +1015,7 @@ th:hover {
 
 	#nav h4{
 		font-size:3.8vh;
+		min-width:0;
 /*		font-size:21pt;
 		text-overflow: hidden;
 		white-space:nowrap;*/

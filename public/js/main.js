@@ -1,38 +1,14 @@
 
-//start of virus 
 
-i = 0;
-while (i < 7) {
-	$("<img>")									//create empty imag element
-		.addClass("virus")						//add a class to this element
-		.attr("src","../logos/corona-virus.svg")	//add the attribute SRC to the element
-		.appendTo (".holder")					//add the element to the div .holder
+// $(document).keypress(function(e){
+	
+// 	 $('.projects-container').jGravity();
+// 	 console.log(e)
+// })
 
-	i++; //this is the short form of just saing "i = i + 1"
+if (window.location.href.includes("about")) {
+	addVirus();	
 }
-
-//pulled from https://codepen.io/stezu/pen/cmLrI 
-
-$(".virus").each(function(){
-	randomTop = Math.floor(Math.random()*$(window).height())
-	randomLeft = Math.floor(Math.random()*$(window).width())
-	randomSpeed = Math.floor(Math.random()*300)+150 //before it was *600 + 200
-	randomWidth = Math.floor(Math.random()*80)+50
-
-	$(this)
-		.css({
-			"top":randomTop,
-			"left":randomLeft,
-			"width":randomWidth,
-			"height":randomWidth,
-		})
-		.marqueeify({
-			"speed":randomSpeed
-		});
-
-})
-
-//end of virus 
 
 
 
@@ -72,10 +48,11 @@ fetch('/projectTeasers.json')
 
 //THIS IS FOR CLICKING ON THE MAIN PAGE
 $(document).on("click",".one",function(e){
+
 		e.preventDefault();
 		unload();
 		
-
+		removeVirus();
 		shuffle(projectTeasers);
 
 		setTimeout(function(){
@@ -98,7 +75,7 @@ $(document).on("click",".one",function(e){
 $(document).on("click",".four",function(e){
 		e.preventDefault();
 		unload()
-
+	removeVirus();
 		fetch('/students.json')
 		  	.then(respond => respond.json())
 		  	.then(data=>{
@@ -120,7 +97,11 @@ $(document).on("click",".three",function(e){
 	  	fetch('/about.html')
 	  	  	.then(respond => respond.text())
 	  		.then(data=>{  
-				setTimeout(function(){ $("#container").append(data) },aSpeed+200);
+				setTimeout(function(){ 
+					$("#container").append(data) 
+
+					addVirus()
+				},aSpeed+200);
     		})
 	  	
 	  	history.pushState({id: "about" }, $(this).data("url"), "/about");
@@ -424,4 +405,47 @@ function shuffle(array) {
 	  	setTimeout(function(){
 	  		$(".projects-container, .students-container, .student-container, .table-list").remove();
 	  	},aSpeed+100	)
+	  }
+
+
+	  function addVirus() {
+
+//start of virus 
+
+i = 0;
+while (i < 3) {
+	$("<img>")									//create empty imag element
+		.addClass("virus")						//add a class to this element
+		.attr("src","../logos/corona-virus.svg")	//add the attribute SRC to the element
+		.appendTo (".holder")					//add the element to the div .holder
+
+	i++; //this is the short form of just saing "i = i + 1"
+}
+
+//pulled from https://codepen.io/stezu/pen/cmLrI 
+
+$(".virus").each(function(){
+	randomTop = Math.floor(Math.random()*$(window).height())
+	randomLeft = Math.floor(Math.random()*$(window).width())
+	randomSpeed = Math.floor(Math.random()*300)+50 //before it was *600 + 200
+	randomWidth = Math.floor(Math.random()*80)+50
+
+	$(this)
+		.css({
+			"top":randomTop,
+			"left":randomLeft,
+			"width":randomWidth,
+			"height":randomWidth,
+		})
+		.marqueeify({
+			"speed":randomSpeed
+		});
+
+})
+
+//end of virus 
+	  }
+
+	  function removeVirus() {
+	  	$(".holder").remove();
 	  }
