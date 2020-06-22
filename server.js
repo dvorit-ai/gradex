@@ -280,13 +280,27 @@ function mn(string) {
 }
 
 
-//this is function to randomize any array
+
+//this is a function to randomize any array (with added function to foreground some designers)
 function shuffle(array) {
+	let index1;
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+
+    for (let i = array.length - 1; i > 0; i--) {
+    if (array[i].includes("project-74")) {
+    	index1 = i    	
+    }
+
+  }
+  t = array[index1];
+   array.splice(index1, 1);   
+   array.unshift(t);
 }
+
+
 
 
 
