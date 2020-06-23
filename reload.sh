@@ -1,6 +1,5 @@
 #!/bin/sh
 # This is a comment!
-echo Hello World        # This is a comment, too!
 git clone https://github.com/dvorit-ai/gradex
 cp -r gradex/* ../gradex/
 export PATH=$PWD/bin/:$PATH
