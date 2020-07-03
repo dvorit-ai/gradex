@@ -1022,7 +1022,7 @@ th:hover {
 	}
 
 	.table-list{
-		margin:0 0 0 53px;
+		margin:0;
 		overflow-x:hidden;
 	}
 
@@ -1031,11 +1031,16 @@ th:hover {
 	}
 
 	.blm{
+		display:block;
 		column-count:1;
 		margin:0 0 0 53px !important;
 		background:var(--main-bg-color);
 		color:var(--main-fg-color);
 		border-bottom:1px solid var(--main-fg-color);
+	}
+
+	.blm h3 br {
+		display:none;
 	}
 
 	.blm a{
@@ -1044,6 +1049,14 @@ th:hover {
 
 	.footer{
 		margin:0 0 0 53px;
+		column-count:1;
+	}
+
+	.footer h2,
+	.footer h3{
+
+		font-size:1rem;
+
 	}
 
 

@@ -1,10 +1,11 @@
 
 
-// $(document).keypress(function(e){
+$(document).keypress(function(e){
 	
-// 	 $('.projects-container').jGravity();
-// 	 console.log(e)
-// })
+	 if (e.charCode == 99) { //hit "c"
+	 	chaos();
+	 }
+})
 
 if (window.location.href.includes("about")) {
 	addVirus();	
@@ -65,6 +66,23 @@ $(document).on("click",".one",function(e){
 			projectTeasers.splice(47,0,"<div class='thumbnail type'><h1 class='larger'>2 0<br>2 0</h1></div>"); 
 			projectTeasers.splice(76,0,"<div class='thumbnail type'><p class='home'>Recession Grads exists to acknowledge the situation of what it is like for us to graduate into a recession, and a period of time where everything is a missing glyph of uncertainty and at an indefinite pause. This site serves to showcase our work despite the circumstances and to start new traditions of archiving future graduates' work.</p></div>"); 
 			$("#container").append("<div class='projects-container'><div class='projects-container-interior'>"+projectTeasers.join('')+"</div></div>");
+		
+				$(".projects-container").prepend("<div class='filter-by-tag'><h6 class='tag see-all'>all work</h6></div>")
+
+		
+	
+
+		fetch('/tags.json')
+	.then(response => response.json())
+	.then(data => {
+		for (i=0;i<data.length;i++) {
+			//console.log(data[i])
+			$(".filter-by-tag").append(data[i])
+		}
+
+})
+
+
 		}, aSpeed+200);
 	  	history.pushState({ id: "students" }, $(this).data("url"), "/");
 
@@ -225,14 +243,20 @@ $(document).on("mouseover",".student-row",function(e){
 
 
 $(document).on("click",".filter",function(e){
-	
+		
+
 	e.preventDefault();
 	$(".filter-by-tag").toggleClass("active")
 	$(document).scrollTop(0)
 
 	if ((window.location.href.includes("about")) ||
 		(window.location.href.includes("student")))	{
-		window.location.href="/tag/see-all"
+	
+		$(".one").click();
+
+		setTimeout(function(){
+			$(".filter-by-tag").addClass("active")
+		},500)
 	}
 })
 
@@ -459,4 +483,35 @@ $(".virus").each(function(){
 
 	  function removeVirus() {
 	  	$(".holder").remove();
+	  }
+
+
+	  function chaos() {
+
+
+	  		$(".projects-container-interior").css({"position":"static"})
+	  		$(".thumbnail").each(function(){
+	  			e = this
+	  			let rect = e.getBoundingClientRect();
+	  			fT = rect.top;
+	  			fL = rect.left;
+	  			w = $(this).width();
+	  			$(this).css({
+	  				//"position":"absolute",
+	  				"width":w,
+	  				"top":fT+"px",
+	  				"left":fL+"px"
+
+	  			})
+	  			
+	  		})
+
+	  		setTimeout(function(){
+	  			$(".thumbnail").css("position","absolute")
+	  			 // $('body').jGravity({
+	  			 //   target: '.thumbnail',
+       //             weight: 25,
+       //             depth: 8
+       //    		});
+	  		},300)
 	  }
