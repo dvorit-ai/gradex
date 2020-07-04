@@ -905,6 +905,10 @@ th:hover {
 
 @media (max-width:1000px) {
 
+	.row-thumb {
+		display:none;
+	}
+
 	.filter-by-tag.active {
 	max-height:1000px;
 
@@ -912,7 +916,7 @@ th:hover {
 	h1{
 		font-size:15vw;
 		line-height:0.9em;
-	}
+	}	
 
 	.larger{
 		font-size:27vw !important;
@@ -943,6 +947,9 @@ th:hover {
 @media (max-width:800px){
 	
 
+	h3 {
+		font-size:18pt;
+	}
 
 	.filter-by-tag{
 		height:100%;
